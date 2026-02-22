@@ -16,7 +16,7 @@
   "hero": {
     "name": "NeoWangKing",
     "bio": "一个爱好广泛的疯子（出生）",
-    "description": "理想是学点感兴趣的玩意儿,欢迎一同学习",
+    "description": "想要学点感兴趣的玩意儿,欢迎一同学习",
     "socials": [
       {
         "name": "Github",
@@ -112,7 +112,7 @@
     "serverURL": "https://waline-1-t8619760.deta.app/"
   },
   "sponsor": {
-    "wechat": "https://s2.loli.net/2024/08/03/6lXu4rHghkCmofV.jpg"
+    "wechat": "/image/2026-2-22/1.png"
   },
   "analytics": {
     "enable": false,
