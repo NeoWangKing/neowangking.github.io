@@ -1,7 +1,7 @@
 {
   "site": {
     "url": "https://neowangking.github.io",
-    "title": "博客",
+    "title": "NeoWangKing的博客",
     "description": "这是一个活着的人走过的漫长道路",
     "keywords": "NeoWangKing,blog,dream,indra,博客,逐梦",
     "lang": "zh-CN",
@@ -10,12 +10,12 @@
   },
   "author": {
     "name": "NeoWangKing",
-    "twitterId": "@lxchapu",
+    "twitterId": "@WangNeo290041",
     "avatar": "/img/avatar.jpg"
   },
   "hero": {
     "name": "NeoWangKing",
-    "bio": "一个爱好广泛的疯子（出生）",
+    "bio": "一个爱好广泛的出生",
     "description": "想要学点感兴趣的玩意儿,欢迎一同学习",
     "socials": [
       {

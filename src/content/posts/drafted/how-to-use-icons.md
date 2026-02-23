@@ -1,6 +1,6 @@
 ---
 title: 如何在 Gyoza 中使用图标？
-author: 模板
+author: lxchapu
 date: 2024-05-08T10:54:27.000Z
 tags: [Icon]
 category: 教程
