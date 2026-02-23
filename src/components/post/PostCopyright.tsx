@@ -1,4 +1,4 @@
-import { author, site } from '@/config.json'
+import { site } from '@/config.json'
 import { getFormattedDateTime } from '@/utils/date'
 import { AnimatedSignature } from '../AnimatedSignature'
 import { useEffect, useState } from 'react'
@@ -11,10 +11,14 @@ function getPostUrl(slug: string) {
 export function PostCopyright({
   title,
   slug,
+  author,
+  summary,
   lastMod,
 }: {
   title: string
   slug: string
+  author: string
+  summary: string
   lastMod: Date
 }) {
   const [lastModStr, setLastModStr] = useState('')
@@ -32,7 +36,8 @@ export function PostCopyright({
   return (
     <section className="text-xs leading-loose text-secondary">
       <p>文章标题：{title}</p>
-      <p>文章作者：{author.name}</p>
+      <p>文章作者：{author}</p>
+      <p>文章概要：{summary}</p>
       <p>
         <span>文章链接：{url}</span>
         <span role="button" className="cursor-pointer select-none" onClick={handleCopyUrl}>
