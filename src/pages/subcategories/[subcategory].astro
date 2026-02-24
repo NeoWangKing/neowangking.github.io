@@ -1,0 +1,59 @@
+---
+import type { GetStaticPaths } from 'astro'
+import PageLayout from '@/layouts/PageLayout.astro'
+import { getAllSubCategories, getOldestPosts, slugify } from '@/utils/content'
+import Highlight from '@/components/Highlight.astro'
+import Timeline from '@/components/Timeline.astro'
+
+export const getStaticPaths = (async () => {
+  const allSubCategories = await getAllSubCategories()
+
+  return allSubCategories.map((subcategory) => {
+    return {
+      params: {
+        subcategory: `${subcategory.supslug}-${subcategory.slug}`,
+      },
+      props: { subcategory },
+    }
+  })
+}) satisfies GetStaticPaths
+
+interface Props {
+  subcategory: {
+    name: string;
+    supname: string;
+    slug: string;
+    supslug: string;
+    count: number;
+  }
+}
+
+const { subcategory } = Astro.props
+
+const oldestPosts = await getOldestPosts().then((posts) => {
+  return posts.filter((post) => slugify(post.data.category) === subcategory.supslug && slugify(post.data.subcategory) === subcategory.slug)
+})
+---
+
+<PageLayout title={`分类 · ${subcategory.supname} · ${subcategory.name}`}>
+  <div class="max-w-[800px] mx-auto px-4 py-16">
+    <header class="space-y-4 mb-8">
+      <h1 class="text-4xl font-bold">
+        分类：
+        <Highlight>
+          <a href={`/categories/${slugify(subcategory.supname)}`}>
+            {subcategory.supname}
+          </a>
+        </Highlight>
+         - 
+        <Highlight>
+          <a href={`/subcategories/${slugify(subcategory.supname)}-${subcategory.name}`}>
+            {subcategory.name}
+          </a>
+        </Highlight>
+      </h1>
+      <p>共有 {subcategory.count} 篇文章。</p>
+    </header>
+    <Timeline posts={oldestPosts} />
+  </div>
+</PageLayout>

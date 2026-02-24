@@ -3,26 +3,30 @@ import { slugify } from '@/utils/content'
 
 interface Props {
   tags: string[]
-  category?: string
+  category: string
+  subcategory: string
   class?: string
 }
 
-const { tags, category, class: className } = Astro.props
+const { tags, category, subcategory, class: className } = Astro.props
 ---
 
 <div class="flex flex-wrap gap-2 text-sm text-secondary" class:list={[className]}>
   {
-    category && (
-      <div>
-        <i class="iconfont icon-folder" />
-        <a
-          class="hover:text-accent hover:underline underline-offset-2 decoration-dashed"
-          href={`/categories/${slugify(category)}`}
-        >
-          {category}
-        </a>
-      </div>
-    )
+    <div>
+      <i class="iconfont icon-folder" />
+      <a
+        class="hover:text-accent hover:underline underline-offset-2 decoration-dashed"
+        href={`/categories/${slugify(category)}`}
+      >
+        {category}
+      </a> / <a
+        class="hover:text-accent hover:underline underline-offset-2 decoration-dashed"
+        href={`/subcategories/${slugify(category)}-${slugify(subcategory)}`}
+      >
+        {subcategory}
+      </a>
+    </div>
   }
   {
     tags.length > 0 && (

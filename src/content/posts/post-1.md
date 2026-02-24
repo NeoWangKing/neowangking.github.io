@@ -2,9 +2,13 @@
 title: C语言基础教程
 author: NeoWangKing
 date: 2026-02-23
-summary: 这是一篇C语言语法的基础教程
-category: C语言
+lastMod: 2026-02-23
 tags: [C语言, 编程语言]
+category: 程设计科
+subcategory: C语言
+summary: 这是一篇C语言语法的基础教程
+comment: false
+draft: false
 ---
 
 ## C语言程序结构

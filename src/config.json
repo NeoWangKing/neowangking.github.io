@@ -82,6 +82,11 @@
       "icon": "icon-archive"
     },
     {
+      "name": "分类",
+      "link": "/",
+      "icon": "icon-menu"
+    },
+    {
       "name": "项目",
       "link": "/projects",
       "icon": "icon-flask"
@@ -99,6 +104,9 @@
   ],
   "posts": {
     "perPage": 10
+  },
+  "tags": {
+    "hot": 5
   },
   "footer": {
     "startTime": "2026-02-22T00:00:00Z"

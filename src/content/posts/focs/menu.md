@@ -4,9 +4,11 @@ author: NeoWangKing
 date: 2026-02-24
 lastMod: 2026-02-24
 tags: [Computer]
-category: 计算机基础
+category: 程设计科
+subcategory: 计算机基础
 summary: 暂无概要
-draft: true
+comment: false
+draft: false
 ---
 
 ## 数据（信息）表示与存储

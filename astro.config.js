@@ -37,4 +37,12 @@ export default defineConfig({
     ],
     remarkRehype: { footnoteLabel: '参考', footnoteBackLabel: '返回正文' },
   },
+  srcDir: 'src',
+  vite: {
+    resolve: {
+      alias: {
+        '@': new URL('./src', import.meta.url).pathname,
+      },
+    },
+  },
 })

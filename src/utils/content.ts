@@ -1,4 +1,5 @@
 import { getCollection } from 'astro:content'
+import { tags } from '@/config.json'
 
 // 获取所有文章
 async function getAllPosts() {
@@ -62,62 +63,102 @@ export function slugify(text: string) {
   return text.replace(/\./g, '').replace(/\s/g, '-').toLowerCase()
 }
 
-// 获取所有分类
+// 获取所有一级分类
 export async function getAllCategories() {
   const newestPosts = await getNewestPosts()
 
-  const allCategories = newestPosts.reduce<{ slug: string; name: string; count: number }[]>(
-    (acc, cur) => {
-      if (cur.data.category) {
-        const slug = slugify(cur.data.category)
-        const index = acc.findIndex((category) => category.slug === slug)
-        if (index === -1) {
-          acc.push({
-            slug,
-            name: cur.data.category,
-            count: 1,
-          })
-        } else {
-          acc[index].count += 1
-        }
-      }
-      return acc
-    },
-    [],
-  )
+  const allCategories = newestPosts.reduce<
+    {
+      slug: string
+      name: string
+      count: number
+    }[]
+  >((acc, cur) => {
+    const slug = slugify(cur.data.category)
+    const index = acc.findIndex((category) => category.slug === slug)
+    if (index === -1) {
+      acc.push({
+        slug: slug,
+        name: cur.data.category,
+        count: 1,
+      })
+    } else {
+      acc[index].count += 1
+    }
+    return acc
+  }, [])
 
   return allCategories
+}
+
+// 获取所有二级分类
+export async function getAllSubCategories() {
+  const newestPosts = await getNewestPosts()
+
+  const allSubCategories = newestPosts.reduce<
+    {
+      slug: string
+      supslug: string
+      name: string
+      supname: string
+      count: number
+    }[]
+  >((acc, cur) => {
+    const supslug = slugify(cur.data.category)
+    const slug = slugify(cur.data.subcategory)
+    const index = acc.findIndex(
+      (subcategory) => subcategory.slug === slug && subcategory.supslug === supslug,
+    )
+    if (index === -1) {
+      acc.push({
+        slug: slug,
+        supslug: supslug,
+        name: cur.data.subcategory,
+        supname: cur.data.category,
+        count: 1,
+      })
+    } else {
+      acc[index].count += 1
+    }
+    return acc
+  }, [])
+
+  return allSubCategories
 }
 
 // 获取所有标签
 export async function getAllTags() {
   const newestPosts = await getNewestPosts()
 
-  const allTags = newestPosts.reduce<{ slug: string; name: string; count: number }[]>(
-    (acc, cur) => {
-      cur.data.tags.forEach((tag) => {
-        const slug = slugify(tag)
-        const index = acc.findIndex((tag) => tag.slug === slug)
-        if (index === -1) {
-          acc.push({
-            slug,
-            name: tag,
-            count: 1,
-          })
-        } else {
-          acc[index].count += 1
-        }
-      })
-      return acc
-    },
-    [],
-  )
+  const allTags = newestPosts.reduce<
+    {
+      slug: string
+      name: string
+      count: number // 有多少篇文章含有此标签
+    }[]
+  >((acc, cur) => {
+    cur.data.tags.forEach((tag) => {
+      const slug = slugify(tag)
+      // 寻找 acc 中是否已经存在这个 tag，如果不存在则会返回 -1
+      const index = acc.findIndex((tag) => tag.slug === slug)
+      if (index === -1) {
+        acc.push({
+          slug,
+          name: tag,
+          count: 1,
+        })
+      } else {
+        acc[index].count += 1
+      }
+    })
+    return acc
+  }, [])
 
   return allTags
 }
 
 // 获取热门标签
-export async function getHotTags(len = 5) {
+export async function getHotTags(len = tags.hot) {
   const allTags = await getAllTags()
 
   return allTags

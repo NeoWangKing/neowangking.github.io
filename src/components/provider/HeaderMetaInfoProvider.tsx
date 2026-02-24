@@ -19,10 +19,12 @@ export function HeaderMetaInfoProvider({
   const setSlug = useSetAtom(metaSlugAtom)
 
   useEffect(() => {
-    // 去掉 pathName 结尾的 '/'
+    // 判断是不是根目录
     if (pathName !== '/') {
-      setPathName(pathName.replace(/\/$/, ''))
+      // 去掉 pathName 结尾的 '/'
+      setPathName(pathName.replace(/\/$/, ''))// 两个 / 中间是正则表达式，\/ 表示转义的 / 符号，$表示末尾
     } else {
+      // 如果是根目录的话就不进行修改
       setPathName(pathName)
     }
     setTitle(title)

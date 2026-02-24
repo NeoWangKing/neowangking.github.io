@@ -1,10 +1,13 @@
 ---
 title: 如何在 Gyoza 中使用图标？
 author: lxchapu
-date: 2024-05-08T10:54:27.000Z
+date: 2024-05-08
+lastMod: 2024-05-08
 tags: [Icon]
 category: 教程
-comments: true
+subcategory: Gyoza
+summary: 讲解了在Gyoza模板中使用图标的方法与规范
+comments: false
 draft: true
 ---
 

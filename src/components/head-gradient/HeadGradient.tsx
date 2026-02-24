@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 
+// 详见 https://motion.framer.wiki/introduction
 export function HeadGradient() {
   return (
     <motion.div
@@ -7,7 +8,9 @@ export function HeadGradient() {
       style={{
         maskImage: 'linear-gradient(black, transparent)',
       }}
+      // 设置元素初始状态
       initial={{ opacity: 0 }}
+      // 设置元素的变化
       animate={{ opacity: 1 }}
     ></motion.div>
   )

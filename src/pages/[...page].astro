@@ -12,13 +12,21 @@ import type { CollectionEntry } from 'astro:content'
 import Hero from '@/components/hero/Hero.astro'
 
 export const getStaticPaths = (async () => {
+  // 
   const sortedPosts = await getSortedPosts()
+  // 每一页显示的文章数量
   const { perPage } = appConfig.posts
+  // 计算总共的页数
   const totalPage = Math.ceil(sortedPosts.length / perPage)
 
-  const paths = Array.from({ length: totalPage }).map((_, i) => {
+  const paths = Array.from({ length: totalPage }).map((_, i) => { 
+    // i 就是 0 ~ totalPage-1
+    // 截取得到第 i+1 页的文章
     const data = sortedPosts.slice(i * perPage, (i + 1) * perPage)
+    // 返回当前的页码 i+1 以及本页所有的文章 data
     const props = { currentPage: i + 1, totalPage, data }
+    
+    // 如果 i 为 0 则表示为首页（页码 1），i 不为 0 则返回 `page/${i + 1}`
     const params = {
       page: i === 0 ? undefined : `page/${i + 1}`,
     }
@@ -36,10 +44,15 @@ interface Props {
 
 const { currentPage, totalPage, data } = Astro.props
 
+// 获取热门标签
 const hotTags = await getHotTags()
+// 获取所有标签
 const allTags = await getAllTags()
-const allCategories = await getAllCategories()
+// 获取所有类别
+// const allCategories = await getAllCategories()
+// 获取所有子类别
 
+//获取页面的跳转链接
 const getPageUrl = (page: number) => {
   if (page === 1) return '/'
   return `/page/${page}`
@@ -48,26 +61,33 @@ const getPageUrl = (page: number) => {
 
 <PageLayout>
   <div>
+    <!-- 如果页码为 1 就显示 Hero 页 -->
     {currentPage === 1 && <Hero />}
     <div class="max-w-[1100px] px-4 md:px-8 py-20 mx-auto grid lg:grid-cols-[auto_300px] gap-10">
+      <!-- 列出所有文章 -->
       <div class="min-w-0">
         <SectionBlock title="最新发布">
           <PostList posts={data} />
           {
+            // 如果总页数大于 1 就显示翻页组件
             totalPage > 1 && (
               <PostPagination current={currentPage} total={totalPage} getPageUrl={getPageUrl} />
             )
           }
         </SectionBlock>
       </div>
+      <!-- 分类和标签展示组件 -->
       <div>
         <aside class="md:sticky md:top-20 space-y-10">
+          <!--
           <SectionBlock title="分类">
             <CategoryList categories={allCategories} />
           </SectionBlock>
+          -->
           <SectionBlock title="热门标签">
             <TagList tags={hotTags} />
             {
+              // 如果热门标签不包含所有标签，显示 更多标签
               allTags.length > hotTags.length && (
                 <div class="mt-2 text-right">
                   <a class="text-sm text-secondary hover:text-accent" href="/tags">
@@ -77,6 +97,7 @@ const getPageUrl = (page: number) => {
               )
             }
           </SectionBlock>
+
         </aside>
       </div>
     </div>
