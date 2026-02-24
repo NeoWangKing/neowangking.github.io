@@ -3,13 +3,15 @@
 
   // 哀悼日
   const MOURNING_DAYS = ['4-4', '5-12', '7-7', '9-18', '12-13']
-
+  
+  // 函数：判断是否是哀悼日
   function isMourningDay() {
     const today = new Date()
     const dateStr = `${today.getMonth() + 1}-${today.getDate()}`
     return MOURNING_DAYS.includes(dateStr)
   }
 
+  // 函数：加载主题
   function load() {
     const localTheme = getLocalTheme()
     const systemTheme = getSystemTheme()
@@ -18,12 +20,14 @@
     } else {
       changePageTheme(localTheme)
     }
+    // 如果是哀悼日，调整页面整体为灰色调
     if (isMourningDay()) {
       document.documentElement.classList.add('gray')
     }
   }
 
+  // 切换主题为“跟随系统”
   load()
-
+  // 添加事件监听，在页面转换时自动加载主题
   document.addEventListener('astro:after-swap', load)
 </script>

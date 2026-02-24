@@ -1,24 +1,33 @@
 <script>
+  // 导入Chroma.js，一个轻量级、零依赖的JavaScript颜色操作库
   import chroma from 'chroma-js'
+  // 从配置文件中导入强调色
   import { color as themeColor } from '@/config.json'
 
+  // 函数：选择一组随机的强调色
   function pickRandomAccent() {
     const seed = (Math.random() * themeColor.accent.length) | 0
     return themeColor.accent[seed]
   }
 
+  // 函数：将颜色数据处理成 R G B 的形式
   function getRgbVal(color: chroma.Color) {
+    //将输入的color转换成rgb数值，并且用空格进行分隔
     return color.rgb().join(' ')
   }
 
+  // 函数：注入随机的颜色
   function injectColor() {
+    // 选择一组随机的强调色
     const accentColor = pickRandomAccent()
 
+    // 设置背景颜色，将强调色与 (light: #fafafa, dark: #000212) 混合
     const rootBgColor = {
       light: chroma.mix('rgb(250,250,250)', accentColor.light, 0.05, 'rgb'),
       dark: chroma.mix('rgb(0,2,18)', accentColor.dark, 0.12, 'rgb'),
     }
-
+    
+    // 有待理解
     const $style = document.createElement('style')
     $style.textContent = `html {
   --color-accent: ${getRgbVal(chroma(accentColor.light))};
@@ -41,7 +50,8 @@
     document.head.appendChild($style)
   }
 
+  // 注入随机的颜色
   injectColor()
-
+  // 添加事件监听，在页面转换时自动注入颜色
   document.addEventListener('astro:after-swap', injectColor)
 </script>

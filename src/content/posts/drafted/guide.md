@@ -123,6 +123,23 @@ pnpm preview
   "sponsor": {
     "wechat": "" // 微信赞赏码图片地址
   }
+  // 如果需要使用网站数据统计，将 enable 修改为 true，并填写对应的配置
+  "analytics": {
+    "enable": false,
+    // https://analytics.google.com
+    "google": {
+      "measurementId": ""
+    },
+    // https://umami.is/docs
+    "umami": {
+      "serverUrl": "",
+      "websiteId": ""
+    },
+    // https://clarity.microsoft.com/
+    "microsoftClarity": {
+      "projectId": ""
+    }
+  }
 }
 ```
 
