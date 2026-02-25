@@ -1,8 +1,8 @@
 ---
 title: 复变函数
 author: NeoWangKing
-date: 2026-02-23
-lastMod: 2026-02-23
+date: 2026-02-25
+lastMod: 2026-02-25
 tags: [数学, 物理, 学科交叉]
 category: ['数学', '数学物理方法']
 summary: 这是我在学习数学物理方法这门课程过程中的笔记
