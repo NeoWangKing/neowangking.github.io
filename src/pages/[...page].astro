@@ -3,7 +3,7 @@ import type { GetStaticPaths } from 'astro'
 import MainPageLayout from '@/layouts/MainPageLayout.astro'
 import PostList from '@/components/post/PostList.astro'
 import PostPagination from '@/components/post/PostPagination.astro'
-import { getSortedPosts, getHotTags, getCategories, getAllTags } from '@/utils/content'
+import { getSortedPosts } from '@/utils/content'
 import appConfig from '@/config.json'
 import SectionBlock from '@/components/SectionBlock.astro'
 import type { CollectionEntry } from 'astro:content'
@@ -40,14 +40,6 @@ interface Props {
 }
 
 const { currentPage, totalPage, data } = Astro.props
-
-// 获取热门标签
-const hotTags = await getHotTags()
-// 获取所有标签
-const allTags = await getAllTags()
-// 获取所有类别
-const Categories = await getCategories()
-// 获取所有子类别
 
 //获取页面的跳转链接
 const getPageUrl = (page: number) => {

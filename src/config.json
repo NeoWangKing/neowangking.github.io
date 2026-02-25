@@ -77,9 +77,9 @@
       "icon": "icon-pantone"
     },
     {
-      "name": "归档",
-      "link": "/archives",
-      "icon": "icon-archive"
+      "name": "关于",
+      "link": "/about",
+      "icon": "icon-ghost"
     },
     {
       "name": "分类",
@@ -95,11 +95,6 @@
       "name": "项目",
       "link": "/projects",
       "icon": "icon-flask"
-    },
-    {
-      "name": "关于",
-      "link": "/about",
-      "icon": "icon-ghost"
     },
     {
       "name": "友链",

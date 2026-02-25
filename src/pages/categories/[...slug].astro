@@ -50,9 +50,11 @@ const subcategory = await getSubCategories(category.name[0])
 const oldestPosts = await getOldestPosts().then((posts) => {
   return posts.filter((post) => listInclude(post.data.category, category.name))
 })
+
+const style = "max-w-[1100px] px-4 md:px-8 py-20 mx-auto grid lg:grid-cols-[auto_300px] gap-10"
 ---
-<MainPageLayout showCategories={false}>
-  <div class="max-w-[800px] mx-auto px-4 py-16">
+<MainPageLayout showCategories={false} style={style}>
+  <div class="max-w-[800px] px-4 py-16">
     <header class="space-y-4 mb-8">
       <h1 class="text-4xl font-bold">
         <Highlight><a href=`/categories`>分类</a></Highlight>：

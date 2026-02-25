@@ -22,7 +22,7 @@ interface Props {
   currentPage?: number
   showCategories?: boolean
   showTags?: boolean
-  tailwind?: string
+  style?: string
 }
 
 const {
@@ -32,7 +32,7 @@ const {
   currentPage,
   showCategories = true,
   showTags = true,
-  tailwind = "max-w-[1100px] px-4 md:px-8 py-20 mx-auto grid lg:grid-cols-[auto_300px] gap-10" 
+  style = "max-w-[1100px] mx-auto px-4 md:px-8 py-20 mx-auto grid lg:grid-cols-[auto_300px] gap-8" 
 } = Astro.props
 ---
 
@@ -40,7 +40,7 @@ const {
   <div>
     <!-- 如果页码为 1 就显示 Hero 页 -->
     {currentPage === 1 && <Hero />}
-    <div class={tailwind}>
+    <div class={style}>
       <slot />
       <!-- 分类和标签展示组件 -->
       <div>
