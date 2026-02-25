@@ -2,14 +2,14 @@
 import Timeline from '@/components/Timeline.astro'
 import Highlight from '@/components/Highlight.astro'
 import PageLayout from '@/layouts/PageLayout.astro'
+import MainPageLayout from '@/layouts/MainPageLayout.astro'
 import { getOldestPosts } from '@/utils/content'
 import { TimelineProgress } from '@/components/TimelineProgress'
 
 const oldestPosts = await getOldestPosts();
 const pageName = "归档";
 ---
-
-<PageLayout title={pageName}>
+<MainPageLayout showCategories={false} showTags={false}>
   <div class="max-w-[800px] mx-auto px-4 py-16">
     <header class="space-y-4 mb-8">
       <h1 class="text-4xl font-bold">
@@ -21,4 +21,4 @@ const pageName = "归档";
     </header>
     <Timeline posts={oldestPosts} />
   </div>
-</PageLayout>
+</MainPageLayout>

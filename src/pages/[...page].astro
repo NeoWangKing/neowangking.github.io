@@ -1,15 +1,12 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import PageLayout from '@/layouts/PageLayout.astro'
+import MainPageLayout from '@/layouts/MainPageLayout.astro'
 import PostList from '@/components/post/PostList.astro'
 import PostPagination from '@/components/post/PostPagination.astro'
-import { getSortedPosts, getHotTags, getAllCategories, getAllTags } from '@/utils/content'
+import { getSortedPosts, getHotTags, getCategories, getAllTags } from '@/utils/content'
 import appConfig from '@/config.json'
 import SectionBlock from '@/components/SectionBlock.astro'
-import TagList from '@/components/TagList.astro'
-import CategoryList from '@/components/CategoryList.astro'
 import type { CollectionEntry } from 'astro:content'
-import Hero from '@/components/hero/Hero.astro'
 
 export const getStaticPaths = (async () => {
   // 
@@ -49,7 +46,7 @@ const hotTags = await getHotTags()
 // 获取所有标签
 const allTags = await getAllTags()
 // 获取所有类别
-const allCategories = await getAllCategories()
+const Categories = await getCategories()
 // 获取所有子类别
 
 //获取页面的跳转链接
@@ -59,47 +56,17 @@ const getPageUrl = (page: number) => {
 }
 ---
 
-<PageLayout>
-  <div>
-    <!-- 如果页码为 1 就显示 Hero 页 -->
-    {currentPage === 1 && <Hero />}
-    <div class="max-w-[1100px] px-4 md:px-8 py-20 mx-auto grid lg:grid-cols-[auto_300px] gap-10">
-      <!-- 列出所有文章 -->
-      <div class="min-w-0">
-        <SectionBlock title="最新发布">
-          <PostList posts={data} />
-          {
-            // 如果总页数大于 1 就显示翻页组件
-            totalPage > 1 && (
-              <PostPagination current={currentPage} total={totalPage} getPageUrl={getPageUrl} />
-            )
-          }
-        </SectionBlock>
-      </div>
-      <!-- 分类和标签展示组件 -->
-      <div>
-        <aside class="md:sticky md:top-20 space-y-10">
-          <!--
-          <SectionBlock title="分类">
-            <CategoryList categories={allCategories} />
-          </SectionBlock>
-          -->
-          <SectionBlock title="热门标签">
-            <TagList tags={hotTags} />
-            {
-              // 如果热门标签不包含所有标签，显示 更多标签
-              allTags.length > hotTags.length && (
-                <div class="mt-2 text-right">
-                  <a class="text-sm text-secondary hover:text-accent" href="/tags">
-                    更多标签 <i class="iconfont icon-arrow-right" />
-                  </a>
-                </div>
-              )
-            }
-          </SectionBlock>
-
-        </aside>
-      </div>
-    </div>
+<MainPageLayout currentPage={currentPage}>
+  <!-- 列出所有文章 -->
+  <div class="min-w-0">
+    <SectionBlock title="最新发布">
+      <PostList posts={data} />
+      {
+        // 如果总页数大于 1 就显示翻页组件
+        totalPage > 1 && (
+          <PostPagination current={currentPage} total={totalPage} getPageUrl={getPageUrl} />
+        )
+      }
+    </SectionBlock>
   </div>
-</PageLayout>
+</MainPageLayout>

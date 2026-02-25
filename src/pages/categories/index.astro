@@ -1,0 +1,32 @@
+---
+import appConfig from '@/config.json'
+import MainPageLayout from '@/layouts/MainPageLayout.astro'
+import { getAllCategories, getCategories, getHotTags, getAllTags, listInclude, getOldestPosts, slugify } from '@/utils/content'
+import SectionBlock from '@/components/SectionBlock.astro'
+import Highlight from '@/components/Highlight.astro'
+import Timeline from '@/components/Timeline.astro'
+import CategorySmallList from '@/components/CategorySmallList.astro'
+
+const oldestPosts = await getOldestPosts()
+const category = await getCategories()
+
+const tailwind = "max-w-[1100px] px-4 md:px-8 py-20 mx-auto grid lg:grid-cols-[auto_300px] gap-10"
+---
+<MainPageLayout showCategories={false} tailwind={tailwind}>
+  <div class="max-w-[800px] mx-auto px-4 py-16">
+    <header class="space-y-4 mb-8">
+      <h1 class="text-4xl font-bold">
+        <Highlight><a href=`/categories`>分类</a></Highlight>
+      </h1>
+      
+    </header>
+    <SectionBlock title="文章分类" style={"mt-4 mb-4 font-bold uppercase tracking-widest text-accent"}>
+      <CategorySmallList categories={category} />
+    </SectionBlock>
+
+    <SectionBlock title=`所有文章（总共 ${oldestPosts.length} 篇文章）`>
+      <Timeline posts={oldestPosts} />
+    </SectionBlock>
+    
+  </div>
+</MainPageLayout>

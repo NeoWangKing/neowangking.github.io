@@ -1,9 +1,12 @@
 ---
 import type { GetStaticPaths } from 'astro'
-import PageLayout from '@/layouts/PageLayout.astro'
-import { getAllCategories, listInclude, getOldestPosts, slugify } from '@/utils/content'
+import appConfig from '@/config.json'
+import MainPageLayout from '@/layouts/MainPageLayout.astro'
+import { getAllCategories, getCategories, getSubCategories, getHotTags, getAllTags, listInclude, getOldestPosts, slugify } from '@/utils/content'
+import SectionBlock from '@/components/SectionBlock.astro'
 import Highlight from '@/components/Highlight.astro'
 import Timeline from '@/components/Timeline.astro'
+import CategorySmallList from '@/components/CategorySmallList.astro'
 
 export const getStaticPaths = (async () => {
   const allCategories = await getAllCategories()
@@ -42,23 +45,34 @@ interface Props {
 
 const { slug } = Astro.params
 const { category } = Astro.props
+const subcategory = await getSubCategories(category.name[0])
 
 const oldestPosts = await getOldestPosts().then((posts) => {
   return posts.filter((post) => listInclude(post.data.category, category.name))
 })
 ---
-<PageLayout title={`分类 · ${category.name.join(' · ')}`}>
+<MainPageLayout showCategories={false}>
   <div class="max-w-[800px] mx-auto px-4 py-16">
     <header class="space-y-4 mb-8">
       <h1 class="text-4xl font-bold">
-        分类：
+        <Highlight><a href=`/categories`>分类</a></Highlight>：
         <Highlight><a href={`/categories/${category.slug[0]}`}>{category.name[0]}</a>/</Highlight>
         {category.name.length === 2 && 
           <Highlight><a href={`/categories/${slug}`}>{category.name[1]}/</a></Highlight>
         }
       </h1>
+      <!--
       <p>共有 {category.count} 篇文章。</p>
+      -->
     </header>
-    <Timeline posts={oldestPosts} />
+    {category.name.length === 1 &&
+    <SectionBlock title="文章子分类" style={"mt-4 mb-4 font-bold uppercase tracking-widest text-accent"}>
+      <CategorySmallList categories={subcategory} />
+    </SectionBlock>
+    }
+    <SectionBlock title=`所有文章（共有 ${category.count} 篇文章）`>
+      <Timeline posts={oldestPosts} />
+    </SectionBlock>
+    
   </div>
-</PageLayout>
+</MainPageLayout>

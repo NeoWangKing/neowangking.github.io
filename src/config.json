@@ -83,8 +83,13 @@
     },
     {
       "name": "分类",
-      "link": "/",
+      "link": "/categories",
       "icon": "icon-menu"
+    },
+    {
+      "name": "标签",
+      "link": "/tags",
+      "icon": "icon-pen"
     },
     {
       "name": "项目",

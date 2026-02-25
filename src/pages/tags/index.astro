@@ -2,12 +2,12 @@
 import TagList from '@/components/TagList.astro'
 import Highlight from '@/components/Highlight.astro'
 import { getAllTags } from '@/utils/content'
-import PageLayout from '@/layouts/PageLayout.astro'
+import MainPageLayout from '@/layouts/MainPageLayout.astro'
 
 const allTags = await getAllTags()
 ---
 
-<PageLayout title="标签">
+<MainPageLayout showTags={false}>
   <div class="max-w-[800px] mx-auto px-4 py-16">
     <header class="space-y-4 mb-8">
       <h1 class="text-4xl font-bold">
@@ -18,4 +18,4 @@ const allTags = await getAllTags()
 
     <TagList tags={allTags} />
   </div>
-</PageLayout>
+</MainPageLayout>
