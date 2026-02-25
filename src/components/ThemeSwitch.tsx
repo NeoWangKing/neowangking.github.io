@@ -9,7 +9,7 @@ export function ThemeSwitch() {
   return (
     <div className="relative inline-block">
       <div
-        className="absolute -z-1 top-1 size-[32px] rounded-full bg-primary transition-transform shadow"
+        className="absolute -z-1 top-1 size-[32px] rounded-full border border-primary bg-primary transition-transform shadow"
         style={{
           transform: `translateX(${left}px)`,
         }}
