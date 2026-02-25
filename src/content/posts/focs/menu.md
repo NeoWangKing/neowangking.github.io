@@ -7,7 +7,7 @@ tags: [Computer]
 category: ['程设计科', '计算机基础']
 summary: 暂无概要
 comment: false
-draft: false
+draft: true
 ---
 
 ## 数据（信息）表示与存储
