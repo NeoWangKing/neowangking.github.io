@@ -14,22 +14,13 @@ interface ShareData {
 
 const shareList = [
   {
-    name: 'Twitter',
-    icon: 'icon-x',
-    onClick: (data: ShareData) => {
-      window.open(
-        `https://twitter.com/intent/tweet?url=${encodeURIComponent(data.url)}&text=${encodeURIComponent(data.text)}&via=${encodeURIComponent(site.title)}`,
-      )
-    },
-  },
-  {
     name: '复制链接',
     icon: 'icon-link',
     onClick: (data: ShareData) => {
       navigator.clipboard.writeText(data.url)
       toast.success('已复制到剪贴板')
     },
-  },
+  }
 ]
 
 export function ActionAside() {
