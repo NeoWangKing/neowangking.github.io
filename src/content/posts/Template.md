@@ -7,7 +7,7 @@ tags: [模板, markdown]
 category: ['模板', 'markdown']
 summary: 这是一篇模板文章
 comment: false
-draft: false
+draft: true
 ---
 
 ## 这是一篇模板文章
