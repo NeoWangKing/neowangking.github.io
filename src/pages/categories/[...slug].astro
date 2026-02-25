@@ -1,0 +1,64 @@
+---
+import type { GetStaticPaths } from 'astro'
+import PageLayout from '@/layouts/PageLayout.astro'
+import { getAllCategories, listInclude, getOldestPosts, slugify } from '@/utils/content'
+import Highlight from '@/components/Highlight.astro'
+import Timeline from '@/components/Timeline.astro'
+
+export const getStaticPaths = (async () => {
+  const allCategories = await getAllCategories()
+
+  return allCategories.map((category) => {
+    if (category.slug.length === 2) {
+      return {
+        params: {
+          slug: `${category.slug[0]}/${category.slug[1]}`,
+        },
+        props: {
+          category: category,
+        },
+      }
+    } else {
+      return {
+        params: {
+          slug: category.slug[0],
+        },
+        props: {
+          category: category,
+        },
+      }
+    }
+    
+  })
+}) satisfies GetStaticPaths
+
+interface Props {
+  category: {
+    name: string[];
+    slug: string[];
+    count: number;
+  }
+}
+
+const { slug } = Astro.params
+const { category } = Astro.props
+
+const oldestPosts = await getOldestPosts().then((posts) => {
+  return posts.filter((post) => listInclude(post.data.category, category.name))
+})
+---
+<PageLayout title={`分类 · ${category.name.join(' · ')}`}>
+  <div class="max-w-[800px] mx-auto px-4 py-16">
+    <header class="space-y-4 mb-8">
+      <h1 class="text-4xl font-bold">
+        分类：
+        <Highlight><a href={`/categories/${category.slug[0]}`}>{category.name[0]}</a>/</Highlight>
+        {category.name.length === 2 && 
+          <Highlight><a href={`/categories/${slug}`}>{category.name[1]}/</a></Highlight>
+        }
+      </h1>
+      <p>共有 {category.count} 篇文章。</p>
+    </header>
+    <Timeline posts={oldestPosts} />
+  </div>
+</PageLayout>

@@ -4,8 +4,7 @@ author: NeoWangKing
 date: 2026-02-24
 lastMod: 2026-02-24
 tags: [Computer]
-category: 程设计科
-subcategory: 计算机基础
+category: ['程设计科', '计算机基础']
 summary: 暂无概要
 comment: false
 draft: false

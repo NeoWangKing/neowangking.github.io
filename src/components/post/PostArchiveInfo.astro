@@ -3,12 +3,11 @@ import { slugify } from '@/utils/content'
 
 interface Props {
   tags: string[]
-  category: string
-  subcategory: string
+  category: string[]
   class?: string
 }
 
-const { tags, category, subcategory, class: className } = Astro.props
+const { tags, category, class: className } = Astro.props
 ---
 
 <div class="flex flex-wrap gap-2 text-sm text-secondary" class:list={[className]}>
@@ -17,14 +16,14 @@ const { tags, category, subcategory, class: className } = Astro.props
       <i class="iconfont icon-folder" />
       <a
         class="hover:text-accent hover:underline underline-offset-2 decoration-dashed"
-        href={`/categories/${slugify(category)}`}
+        href={`/categories/${slugify(category[0])}`}
       >
-        {category}
+        {category[0]}
       </a> / <a
         class="hover:text-accent hover:underline underline-offset-2 decoration-dashed"
-        href={`/subcategories/${slugify(category)}-${slugify(subcategory)}`}
+        href={`/categories/${slugify(category.join('/'))}`}
       >
-        {subcategory}
+        {category[1]}
       </a>
     </div>
   }

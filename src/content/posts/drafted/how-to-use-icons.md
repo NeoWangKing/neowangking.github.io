@@ -4,8 +4,7 @@ author: lxchapu
 date: 2024-05-08
 lastMod: 2024-05-08
 tags: [Icon]
-category: 教程
-subcategory: Gyoza
+category: ['教程', 'Gyoza']
 summary: 讲解了在Gyoza模板中使用图标的方法与规范
 comments: false
 draft: true

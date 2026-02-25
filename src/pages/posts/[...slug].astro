@@ -40,7 +40,7 @@ const { headings, Content, remarkPluginFrontmatter } = await current.render()
 
 const mdSlug = `/posts/${current.slug}`
 
-const mdDescription = concat(current.data.category || '', current.data.tags.join(', '))
+const mdDescription = concat(current.data.category.join('/') || '', current.data.tags.join(', '))
 
 function concat(str1: string, str2: string, sep = ' / ') {
   if (str1 && str2) return str1 + sep + str2
@@ -76,7 +76,6 @@ const lastMod = current.data.lastMod || current.data.date
         <PostArchiveInfo
           class="justify-center"
           category={current.data.category}
-          subcategory={current.data.subcategory}
           tags={current.data.tags}
         />
         <div>

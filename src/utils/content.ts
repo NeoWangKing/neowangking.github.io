@@ -63,67 +63,86 @@ export function slugify(text: string) {
   return text.replace(/\./g, '').replace(/\s/g, '-').toLowerCase()
 }
 
-// 获取所有一级分类
+// 判断两个列表是否完全相同
+export function listCompare(list1: string[], list2: string[]) {
+  if (list1.length !== list2.length) {
+    return false
+  } else {
+    const len = list1.length
+    var i = 0
+    while (i < len && list1[i] === list2[i]) {
+      i++
+    }
+    return i === len
+  }
+}
+
+// 判断列表1是否包含有列表2
+export function listInclude(list1: string[], list2: string[]) {
+  if (list1.length < list2.length) {
+    return false
+  } else {
+    const len = list1.length
+    var i = 0
+    while (i < len && list1[i] !== list2[i]) {
+      i++
+    }
+    var j = 0
+    while (j < list2.length && i < len && list1[i] === list2[j]) {
+      i++
+      j++
+    }
+    return j === list2.length && i <= len
+  }
+}
+
+// 获取所有分类
 export async function getAllCategories() {
   const newestPosts = await getNewestPosts()
 
   const allCategories = newestPosts.reduce<
     {
-      slug: string
-      name: string
+      slug: string[]
+      name: string[]
       count: number
     }[]
   >((acc, cur) => {
-    const slug = slugify(cur.data.category)
-    const index = acc.findIndex((category) => category.slug === slug)
+    if (cur.data.category.length === 0) {
+      cur.data.category = ['未分类', '未分子类']
+    }
+    if (cur.data.category.length === 1) {
+      cur.data.category[1] = '未分子类'
+    }
+    const slug = [slugify(cur.data.category[0])]
+    const index = acc.findIndex((category) => listCompare(category.slug, slug))
     if (index === -1) {
       acc.push({
         slug: slug,
+        name: [cur.data.category[0]],
+        count: 1,
+      })
+      // console.log(`[INFO] found a new category: slug: ${slug}`)
+    } else {
+      acc[index].count += 1
+      // console.log(`[INFO] add a post to category: slug: ${slug}`)
+    }
+    const subslug = [slugify(cur.data.category[0]), slugify(cur.data.category[1])]
+    const subindex = acc.findIndex((category) => listCompare(category.slug, subslug))
+    if (subindex === -1) {
+      acc.push({
+        slug: subslug,
         name: cur.data.category,
         count: 1,
       })
+      // console.log(`[INFO] found a new sub-category: slug: ${subslug}`)
     } else {
-      acc[index].count += 1
+      acc[subindex].count += 1
+      // console.log(`[INFO] add a post to sub-category: slug: ${subslug}`)
     }
     return acc
   }, [])
-
+  // console.log(allCategories)
   return allCategories
-}
-
-// 获取所有二级分类
-export async function getAllSubCategories() {
-  const newestPosts = await getNewestPosts()
-
-  const allSubCategories = newestPosts.reduce<
-    {
-      slug: string
-      supslug: string
-      name: string
-      supname: string
-      count: number
-    }[]
-  >((acc, cur) => {
-    const supslug = slugify(cur.data.category)
-    const slug = slugify(cur.data.subcategory)
-    const index = acc.findIndex(
-      (subcategory) => subcategory.slug === slug && subcategory.supslug === supslug,
-    )
-    if (index === -1) {
-      acc.push({
-        slug: slug,
-        supslug: supslug,
-        name: cur.data.subcategory,
-        supname: cur.data.category,
-        count: 1,
-      })
-    } else {
-      acc[index].count += 1
-    }
-    return acc
-  }, [])
-
-  return allSubCategories
 }
 
 // 获取所有标签
