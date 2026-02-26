@@ -2,7 +2,7 @@
 title: 复变函数
 author: NeoWangKing
 date: 2026-02-25
-lastMod: 2026-02-26
+lastMod: 2026-02-26T18:04:54.372Z
 tags: [数学, 物理, 学科交叉]
 category: ['数学', '数学物理方法']
 summary: 这是我在学习数学物理方法这门课程过程中的笔记
@@ -114,4 +114,4 @@ draft: false
   - 若绕支点 $n$ 周后函数值 $w$ 复原，则称为 $n-1$ 阶支点
 
 - **黎曼面** 围绕支点，将平面沿从支点发出的一条射线剪开，将多个平面如此切开，使其分别对应 $\mathrm{Arg} z$ 的不同取值范围（比如：$[0,2\pi)$，$[2\pi,4\pi)$），在此基础上，将这些平面的上缘与下缘首尾相接，形成一个自相交的多叶的面，称为函数的**黎曼面**
-  ![黎曼面](@/image/posts/mathematics/MMiP/ComplexFunction/001.jpg)
+  ![黎曼面](@/image/posts/mathematics/MMiP/ComplexFunction/001.jpg '黎曼面')
