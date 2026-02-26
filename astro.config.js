@@ -19,7 +19,7 @@ import rehypeKatex from 'rehype-katex'
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://NeoWangKing.github.io',
+  site: 'https://www.neowangking.top',
   integrations: [tailwind(), react(), sitemap()],
   markdown: {
     syntaxHighlight: false,
