@@ -76,11 +76,13 @@ $$
 
 1. 单值函数
 2. 对于区域 $B$ 上的一点 $z$ ，极限
+
    $$
    \begin{align}
    \lim_{\Delta z\rightarrow 0}{\frac{\Delta w}{\Delta z}}=\lim_{\Delta z\rightarrow 0}{\frac{f(z+\Delta z)-f(z)}{\Delta z}}
    \end{align}
    $$
+
    存在且**与 $\Delta z\rightarrow 0$ 的方式无关**
 
 则称函数 $w$ 在 $z$ 点**可导**，此极限称为 $z$ 点处的导数，记为 $f'(z)$ 或 $\mathrm{d}f/\mathrm{d}z$

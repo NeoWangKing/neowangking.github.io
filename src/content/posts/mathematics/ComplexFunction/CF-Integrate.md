@@ -32,22 +32,27 @@ draft: false
      $$
      这样就转化为了**两个实变函数的线积分**
    - 因此，实变函数的许多性质也对路积分成立，如
+
      1. 常数因子可以转移到积分号之外
      2. 函数的和的积分等于函数的积分的和
      3. 反转积分路径，积分值变号
      4. 全路径上的积分等于各分段路径上积分的和
      5. 积分不等式1：
+
         $$
         \begin{align}
         \left|\int_{l}{f(z)\mathrm{d}z}\right|\le\int_{l}{\left|f(z)\right|\left|\mathrm{d}z\right|}
         \end{align}
         $$
+
      6. 积分不等式2：
+
         $$
         \begin{align}
         \left|\int_{l}{f(z)\mathrm{d}z}\right|\le ML
         \end{align}
         $$
+
         其中 $M$ 为 $|f(z)|$ 在 $l$ 上的最大值，$L$ 为 $l$ 的全长
 
 ## 柯西定理
