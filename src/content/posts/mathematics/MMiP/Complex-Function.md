@@ -42,7 +42,13 @@ draft: false
 
 ### 复变函数的定义
 
-**定义（复变函数）** 复平面上的**点集 $E$**上的每一个点，都有一个或者多个复数值 $w$ 与之对应，称 $w$ 为 $z$ 的函数——**复变函数**，$z$ 称为 $w$ 的宗量，定义域为 $E$ ，记作 $$w=f(z),\space z\in E$$
+**定义（复变函数）** 复平面上的**点集 $E$**上的每一个点，都有一个或者多个复数值 $w$ 与之对应，称 $w$ 为 $z$ 的函数——**复变函数**，$z$ 称为 $w$ 的宗量，定义域为 $E$ ，记作
+
+$$
+\begin{align}
+w=f(z),\space z\in E
+\end{align}
+$$
 
 > 在复变函数的理论中，**解析函数**是研究的主要对象
 
@@ -70,14 +76,28 @@ draft: false
 
 1. 单值函数
 2. 对于区域 $B$ 上的一点 $z$ ，极限
-   $$\lim_{\Delta z\rightarrow 0}{\frac{\Delta w}{\Delta z}}=\lim_{\Delta z\rightarrow 0}{\frac{f(z+\Delta z)-f(z)}{\Delta z}}$$
+   $$
+   \begin{align}
+   \lim_{\Delta z\rightarrow 0}{\frac{\Delta w}{\Delta z}}=\lim_{\Delta z\rightarrow 0}{\frac{f(z+\Delta z)-f(z)}{\Delta z}}
+   \end{align}
+   $$
    存在且**与 $\Delta z\rightarrow 0$ 的方式无关**
 
 则称函数 $w$ 在 $z$ 点**可导**，此极限称为 $z$ 点处的导数，记为 $f'(z)$ 或 $\mathrm{d}f/\mathrm{d}z$
 
 ### 可导的必要条件
 
-**柯西（C）-黎曼（R）条件（方程）** $$\begin{cases}\dfrac{\partial u}{\partial x}=\dfrac{\partial v}{\partial y} \\ \dfrac{\partial v}{\partial x}=-\dfrac{\partial u}{\partial y}\end{cases}$$ 其中 $u$ 和 $v$ 分别为函数的实部和虚部函数
+**柯西（C）-黎曼（R）条件（方程）**
+
+$$
+\begin{align}
+\begin{cases}
+\dfrac{\partial u}{\partial x}=\dfrac{\partial v}{\partial y} \\ \dfrac{\partial v}{\partial x}=-\dfrac{\partial u}{\partial y}
+\end{cases}
+\end{align}
+$$
+
+其中 $u$ 和 $v$ 分别为函数的实部和虚部函数
 
 ## 解析函数
 
