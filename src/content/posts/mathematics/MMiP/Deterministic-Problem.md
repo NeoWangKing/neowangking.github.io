@@ -3,9 +3,9 @@ title: 数学物理方程的定解问题
 author: NeoWangKing
 date: 2026-03-01
 lastMod: 2026-03-01
-tags: [数学, 物理, 学科交叉]
+tags: [数学, 物理, 学科交叉, 数学物理方法]
 category: ['数学', '数学物理方法']
-summary: 这是我在学习数学物理方法这门课程过程中的笔记
+summary: 这是我在学习 数学物理方法 过程中的笔记
 comment: false
 draft: false
 ---
