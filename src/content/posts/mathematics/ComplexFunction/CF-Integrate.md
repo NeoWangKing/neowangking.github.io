@@ -104,12 +104,15 @@ draft: false
 ## 柯西公式
 
 1. **柯西公式**
+
    若 $f(z)$ 在闭单连通区域 $\overline{B}$ 上解析，$l$ 为 $\overline{B}$ 的边界线，$\alpha$ 为 $\overline{B}$ 内的任意一点，则有
+
    $$
    \begin{align}
    f(\alpha)=\frac{1}{2\pi\imath}\oint_{l}{\frac{f(z)}{z-\alpha}\mathrm{d}z}
    \end{align}
    $$
+
    此为**柯西公式**
 
 > 以下是柯西公式的两个推论
