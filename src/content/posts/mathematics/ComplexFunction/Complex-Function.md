@@ -4,7 +4,7 @@ author: NeoWangKing
 date: 2026-02-25
 lastMod: 2026-02-26T18:04:54.372Z
 tags: [数学, 物理, 学科交叉]
-category: ['数学', '数学物理方法']
+category: ['数学', '复变函数论']
 summary: 这是我在学习数学物理方法这门课程过程中的笔记
 comment: false
 draft: false
