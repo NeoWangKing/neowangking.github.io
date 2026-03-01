@@ -100,3 +100,21 @@ draft: false
    \int_{z_{1}}^{z_{2}}{f(\zeta)\mathrm{d}\zeta}=F(z_{2})-F(z_{1})
    \end{align}
    $$
+
+## 柯西公式
+
+1. **柯西公式**
+   若 $f(z)$ 在闭单连通区域 $\overline{B}$ 上解析，$l$ 为 $\overline{B}$ 的边界线，$\alpha$ 为 $\overline{B}$ 内的任意一点，则有
+   $$
+   \begin{align}
+   f(\alpha)=\frac{1}{2\pi\imath}\oint_{l}{\frac{f(z)}{z-\alpha}\mathrm{d}z}
+   \end{align}
+   $$
+   此为**柯西公式**
+
+> 以下是柯西公式的两个推论
+>
+> 1.  **模数原理**
+>     若 $f(z)$ 在某个闭区域上解析，则 $|f(z)|$ 只能在边界线上取最大值
+> 2.  **刘维尔定理**
+>     如 $f(z)$ 在全平面上解析且有界，即 $|f(z)|\le N$ ，则 $f(z)$ 必为常数
