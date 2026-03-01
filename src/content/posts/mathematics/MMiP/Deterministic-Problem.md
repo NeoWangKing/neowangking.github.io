@@ -27,7 +27,9 @@ $$
    对应 $a^{2}=F_{T}/\rho$ ，方程为
 
    $$
+   \begin{align}
    \rho u_{tt}-F_{T}u_{xx}=0
+   \end{align}
    $$
 
    即为**弦振动方程**
@@ -165,5 +167,56 @@ $$
    > 注意这个方程与前面的振动的常用方程的不同，比如符号、偏导的阶数
 
 ### 输运方程
+
+1. 扩散方程
+
+   扩散直接与物质的浓度有关，方程
+
+   $$
+   \begin{align}
+   u_{t}-\left[\frac{\partial}{\partial x}\left(D\frac{\partial u}{\partial x}\right)+\frac{\partial}{\partial y}\left(D\frac{\partial u}{\partial y}\right)+\frac{\partial}{\partial z}\left(D\frac{\partial u}{\partial z}\right)\right]=0
+   \end{align}
+   $$
+
+   如果扩散系数 $D$ 在空间中是均匀的，则方程可以简化为
+
+   $$
+   \begin{align}
+   u_{t}-a^{2}\Delta_{3}u=0
+   \end{align}
+   $$
+
+   而在有源（汇）扩散的情形下，考虑一下情况：
+
+   1. 扩散源强度与浓度无关
+
+      扩散源强度为 $F(x,y,z,t)$ ，则方程为
+
+      $$
+      \begin{align}
+      u_{t}-\left[\frac{\partial}{\partial x}\left(D\frac{\partial u}{\partial x}\right)+\frac{\partial}{\partial y}\left(D\frac{\partial u}{\partial y}\right)+\frac{\partial}{\partial z}\left(D\frac{\partial u}{\partial z}\right)\right]=F(x,y,z,t)
+      \end{align}
+      $$
+
+      $$
+      \begin{align}
+      u_{t}-a^{2}\Delta_{3}u=F(x,y,z,t)\space(a^{2}=D)
+      \end{align}
+      $$
+
+   2. 扩散源的强度与浓度 $u$ 成正比
+
+      例如 $^{235}\mathrm{U}$ 原子核的链式反应中，中子数增殖的时间变化率为 $b^{2}u$ ，于是一维和三维方程相应变化为
+
+      $$
+      \begin{align}
+      \begin{cases}
+      u_{t}-a^{2}u_{xx}-b^{2}u=0\\
+      u_{t}-a^{2}\Delta_{3}u-b^{2}u=0
+      \end{cases}
+      \end{align}
+      $$
+
+2. 热传导方程
 
 ### 稳定场方程
