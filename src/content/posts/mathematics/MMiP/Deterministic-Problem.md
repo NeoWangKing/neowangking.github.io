@@ -1,5 +1,5 @@
 ---
-title: 数学物理方程的定解问题
+title: 数理方法（1）：数学物理方程的定解问题
 author: NeoWangKing
 date: 2026-03-01
 lastMod: 2026-03-01

@@ -1,5 +1,5 @@
 ---
-title: 复变函数的积分
+title: 复变函数论（2）：复变函数的积分
 author: NeoWangKing
 date: 2026-03-01
 lastMod: 2026-03-01

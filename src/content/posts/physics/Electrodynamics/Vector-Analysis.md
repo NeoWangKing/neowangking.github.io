@@ -1,5 +1,5 @@
 ---
-title: 矢量分析
+title: 电动力学（1）：矢量分析
 author: NeoWangKing
 date: 2026-03-02
 lastMod: 2026-03-02

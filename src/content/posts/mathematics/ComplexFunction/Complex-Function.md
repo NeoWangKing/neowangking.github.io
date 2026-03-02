@@ -1,5 +1,5 @@
 ---
-title: 复变函数
+title: 复变函数论（1）：复变函数
 author: NeoWangKing
 date: 2026-02-25
 lastMod: 2026-02-26T18:04:54.372Z
