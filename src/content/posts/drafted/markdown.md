@@ -6,7 +6,7 @@ lastMod: 2024-04-01
 tags: [Markdown]
 category: ['例子', 'markdown']
 summary: 这是一篇 Markdown 文章的示例。展示了 Markdown 的语法和渲染效果。
-comment: false
+comments: false
 draft: true
 ---
 

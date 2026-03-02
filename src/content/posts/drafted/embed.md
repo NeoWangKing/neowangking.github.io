@@ -6,7 +6,7 @@ lastMod: 2024-05-18
 tags: [Video, Markdown]
 category: ['例子', 'markdown']
 summary: 这篇文章介绍了如何在文章中嵌入视频和代码。
-comment: false
+comments: false
 draft: true
 ---
 

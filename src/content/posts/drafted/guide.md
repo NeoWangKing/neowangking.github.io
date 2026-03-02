@@ -6,7 +6,7 @@ lastMod: 2024-05-08
 tags: [Astro, Gyoza]
 category: ['教程', 'Gyoza']
 summary: 欢迎使用 Gyoza，Gyoza 是一款 Astro 博客主题，它保持简洁和可爱的风格。本篇文章将会介绍如何使用并部署 Gyoza。
-comment: false
+comments: false
 draft: true
 ---
 
