@@ -148,3 +148,116 @@ draft: false
 >     \nabla\times(\boldsymbol{A}\times\boldsymbol{B})=(\boldsymbol{B}\cdot\nabla)\boldsymbol{A}-(\boldsymbol{A}\cdot\nabla)\boldsymbol{B}+\boldsymbol{A}(\nabla\cdot\boldsymbol{B})-\boldsymbol{B}(\nabla\cdot\boldsymbol{A})
 >     \end{align}
 >     $$
+
+### 矢量的积分学
+
+1. 梯度定理
+
+   $$
+   \begin{align}
+   \int_{\boldsymbol{a}}^{\boldsymbol{b}}{(\nabla T)\cdot\mathrm{d}\boldsymbol{l}}=T(\boldsymbol{b})-T(\boldsymbol{a})
+   \end{align}
+   $$
+
+   即梯度场上的路径积分只与路径的起点和终点有关，于是可以得到环路积分：
+
+   $$
+   \begin{align}
+   \oint{(\nabla T)\cdot\mathrm{d}\boldsymbol{l}}=0
+   \end{align}
+   $$
+
+2. 散度定理
+
+   $$
+   \begin{align}
+   \iiint_{V}{(\nabla\cdot\boldsymbol{v})\mathrm{d}\tau}=\oiint_{S=\partial V}{\boldsymbol{v}\cdot\mathrm{d}\boldsymbol{a}}
+   \end{align}
+   $$
+
+3. 旋度定理
+
+   $$
+   \begin{align}
+   \iint_{S}{(\nabla\times\boldsymbol{v})\cdot\mathrm{d}\boldsymbol{v}}=\oint_{L=\partial S}{\boldsymbol{v}\cdot\mathrm{d}\boldsymbol{l}}
+   \end{align}
+   $$
+
+### 矢量的不同坐标系转换
+
+1. 球坐标系
+
+   ![球坐标系](@/image/posts/physics/Electrodynamics/Vector-Analysis/spherical.jpg '球坐标系')
+
+   在球坐标系下，梯度、散度、旋度以及拉普拉斯算符的形式为
+
+   - 梯度：
+
+     $$
+     \begin{align}
+     \nabla T=\frac{\partial T}{\partial r}\boldsymbol{\hat{r}}+\frac{1}{r}\frac{\partial T}{\partial\theta}\boldsymbol{\hat{\theta}}+\frac{1}{r\sin{\theta}}\frac{\partial T}{\partial \phi}\boldsymbol{\hat{\phi}}
+     \end{align}
+     $$
+
+   - 散度：
+
+     $$
+     \begin{align}
+     \nabla\cdot\boldsymbol{v}=\frac{1}{r^{2}}\frac{\partial}{\partial r}(r^{2} v_{r})+\frac{1}{r\sin{\theta}}\frac{\partial}{\partial \theta}(\sin{\theta} v_{\theta})+\frac{1}{r\sin{\theta}}\frac{\partial v_{\phi}}{\partial \phi}
+     \end{align}
+     $$
+
+   - 旋度：
+
+     $$
+     \begin{align}
+     \nabla\times\boldsymbol{v}=&\frac{1}{r\sin{\theta}}\left[\frac{\partial}{\partial\theta}(\sin{\theta}v_{\phi})-\frac{\partial v_{\theta}}{\partial\phi}\right]\boldsymbol{\hat{r}}+\frac{1}{r}\left[\frac{1}{\sin{\theta}}\frac{\partial v_{r}}{\partial\phi}-\frac{\partial}{\partial r}(r v_{\phi})\right]\boldsymbol{\hat{\theta}}\\
+     &+\frac{1}{r}\left[\frac{\partial}{\partial r}(r v_{\theta})-\frac{\partial v_{r}}{\partial \theta}\right]\boldsymbol{\hat{\phi}}
+     \end{align}
+     $$
+
+   - 拉普拉斯算符：
+     $$
+     \begin{align}
+     \nabla^{2}T=\frac{1}{r^{2}}\frac{\partial}{\partial r}\left(r^{2}\frac{\partial T}{\partial r}\right)+\frac{1}{r^{2}\sin{\theta}}\frac{\partial}{\partial\theta}\left(\sin{\theta}\frac{\partial T}{\partial \theta}\right)+\frac{1}{r^{2}\sin^{2}{\theta}}\frac{\partial^{2}T}{\partial \phi^{2}}
+     \end{align}
+     $$
+
+2. 柱坐标系
+
+   ![柱坐标系](@/image/posts/physics/Electrodynamics/Vector-Analysis/cylindrical.jpg '柱坐标系')
+
+   在柱坐标系下，梯度、散度、旋度以及拉普拉斯算符的形式为
+
+   - 梯度：
+
+     $$
+     \begin{align}
+     \nabla T=\frac{\partial T}{\partial s}\boldsymbol{\hat{s}}+\frac{1}{s}\frac{\partial T}{\partial\phi}\boldsymbol{\hat{\phi}}+\frac{\partial T}{\partial z}\boldsymbol{\hat{z}}
+     \end{align}
+     $$
+
+   - 散度：
+
+     $$
+     \begin{align}
+     \nabla\cdot\boldsymbol{v}=\frac{1}{s}\frac{\partial}{\partial s}(s v_{s})+\frac{1}{s}\frac{\partial v_{\phi}}{\partial \phi}+\frac{\partial v_{z}}{\partial z}
+     \end{align}
+     $$
+
+   - 旋度：
+
+     $$
+     \begin{align}
+     \nabla\times\boldsymbol{v}=\left(\frac{1}{s}\frac{\partial v_{z}}{\partial\phi}-\frac{\partial v_{\phi}}{\partial z}\right)\boldsymbol{\hat{s}}+\left(\frac{\partial v_{s}}{\partial z}-\frac{\partial v_{z}}{\partial s}\right)\boldsymbol{\hat{\phi}}+\frac{1}{s}\left[\frac{\partial}{\partial s}(s v_{\phi})-\frac{\partial v_{s}}{\partial \phi}\right]\boldsymbol{\hat{z}}
+     \end{align}
+     $$
+
+   - 拉普拉斯算符：
+     $$
+     \begin{align}
+     \nabla^{2}T=\frac{1}{s}\frac{\partial}{\partial s}\left(s\frac{\partial T}{\partial s}\right)+\frac{1}{s^{2}}\frac{\partial^{2}T}{\partial\phi^{2}}+\frac{\partial^{2}T}{\partial z^{2}}
+     \end{align}
+     $$
+
+### 狄拉克函数
