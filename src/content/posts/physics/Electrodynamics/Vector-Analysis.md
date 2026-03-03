@@ -261,3 +261,76 @@ draft: false
      $$
 
 ### 狄拉克函数
+
+1. 一维狄拉克函数
+
+   一维情形下的狄拉克函数 $\delta(x)$ 可以看作一个位于 $x=0$ 处的无限高、无限窄的“尖刺”，并且其面积为 $1$，即
+
+   $$
+   \begin{align}
+   \delta(x)=
+   \begin{cases}
+   0, & \text{if}\space x \neq 0\\
+   \infty, & \text{if}\space x = 0
+   \end{cases}
+   \end{align}
+   $$
+
+   并且
+
+   $$
+   \begin{align}
+   \int_{-\infty}^{\infty}{\delta(x)\mathrm{d}x}=1
+   \end{align}
+   $$
+
+   ![狄拉克函数示意图](@/image/posts/physics/Electrodynamics/Vector-Analysis/diracfunction.jpg '狄拉克函数示意图')
+
+   #### 一维狄拉克函数的一些性质：
+
+   - $\int_{-\infty}^{\infty}{f(x)\delta(x-a)\mathrm{d}x}=f(a)$
+
+   - $\delta(kx)=\frac{1}{|k|}\delta(x)$
+
+2. 三维狄拉克函数
+
+   三维情形下的狄拉克函数可以由一维狄拉克函数简单的生成
+
+   $$
+   \begin{align}
+   \delta^{3}(\boldsymbol{r})=\delta(x)\delta(y)\delta(z)
+   \end{align}
+   $$
+
+   易证，三维的狄拉克函数依旧满足“面积为一”
+
+   $$
+   \begin{align}
+   \iiint_{\text{all space}}{\delta^{3}(\boldsymbol{r})\mathrm{d}\tau}=1
+   \end{align}
+   $$
+
+   #### 三维狄拉克函数的一些性质：
+
+   与一维的情形相对应
+
+   - $\iiint_{\text{all space}}{f(\boldsymbol{r})\delta^{3}(\boldsymbol{r}-\boldsymbol{a})\mathrm{d}\tau}=f(\boldsymbol{a})$
+
+   - $\delta^{3}(k\boldsymbol{r})=\frac{1}{|k^{3}|}\delta^{3}(\boldsymbol{r})$
+
+### 矢量场理论
+
+1. 亥姆霍兹定理
+
+   一个矢量场 $F$ 可以由其散度场 $D$ 和旋度场 $C$ 唯一的定义，**当且仅当**在 $r\rightarrow+\infty$ 时，这个矢量场本身趋于 $0$，且其散度和旋度趋于零的速度比 $\frac{1}{r^{2}}$ 快
+
+   $$
+   \begin{align}
+   \text{ $F$ 可被 $D$ 和 $C$ 唯一定义} \iff
+   \begin{cases}
+   F\rightarrow 0\\
+   r^{2}D\rightarrow 0\\
+   r^{2}C\rightarrow 0
+   \end{cases},\quad(r\rightarrow +\infty)
+   \end{align}
+   $$
