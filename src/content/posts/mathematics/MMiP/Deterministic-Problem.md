@@ -10,7 +10,7 @@ comments: false
 draft: false
 ---
 
-## 数学物理方程的类型
+## 数学物理方程的导出
 
 ### 波动方程
 
@@ -219,4 +219,191 @@ $$
 
 2. 热传导方程
 
+   热传导的起源是温度的不均匀，热传导现象遵循**热传导定律**，也就是**傅里叶定律**
+
+   $$
+   \begin{align}
+   \boldsymbol{q}=-k\nabla u
+   \end{align}
+   $$
+
+   比例系数 $k$ 称作**热传导系数**
+
+   仿照扩散问题，应用热传导定律和能量守恒定律，可以导出热传导方程
+
+   $$
+   \begin{align}
+   c\rho u_{t}-\left[\frac{\partial}{\partial x}(ku_{x})+\frac{\partial}{\partial y}(ku_{y})+\frac{\partial}{\partial z}(ku_{z})\right]=0
+   \end{align}
+   $$
+
+   其中 $c$ 是比热容，$\rho$ 的密度，对于均匀物体，$k$、$c$、$\rho$ 是常数，上式化为
+
+   $$
+   \begin{align}
+   u_{t}-a^{2}\Delta u=0,\space\left(a^{2}=\frac{k}{c\rho}\right)
+   \end{align}
+   $$
+
+   - 如果存在热源 $F(x,y,z,t)$ ，方程就可以化为
+
+     $$
+     \begin{align}
+     c\rho u_{t}-\left[\frac{\partial}{\partial x}(ku_{x})+\frac{\partial}{\partial y}(ku_{y})+\frac{\partial}{\partial z}(ku_{z})\right]=F(x,y,z,t)
+     \end{align}
+     $$
+
+     对均匀物体
+
+     $$
+     \begin{align}
+     u_{t}-a^{2}\Delta u=f(x,y,z,t),\space\left(a^{2}=\frac{k}{c\rho}\right)
+     \end{align}
+     $$
+
 ### 稳定场方程
+
+1. 稳定浓度分布
+
+   如果扩散源的强度 $F(x,y,z)$ 不随时间变化，扩散运动最后会达到稳定状态，于是方程 $\text{(22)}$ 就化为
+
+   $$
+   \begin{align}
+   \nabla\cdot(D\nabla u)=-F(x,y,z)
+   \end{align}
+   $$
+
+   如果 $D$ 是常数，就有
+
+   $$
+   \begin{align}
+   D\Delta u=-F(x,y,z)
+   \end{align}
+   $$
+
+   这就是**泊松方程**，如果没有源，就是**拉普拉斯方程**
+
+   $$
+   \begin{align}
+   \Delta u=0
+   \end{align}
+   $$
+
+   这两个方程就是**浓度的稳定分布方程**
+
+2. 稳定温度分布
+
+   与浓度分布对应，如果热源温度 $T(x,y,z)$ 不随时间变化，方程 $\text{(28)}$ 就化为
+
+   $$
+   \begin{align}
+   \nabla\cdot(k\nabla u)=-T(x,y,z)
+   \end{align}
+   $$
+
+   如果 $k$ 是常数，就有
+
+   $$
+   \begin{align}
+   k\Delta u=-T(x,y,z)
+   \end{align}
+   $$
+
+   这也是**泊松方程**，如果没有热源，也会简化为**拉普拉斯方程**
+
+   $$
+   \begin{align}
+   \Delta u=0
+   \end{align}
+   $$
+
+3. 静电场
+
+   静电场的电场强度 $\boldsymbol{E}$ 是无旋的，即
+
+   $$
+   \begin{align}
+   \nabla\times\boldsymbol{E}=0
+   \end{align}
+   $$
+
+   于是存在电势函数 $V(x,y,z)$ 使得
+
+   $$
+   \begin{align}
+   \boldsymbol{E}=-\nabla V
+   \end{align}
+   $$
+
+   而电场强度的散度又满足
+
+   $$
+   \begin{align}
+   \nabla\cdot\boldsymbol{E}=\frac{1}{\varepsilon_{0}}\rho
+   \end{align}
+   $$
+
+   代入即可得到**泊松方程**
+
+   $$
+   \begin{align}
+   \Delta V=-\frac{1}{\varepsilon_{0}}\rho
+   \end{align}
+   $$
+
+   在没有电荷分布的区域内，方程简化为**拉普拉斯方程**
+
+   $$
+   \begin{align}
+   \Delta V=0
+   \end{align}
+   $$
+
+4. 恒定电流场
+
+   研究具有恒定电流分布的导电介质，其中的电荷满足连续性方程
+
+   $$
+   \begin{align}
+   \frac{\partial \rho}{\partial t}+\nabla\cdot\boldsymbol{j}=0
+   \end{align}
+   $$
+
+   在恒定电流的情况下，$\boldsymbol{j}(x,y,z)$ 不随时间变化，$\rho(x,y,z)$ 也不随时间变化，于是
+
+   $$
+   \begin{align}
+   \nabla\cdot\boldsymbol{j}=0
+   \end{align}
+   $$
+
+   于是根据麦克斯韦方程组，有
+
+   $$
+   \begin{align}
+   \nabla\times\boldsymbol{E}=0\\
+   \Rightarrow\boldsymbol{E}=-\nabla\varphi
+   \end{align}
+   $$
+
+   代入 $\boldsymbol{j}=\sigma\boldsymbol{E}$ 即可得到
+
+   $$
+   \begin{align}
+   \nabla\cdot(\sigma\boldsymbol{E})=-\nabla\cdot(\sigma\nabla\varphi)=0
+   \end{align}
+   $$
+
+   对于均匀导电介质，$\sigma$ 是常量，于是方程简化为
+
+   $$
+   \begin{align}
+   \Delta\varphi=0
+   \end{align}
+   $$
+
+   这是**拉普拉斯方程**
+
+## 定解条件
+
+### （一）初始条件
