@@ -6,7 +6,7 @@ lastMod: 2026-03-03
 tags: [数学, 物理, 学科交叉, 电动力学, 矢量分析]
 category: ['物理', '电动力学']
 summary: 这是我在学习 电动力学 过程中的笔记
-comments: false
+comments: true
 draft: false
 ---
 

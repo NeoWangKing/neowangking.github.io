@@ -16,7 +16,7 @@ export function Waline({ serverURL }: { serverURL: string }) {
       locale: {
         placeholder: '发条友善的评论吧（支持 Markdown 语法）…',
       },
-      emoji: ['//unpkg.com/@waline/emojis@1.1.0/bilibili'],
+      emoji: ['//unpkg.com/@waline/emojis@1.4.0/bilibili', '//unpkg.com/@waline/emojis@1.4.0/qq', '//unpkg.com/@waline/emojis@1.4.0/bmoji'],
     })
 
     return () => {
