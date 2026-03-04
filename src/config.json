@@ -31,12 +31,6 @@
         "color": "rgb(245, 154, 155)"
       },
       {
-        "name": "Email",
-        "icon": "icon-mail",
-        "url": "mailto:3245938285@qq.com",
-        "color": "rgb(150, 215, 201)"
-      },
-      {
         "name": "Zhihu",
         "icon": "icon-zhihu",
         "url": "https://www.zhihu.com/people/wang-zi-zhu-28-60",
