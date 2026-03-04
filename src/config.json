@@ -112,9 +112,10 @@
     "startTime": "2026-02-22T00:00:00Z"
   },
   "docSearch": {
-    "appId": "",
-    "apiKey": "",
-    "indexName": ""
+    "container": "#docsearch",
+    "appId": "TINHKBNZPV",
+    "apiKey": "bf1a86dee17e78045aa4f76384d90e3b",
+    "indexName": "Blog Doc Crawler"
   },
   "waline": {
     "serverURL": "https://waline.neowangking.top/"
