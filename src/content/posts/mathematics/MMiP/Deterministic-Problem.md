@@ -6,7 +6,7 @@ lastMod: 2026-03-04
 tags: [数学, 物理, 学科交叉, 数学物理方法]
 category: ['数学', '数学物理方法']
 summary: 这是我在学习 数学物理方法 过程中的笔记
-comments: false
+comments: true
 draft: false
 ---
 
