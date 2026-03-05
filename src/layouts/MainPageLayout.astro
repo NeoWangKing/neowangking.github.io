@@ -5,13 +5,11 @@ import SectionBlock from '@/components/SectionBlock.astro'
 import TagList from '@/components/TagList.astro'
 import CategoryList from '@/components/CategoryList.astro'
 
-import { getSortedPosts, getHotTags, getCategories, getAllTags } from '@/utils/content'
+import { getHotTags, getCategories } from '@/utils/content'
 
 
 // 获取热门标签
 const hotTags = await getHotTags()
-// 获取所有标签
-const allTags = await getAllTags()
 // 获取所有类别
 const Categories = await getCategories()
 
