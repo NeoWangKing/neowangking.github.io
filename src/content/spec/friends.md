@@ -1,16 +1,32 @@
 ---
-title: 朋友们
-description: 我的小伙伴们和一些有趣的站点。
+title: 朋友圈
+description: 我的小伙伴们和一些有趣的站点，希望你也能从中发现一些宝藏。
 comments: true
 ---
 
-## 怎么申请友链？
+---
 
-想要交换友链的小伙伴们，欢迎去本站的 [Github 仓库](https://github.com/NeoWangKing/neowangking.github.io/tree/master/src/content/friends)提交一个 PR。审核通过后，就可以在这里展示啦。
+## 申请友链的条件
 
-请在`/src/content/friends/`目录下添加一个`<short-name>.yaml`文件，参考格式：
+🍅不接受新站链接（3个月以内）。
 
-```yml
+🎄先友后链，申请前请先提前做好本站友情链接。
+
+🌈贵站在百度、Google、Bing等各大搜索引擎中能够正常收录。
+
+💖稳定更新，上一次发布新内容在两个月以内。
+
+🍧凡内容污秽、暴力的、广告挂马的、违背社会主义核心价值观的勿扰。
+
+🎯申请方式：留言板留言。
+
+## 关于如何申请友链
+
+可以直接在留言板留言，我看到之后会进行审核，审核通过后就会把友链加上
+
+申请友链的留言请按照以下格式：
+
+```
 title: 网站名称
 description: 一句话介绍下你的网站或者你自己
 link: 网站地址
