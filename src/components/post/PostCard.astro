@@ -14,6 +14,7 @@ const { remarkPluginFrontmatter } = await entry.render()
 
 <a class="block relative py-8 focus-visible:outline-0" href={`/posts/${entry.slug}`}>
   <PostCardHoverOverlay client:only="react" />
+  <!-- 标题 -->
   <h2 class="relative text-2xl font-bold">
     {entry.data.title}
     {
@@ -22,6 +23,7 @@ const { remarkPluginFrontmatter } = await entry.render()
       )
     }
   </h2>
+  <!-- 封面 -->
   <div class="mt-4 overflow-hidden">
     {
       entry.data.cover && (

@@ -44,9 +44,10 @@ export function PostCardHoverOverlay() {
         {enter && (
           <motion.div
             className="absolute inset-y-4 -inset-x-4 -z-1 bg-accent/10 rounded-lg"
-            initial={{ opacity: 0.2, scale: 0.95 }}
+            initial={{ opacity: 0, scale: 1 }}
             animate={{ opacity: 1, scale: 1 }}
-            exit={{ opacity: 0, scale: 0.95 }}
+            exit={{ opacity: 0, scale: 1 }}
+            transition={{ type: "spring", duration: 0.8, bounce: 0.35, delay: 0.1 }}
             layout
             layoutId="post-card-hover-overlay"
           ></motion.div>

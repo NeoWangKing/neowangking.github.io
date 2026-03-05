@@ -1,6 +1,6 @@
 ---
 interface Props {
-  title: string
+  title?: string
   style?: string
 }
 
@@ -8,6 +8,6 @@ const { title, style = "mt-4 mb-8 font-bold uppercase tracking-widest text-accen
 ---
 
 <section>
-  <div class={style}>{title}</div>
+  {title && <div class={style}>{title}</div>}
   <slot />
 </section>
