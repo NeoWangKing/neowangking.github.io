@@ -76,13 +76,13 @@
       "icon": "icon-ghost"
     },
     {
-      "name": "分类",
-      "link": "/categories",
+      "name": "归档",
+      "link": "/archives",
       "icon": "icon-menu"
     },
     {
-      "name": "标签",
-      "link": "/tags",
+      "name": "留言板",
+      "link": "/issue",
       "icon": "icon-pen"
     },
     {
