@@ -1,8 +1,11 @@
 ---
 import { Waline } from './Waline'
 import { waline } from '@/config.json'
+import SectionBlock from '@/components/SectionBlock.astro'
 ---
 
 <div>
-  {waline.serverURL && <Waline {...waline} client:visible />}
+  <SectionBlock title="评论区">
+    {waline.serverURL && <Waline {...waline} client:visible />}
+  </SectionBlock>
 </div>
