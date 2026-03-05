@@ -45,6 +45,16 @@ const {
       <!-- 分类和标签展示组件 -->
       <div>
         <aside class="md:sticky md:top-20 space-y-10">
+          {showTags &&
+          <SectionBlock title="热门标签">
+              <TagList tags={hotTags} />
+              <div class="mt-2 text-right">
+                <a class="text-sm text-secondary hover:text-accent" href="/tags">
+                  更多标签 <i class="iconfont icon-arrow-right" />
+                </a>
+              </div>
+          </SectionBlock>
+          }
           {showCategories &&
             <SectionBlock title="文章分类">
               <CategoryList categories={Categories} />
@@ -55,16 +65,6 @@ const {
               </div>
             </SectionBlock>
             
-          }
-          {showTags &&
-          <SectionBlock title="热门标签">
-              <TagList tags={hotTags} />
-              <div class="mt-2 text-right">
-                <a class="text-sm text-secondary hover:text-accent" href="/tags">
-                  更多标签 <i class="iconfont icon-arrow-right" />
-                </a>
-              </div>
-          </SectionBlock>
           }
         </aside>
       </div>
