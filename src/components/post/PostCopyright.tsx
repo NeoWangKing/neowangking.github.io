@@ -44,7 +44,7 @@ export function PostCopyright({
           [复制]
         </span>
       </p>
-      <p>最后修改时间：{lastModStr}</p>
+      <p>上次修改：{lastModStr}</p>
       <hr className="my-3 border-primary" />
       <div>
         <div className="float-right ml-4 my-2">
