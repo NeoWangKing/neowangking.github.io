@@ -18,17 +18,17 @@ draft: false
 
 $$
 \begin{align}
-u_{tt}-a^{2}\Delta u=0
+u_{tt} - a^{2}\Delta u = 0
 \end{align}
 $$
 
 1. 均匀弦的微小横振动
 
-   对应 $a^{2}=F_{T}/\rho$ ，方程为
+   对应 $a^{2} = F_{T} / \rho$ ，方程为
 
    $$
    \begin{align}
-   \rho u_{tt}-F_{T}u_{xx}=0
+   \rho u_{tt} - F_{T}u_{xx} = 0
    \end{align}
    $$
 
@@ -38,8 +38,8 @@ $$
 
    $$
    \begin{align}
-   \rho u_{tt}-F_{T}u_{xx}&=F(x,t)\\
-   \Rightarrow u_{tt}-a^{2}u_{xx}&=f(x,t)
+   \rho u_{tt} - F_{T}u_{xx} &= F(x,t)\\
+   \Rightarrow u_{tt} - a^{2}u_{xx} &= f(x,t)
    \end{align}
    $$
 
@@ -47,11 +47,11 @@ $$
 
 2. 均匀杆的纵振动
 
-   对应 $a^{2}=E/\rho$ ，方程为
+   对应 $a^{2} = E / \rho$ ，方程为
 
    $$
    \begin{align}
-   \rho u_{tt}-Eu_{xx}=0
+   \rho u_{tt} - Eu_{xx} = 0
    \end{align}
    $$
 
@@ -61,8 +61,8 @@ $$
 
    $$
    \begin{align}
-   \rho u_{tt}-Eu_{xx}&=F(x,t)\\
-   \Rightarrow u_{tt}-a^{2}u_{xx}&=f(x,t)
+   \rho u_{tt} - Eu_{xx} &= F(x,t)\\
+   \Rightarrow u_{tt} - a^{2}u_{xx} &= f(x,t)
    \end{align}
    $$
 
@@ -76,8 +76,8 @@ $$
 
       $$
       \begin{align}
-      LCj_{tt}-j_{xx}+(LG+RC)j_{t}+RGj&=0\\
-      LCv_{tt}-v_{xx}+(LG+RC)v_{t}+RGv&=0
+      LCj_{tt} - j_{xx} + (LG+RC)j_{t} + RGj &= 0\\
+      LCv_{tt} - v_{xx} + (LG+RC)v_{t} + RGv &= 0
       \end{align}
       $$
 
@@ -87,12 +87,12 @@ $$
 
       $$
       \begin{align}
-      j_{tt}-a^{2}j_{xx}&=0\\
-      v_{tt}-a^{2}v_{xx}&=0
+      j_{tt} - a^{2}j_{xx} &= 0\\
+      v_{tt} - a^{2}v_{xx} &= 0
       \end{align}
       $$
 
-      其中 $a^{2}=1/LC$
+      其中 $a^{2} = 1 / LC$
 
    上述四个方程叫做**传输线方程（电报方程）**
 
@@ -102,7 +102,7 @@ $$
 
    $$
    \begin{align}
-   \rho u_{tt}-F_{T}(u_{xx}+u_{yy})=0
+   \rho u_{tt} - F_{T}(u_{xx} + u_{yy}) = 0
    \end{align}
    $$
 
@@ -110,8 +110,8 @@ $$
 
    $$
    \begin{align}
-   \rho u_{tt}-F_{T}\Delta_{2}u&=0\\
-   u_{tt}-a^{2}\Delta_{2}u&=0
+   \rho u_{tt} - F_{T}\Delta_{2}u &= 0\\
+   u_{tt} - a^{2}\Delta_{2}u &= 0
    \end{align}
    $$
 
@@ -121,7 +121,7 @@ $$
 
    $$
    \begin{align}
-   u_{tt}-a^{2}\Delta_{2}u=f(x,y,t)
+   u_{tt} - a^{2}\Delta_{2}u = f(x,y,t)
    \end{align}
    $$
 
@@ -133,7 +133,7 @@ $$
 
    $$
    \begin{align}
-   u_{tt}-a^{2}\Delta_{3}u=0
+   u_{tt} - a^{2}\Delta_{3}u = 0
    \end{align}
    $$
 
@@ -145,12 +145,12 @@ $$
 
    $$
    \begin{align}
-   \boldsymbol{E}_{tt}-a^{2}\Delta_{3}\boldsymbol{E}&=0\\
-   \boldsymbol{H}_{tt}-a^{2}\Delta_{3}\boldsymbol{H}&=0
+   \boldsymbol{E}_{tt} - a^{2}\Delta_{3}\boldsymbol{E} &= 0\\
+   \boldsymbol{H}_{tt} - a^{2}\Delta_{3}\boldsymbol{H} &= 0
    \end{align}
    $$
 
-   此即为真空中的**电磁波方程**，其中 $a^{2}=1/\mu*{0}\varepsilon*{0}=光速平方
+   此即为真空中的**电磁波方程**，其中 $a^{2} = 1 / \mu_{0}\varepsilon_{0} = 光速平方$
 
 7. 杆的微小横振动
 
@@ -158,7 +158,7 @@ $$
 
    $$
    \begin{align}
-   u_{tt}+a^{2}u_{xxxx}=0\space(a^{2}=EI/\rho)
+   u_{tt} + a^{2}u_{xxxx} = 0\quad(a^{2} = EI / \rho)
    \end{align}
    $$
 
@@ -174,7 +174,7 @@ $$
 
    $$
    \begin{align}
-   u_{t}-\left[\frac{\partial}{\partial x}\left(D\frac{\partial u}{\partial x}\right)+\frac{\partial}{\partial y}\left(D\frac{\partial u}{\partial y}\right)+\frac{\partial}{\partial z}\left(D\frac{\partial u}{\partial z}\right)\right]=0
+   u_{t} - \left[\frac{\partial}{\partial x}\left(D\frac{\partial u}{\partial x}\right) + \frac{\partial}{\partial y}\left(D\frac{\partial u}{\partial y}\right) + \frac{\partial}{\partial z}\left(D\frac{\partial u}{\partial z}\right)\right] = 0
    \end{align}
    $$
 
@@ -182,7 +182,7 @@ $$
 
    $$
    \begin{align}
-   u_{t}-a^{2}\Delta_{3}u=0
+   u_{t} - a^{2}\Delta_{3}u = 0
    \end{align}
    $$
 
@@ -194,13 +194,13 @@ $$
 
       $$
       \begin{align}
-      u_{t}-\left[\frac{\partial}{\partial x}\left(D\frac{\partial u}{\partial x}\right)+\frac{\partial}{\partial y}\left(D\frac{\partial u}{\partial y}\right)+\frac{\partial}{\partial z}\left(D\frac{\partial u}{\partial z}\right)\right]=F(x,y,z,t)
+      u_{t} - \left[\frac{\partial}{\partial x}\left(D\frac{\partial u}{\partial x}\right) + \frac{\partial}{\partial y}\left(D\frac{\partial u}{\partial y}\right) + \frac{\partial}{\partial z}\left(D\frac{\partial u}{\partial z}\right)\right] = F(x,y,z,t)
       \end{align}
       $$
 
       $$
       \begin{align}
-      u_{t}-a^{2}\Delta_{3}u=F(x,y,z,t)\space(a^{2}=D)
+      u_{t} - a^{2}\Delta_{3}u = F(x,y,z,t)\quad(a^{2} = D)
       \end{align}
       $$
 
@@ -211,8 +211,8 @@ $$
       $$
       \begin{align}
       \begin{cases}
-      u_{t}-a^{2}u_{xx}-b^{2}u=0\\
-      u_{t}-a^{2}\Delta_{3}u-b^{2}u=0
+      u_{t} - a^{2}u_{xx} - b^{2}u = 0\\
+      u_{t} - a^{2}\Delta_{3}u - b^{2}u = 0
       \end{cases}
       \end{align}
       $$
@@ -223,7 +223,7 @@ $$
 
    $$
    \begin{align}
-   \boldsymbol{q}=-k\nabla u
+   \boldsymbol{q} = -k\nabla u
    \end{align}
    $$
 
@@ -233,7 +233,7 @@ $$
 
    $$
    \begin{align}
-   c\rho u_{t}-\left[\frac{\partial}{\partial x}(ku_{x})+\frac{\partial}{\partial y}(ku_{y})+\frac{\partial}{\partial z}(ku_{z})\right]=0
+   c\rho u_{t} - \left[\frac{\partial}{\partial x}(ku_{x}) + \frac{\partial}{\partial y}(ku_{y}) + \frac{\partial}{\partial z}(ku_{z})\right] = 0
    \end{align}
    $$
 
@@ -241,7 +241,7 @@ $$
 
    $$
    \begin{align}
-   u_{t}-a^{2}\Delta u=0,\space\left(a^{2}=\frac{k}{c\rho}\right)
+   u_{t} - a^{2}\Delta u=0,\quad\left(a^{2} = \frac{k}{c\rho}\right)
    \end{align}
    $$
 
@@ -249,7 +249,7 @@ $$
 
      $$
      \begin{align}
-     c\rho u_{t}-\left[\frac{\partial}{\partial x}(ku_{x})+\frac{\partial}{\partial y}(ku_{y})+\frac{\partial}{\partial z}(ku_{z})\right]=F(x,y,z,t)
+     c\rho u_{t} - \left[\frac{\partial}{\partial x}(ku_{x}) + \frac{\partial}{\partial y}(ku_{y}) + \frac{\partial}{\partial z}(ku_{z})\right] = F(x,y,z,t)
      \end{align}
      $$
 
@@ -257,7 +257,7 @@ $$
 
      $$
      \begin{align}
-     u_{t}-a^{2}\Delta u=f(x,y,z,t),\space\left(a^{2}=\frac{k}{c\rho}\right)
+     u_{t} - a^{2}\Delta u = f(x,y,z,t),\quad\left(a^{2} = \frac{k}{c\rho}\right)
      \end{align}
      $$
 
@@ -269,7 +269,7 @@ $$
 
    $$
    \begin{align}
-   \nabla\cdot(D\nabla u)=-F(x,y,z)
+   \nabla \cdot (D\nabla u) = -F(x,y,z)
    \end{align}
    $$
 
@@ -277,7 +277,7 @@ $$
 
    $$
    \begin{align}
-   D\Delta u=-F(x,y,z)
+   D\Delta u = -F(x,y,z)
    \end{align}
    $$
 
@@ -285,7 +285,7 @@ $$
 
    $$
    \begin{align}
-   \Delta u=0
+   \Delta u = 0
    \end{align}
    $$
 
@@ -297,7 +297,7 @@ $$
 
    $$
    \begin{align}
-   \nabla\cdot(k\nabla u)=-T(x,y,z)
+   \nabla \cdot (k\nabla u) = -T(x,y,z)
    \end{align}
    $$
 
@@ -305,7 +305,7 @@ $$
 
    $$
    \begin{align}
-   k\Delta u=-T(x,y,z)
+   k\Delta u = -T(x,y,z)
    \end{align}
    $$
 
@@ -313,7 +313,7 @@ $$
 
    $$
    \begin{align}
-   \Delta u=0
+   \Delta u = 0
    \end{align}
    $$
 
@@ -323,7 +323,7 @@ $$
 
    $$
    \begin{align}
-   \nabla\times\boldsymbol{E}=0
+   \nabla \times \boldsymbol{E} = 0
    \end{align}
    $$
 
@@ -331,7 +331,7 @@ $$
 
    $$
    \begin{align}
-   \boldsymbol{E}=-\nabla V
+   \boldsymbol{E} = -\nabla V
    \end{align}
    $$
 
@@ -339,7 +339,7 @@ $$
 
    $$
    \begin{align}
-   \nabla\cdot\boldsymbol{E}=\frac{1}{\varepsilon_{0}}\rho
+   \nabla \cdot \boldsymbol{E} = \frac{1}{\varepsilon_{0}}\rho
    \end{align}
    $$
 
@@ -347,7 +347,7 @@ $$
 
    $$
    \begin{align}
-   \Delta V=-\frac{1}{\varepsilon_{0}}\rho
+   \Delta V = -\frac{1}{\varepsilon_{0}}\rho
    \end{align}
    $$
 
@@ -355,7 +355,7 @@ $$
 
    $$
    \begin{align}
-   \Delta V=0
+   \Delta V = 0
    \end{align}
    $$
 
@@ -365,7 +365,7 @@ $$
 
    $$
    \begin{align}
-   \frac{\partial \rho}{\partial t}+\nabla\cdot\boldsymbol{j}=0
+   \frac{\partial \rho}{\partial t} + \nabla \cdot \boldsymbol{j} = 0
    \end{align}
    $$
 
@@ -373,7 +373,7 @@ $$
 
    $$
    \begin{align}
-   \nabla\cdot\boldsymbol{j}=0
+   \nabla \cdot \boldsymbol{j} = 0
    \end{align}
    $$
 
@@ -381,16 +381,16 @@ $$
 
    $$
    \begin{align}
-   \nabla\times\boldsymbol{E}=0\\
-   \Rightarrow\boldsymbol{E}=-\nabla\varphi
+   \nabla \times \boldsymbol{E} = 0\\
+   \Rightarrow\boldsymbol{E} = -\nabla\varphi
    \end{align}
    $$
 
-   代入 $\boldsymbol{j}=\sigma\boldsymbol{E}$ 即可得到
+   代入 $\boldsymbol{j} = \sigma\boldsymbol{E}$ 即可得到
 
    $$
    \begin{align}
-   \nabla\cdot(\sigma\boldsymbol{E})=-\nabla\cdot(\sigma\nabla\varphi)=0
+   \nabla \cdot (\sigma\boldsymbol{E}) = -\nabla \cdot (\sigma\nabla\varphi) = 0
    \end{align}
    $$
 
@@ -398,7 +398,7 @@ $$
 
    $$
    \begin{align}
-   \Delta\varphi=0
+   \Delta\varphi = 0
    \end{align}
    $$
 
@@ -416,7 +416,7 @@ $$
 
    $$
    \begin{align}
-   \left. u(x,y,z,t)\right|_{t=0}=\varphi(x,y,z)
+   \left. u(x,y,z,t)\right|_{t = 0} = \varphi(x,y,z)
    \end{align}
    $$
 
@@ -426,7 +426,7 @@ $$
 
    $$
    \begin{align}
-   \left. u(x,y,z,t)\right|_{t=0}=\varphi(x,y,z)
+   \left. u(x,y,z,t)\right|_{t = 0} = \varphi(x,y,z)
    \end{align}
    $$
 
@@ -434,7 +434,7 @@ $$
 
    $$
    \begin{align}
-   \left. u_{t}(x,y,z,t)\right|_{t=0}=\psi(x,y,z)
+   \left. u_{t}(x,y,z,t)\right|_{t = 0} = \psi(x,y,z)
    \end{align}
    $$
 
@@ -456,7 +456,7 @@ $$
 
       $$
       \begin{align}
-      \left. u(\boldsymbol{r},t)\right|_{\Sigma}=f(M,t)
+      \left. u(\boldsymbol{r},t)\right|_{\Sigma} = f(M,t)
       \end{align}
       $$
 
@@ -466,7 +466,7 @@ $$
 
       $$
       \begin{align}
-      \left. \frac{\partial u}{\partial n}\right|_{\Sigma}=f(M,t)
+      \left. \frac{\partial u}{\partial n}\right|_{\Sigma} = f(M,t)
       \end{align}
       $$
 
@@ -476,7 +476,7 @@ $$
 
       $$
       \begin{align}
-      \left. \left(u+H\frac{\partial u}{\partial n}\right)\right|_{\Sigma}=f(M,t)
+      \left. \left(u + H\frac{\partial u}{\partial n}\right)\right|_{\Sigma} = f(M,t)
       \end{align}
       $$
 
@@ -496,13 +496,13 @@ $$
 
    $$
    \begin{align}
-   \sum_{j=1}^{n}{\sum_{i=1}^{n}{a_{ij}u_{x_{i}x_{j}}}}+\sum_{i=1}^{n}{b_{i}u_{x_{i}}}+cu+f=0
+   \sum_{j = 1}^{n}{\sum_{i = 1}^{n}{a_{ij}u_{x_{i}x_{j}}}} + \sum_{i = 1}^{n}{b_{i}u_{x_{i}}} + cu + f = 0
    \end{align}
    $$
 
-   其中 $x_{i}(i=1,2,\cdots,n)$ 是所有自变量（包括空间坐标和时间坐标），$a_{ij}$、$b_{i}$、$c$、$f$只是 $x_{1},x_{2},\cdots,x_{n}$ 的函数，这个方程就称作**线性的**
+   其中 $x_{i}(i = 1,2,\cdots,n)$ 是所有自变量（包括空间坐标和时间坐标），$a_{ij}$、$b_{i}$、$c$、$f$只是 $x_{1},x_{2},\cdots,x_{n}$ 的函数，这个方程就称作**线性的**
 
-   如果 $f=0$ 方程就是**齐次的**，否则就是**非齐次的**
+   如果 $f = 0$ 方程就是**齐次的**，否则就是**非齐次的**
 
    - 如果泛定方程和定解条件都是线性的，可以把定解问题看作几个部分的线性叠加，**只需要这几个部分的泛定方程和定解条件的线性叠加与之前相同就行**，这就是**叠加原理**
 
@@ -512,7 +512,7 @@ $$
 
    $$
    \begin{align}
-   a_{11}u_{xx}+2a_{12}u_{xy}+a_{22}u_{yy}+b_{1}u_{x}+b_{2}u_{y}+cu+f=0
+   a_{11}u_{xx} + 2a_{12}u_{xy} + a_{22}u_{yy} + b_{1}u_{x} + b_{2}u_{y} + cu + f = 0
    \end{align}
    $$
 
@@ -523,22 +523,22 @@ $$
    $$
    \begin{align}
    \begin{cases}
-   x=x(\xi,\eta)\\
-   y=y(\xi,\eta)
+   x = x(\xi, \eta)\\
+   y = y(\xi, \eta)
    \end{cases}
    \text{即}
    \begin{cases}
-   \xi=\xi(x,y)\\
-   \eta=\eta(x,y)
+   \xi = \xi(x, y)\\
+   \eta = \eta(x, y)
    \end{cases}
    \end{align}
    $$
 
-   代换的雅可比式 $\frac{\partial(\xi,\eta)}{\partial(x,y)}\neq0$，代换之后的方程
+   代换的雅可比式 $\frac{\partial(\xi, \eta)}{\partial(x, y)} \neq 0$，代换之后的方程
 
    $$
    \begin{align}
-   A_{11}u_{\xi\xi}+2A_{12}u_{\xi\eta}+A_{22}u_{\eta\eta}+B_{1}u_{\xi}+B_{2}u_{\eta}+Cu+F=0
+   A_{11}u_{\xi\xi} + 2A_{12}u_{\xi\eta} + A_{22}u_{\eta\eta} + B_{1}u_{\xi} + B_{2}u_{\eta} + Cu + F = 0
    \end{align}
    $$
 
@@ -547,13 +547,13 @@ $$
    $$
    \begin{align}
    \begin{cases}
-   A_{11}=a_{11}\xi_{x}^{2}+2a_{12}\xi_{x}\xi_{y}+a_{22}\xi_{y}^{2}\\
-   A_{12}=a_{11}\xi_{x}\eta_{x}+a_{12}(\xi_{x}\eta_{y}+\xi_{y}\eta_{x})+a_{22}\xi_{y}\eta_{y}\\
-   A_{22}=a_{11}\eta_{x}^{2}+2a_{12}\eta_{x}\eta_{y}+a_{22}\eta_{y}^{2}\\
-   B_{1}=a_{11}\xi_{xx}+2a_{12}\xi_{xy}+a_{22}\xi_{yy}+b_{1}\xi_{x}+b_{2}\xi_{y}\\
-   B_{2}=a_{11}\eta_{xx}+2a_{12}\eta_{xy}+a_{22}\eta_{yy}+b_{1}\eta_{x}+b_{2}\eta_{y}\\
-   C=c\\
-   F=f
+   A_{11} = a_{11}\xi_{x}^{2} + 2a_{12}\xi_{x}\xi_{y} + a_{22}\xi_{y}^{2}\\
+   A_{12} = a_{11}\xi_{x}\eta_{x} + a_{12}(\xi_{x}\eta_{y} + \xi_{y}\eta_{x}) + a_{22}\xi_{y}\eta_{y}\\
+   A_{22} = a_{11}\eta_{x}^{2} + 2a_{12}\eta_{x}\eta_{y} + a_{22}\eta_{y}^{2}\\
+   B_{1} = a_{11}\xi_{xx} + 2a_{12}\xi_{xy} + a_{22}\xi_{yy} + b_{1}\xi_{x} + b_{2}\xi_{y}\\
+   B_{2} = a_{11}\eta_{xx} + 2a_{12}\eta_{xy} + a_{22}\eta_{yy} + b_{1}\eta_{x} + b_{2}\eta_{y}\\
+   C = c\\
+   F = f
    \end{cases}
    \end{align}
    $$
@@ -562,28 +562,28 @@ $$
 
    $$
    \begin{align}
-   a_{11}\xi_{x}^{2}+2a_{12}\xi_{x}\xi_{y}+a_{22}\xi_{y}^{2}=0
+   a_{11}\xi_{x}^{2} + 2a_{12}\xi_{x}\xi_{y} + a_{22}\xi_{y}^{2} = 0
    \end{align}
    $$
 
-   的代换 $\xi$，则就有 $A_{11}=0$，同理也可以选取合适的 $\eta$ 使得 $A_{22}=0$，这样方程就可以得到化简
+   的代换 $\xi$，则就有 $A_{11} = 0$，同理也可以选取合适的 $\eta$ 使得 $A_{22} = 0$，这样方程就可以得到化简
 
-   进一步的，如果把 $\xi(x,y)=\text{常数}$ 当作定义隐函数 $y(x)$ 的方程，则 $\mathrm{d}y/\mathrm{d}x=-\xi_{x}/\xi_{y}$ 从而上述方程就是
+   进一步的，如果把 $\xi(x, y) = \text{常数}$ 当作定义隐函数 $y(x)$ 的方程，则 $\mathrm{d}y / \mathrm{d}x = -\xi_{x} / \xi_{y}$ 从而上述方程就是
 
    $$
    \begin{align}
-   a_{11}\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^{2}-2a_{12}\frac{\mathrm{d}y}{\mathrm{d}x}+a_{22}=0
+   a_{11}\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right)^{2} - 2a_{12}\frac{\mathrm{d}y}{\mathrm{d}x} + a_{22} = 0
    \end{align}
    $$
 
-   这就是二阶线性偏微分方程的**特征方程**，特征方程的一般积分“ $\xi(x,y)=\text{常数}$ ”和“ $\eta(x,y)=\text{常数}$ ”叫做**特征线**
+   这就是二阶线性偏微分方程的**特征方程**，特征方程的一般积分“ $\xi(x, y) = \text{常数}$ ”和“ $\eta(x, y) = \text{常数}$ ”叫做**特征线**
 
    特征方程可以分为两个方程
 
    $$
    \begin{align}
-   \frac{\mathrm{d}y}{\mathrm{d}x}=\frac{a_{12}+\sqrt{a_{12}^{2}-a_{11}a_{22}}}{a_{11}}\\
-   \frac{\mathrm{d}y}{\mathrm{d}x}=\frac{a_{12}-\sqrt{a_{12}^{2}-a_{11}a_{22}}}{a_{11}}
+   \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{a_{12} + \sqrt{a_{12}^{2} - a_{11}a_{22}}}{a_{11}}\\
+   \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{a_{12} - \sqrt{a_{12}^{2} - a_{11}a_{22}}}{a_{11}}
    \end{align}
    $$
 
@@ -592,9 +592,9 @@ $$
    $$
    \begin{align}
    \begin{cases}
-   a_{12}^{2}-a_{11}a_{22}>0,\quad\text{双曲型}\\
-   a_{12}^{2}-a_{11}a_{22}=0,\quad\text{抛物型}\\
-   a_{12}^{2}-a_{11}a_{22}<0,\quad\text{椭圆型}
+   a_{12}^{2} - a_{11}a_{22} > 0,\quad\text{双曲型}\\
+   a_{12}^{2} - a_{11}a_{22} = 0,\quad\text{抛物型}\\
+   a_{12}^{2} - a_{11}a_{22} < 0,\quad\text{椭圆型}
    \end{cases}
    \end{align}
    $$

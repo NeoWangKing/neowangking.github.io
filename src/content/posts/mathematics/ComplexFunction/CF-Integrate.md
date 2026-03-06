@@ -18,7 +18,7 @@ draft: false
 
    $$
    \begin{align}
-   \int_{l}{f(z)\mathrm{d}z}&=\lim_{\max{|\Delta z_{k}|}}{\sum_{k=1}^{n}f(\zeta_{k})\Delta z_{k}}
+   \int_{l}{f(z)\mathrm{d}z} &= \lim_{\max{|\Delta z_{k}|}}{\sum_{k = 1}^{n}f(\zeta_{k})\Delta z_{k}}
    \end{align}
    $$
 
@@ -27,7 +27,8 @@ draft: false
    - 将路积分用实部和虚部展开：
      $$
      \begin{align}
-     \int_{l}{f(z)\mathrm{d}z}&=\int_{l}{[u(x,y)+\imath v(x,y)](\mathrm{d}x+\imath \mathrm{d}y)}\\&=\int_{l}{u(x,y)\mathrm{d}x-v(x,y)\mathrm{d}y}+\imath\int_{l}{v(x,y)\mathrm{d}x+u(x,y)\mathrm{d}y}
+     \int_{l}{f(z)\mathrm{d}z} &= \int_{l}{[u(x, y) + \imath v(x, y)](\mathrm{d}x + \imath \mathrm{d}y)}\\
+     &= \int_{l}{u(x, y)\mathrm{d}x-v(x, y)\mathrm{d}y} + \imath\int_{l}{v(x, y)\mathrm{d}x + u(x, y)\mathrm{d}y}
      \end{align}
      $$
      这样就转化为了**两个实变函数的线积分**
@@ -41,7 +42,7 @@ draft: false
 
         $$
         \begin{align}
-        \left|\int_{l}{f(z)\mathrm{d}z}\right|\le\int_{l}{\left|f(z)\right|\left|\mathrm{d}z\right|}
+        \left|\int_{l}{f(z)\mathrm{d}z}\right| \le \int_{l}{\left|f(z)\right|\left|\mathrm{d}z\right|}
         \end{align}
         $$
 
@@ -49,7 +50,7 @@ draft: false
 
         $$
         \begin{align}
-        \left|\int_{l}{f(z)\mathrm{d}z}\right|\le ML
+        \left|\int_{l}{f(z)\mathrm{d}z}\right| \le ML
         \end{align}
         $$
 
@@ -65,7 +66,7 @@ draft: false
 
    $$
    \begin{align}
-   \oint_{l}{f(z)\mathrm{d}z}=0
+   \oint_{l}{f(z)\mathrm{d}z} = 0
    \end{align}
    $$
 
@@ -79,7 +80,7 @@ draft: false
 
    $$
    \begin{align}
-   \oint_{l}{f(z)\mathrm{d}z}+\sum_{i=1}^{n}{\oint_{l_{i}}{f(z)\mathrm{d}z}}=0
+   \oint_{l}{f(z)\mathrm{d}z}+\sum_{i = 1}^{n}{\oint_{l_{i}}{f(z)\mathrm{d}z}} = 0
    \end{align}
    $$
 
@@ -93,16 +94,16 @@ draft: false
 
    $$
    \begin{align}
-   F(z)=\int_{z_{0}}^{z}{f(\zeta)\mathrm{d}\zeta}
+   F(z) = \int_{z_{0}}^{z}{f(\zeta)\mathrm{d}\zeta}
    \end{align}
    $$
 
-   可证得 $F(z)$ 在 $B$ 上是解析的，且 $F'(z)=f(z)$ ，即 $F(z)$ 是 $f(z)$ 的一个**原函数**
+   可证得 $F(z)$ 在 $B$ 上是解析的，且 $F'(z) = f(z)$ ，即 $F(z)$ 是 $f(z)$ 的一个**原函数**
    于是，路积分可以表示为原函数的**改变量**
 
    $$
    \begin{align}
-   \int_{z_{1}}^{z_{2}}{f(\zeta)\mathrm{d}\zeta}=F(z_{2})-F(z_{1})
+   \int_{z_{1}}^{z_{2}}{f(\zeta)\mathrm{d}\zeta} = F(z_{2}) - F(z_{1})
    \end{align}
    $$
 
@@ -114,7 +115,7 @@ draft: false
 
    $$
    \begin{align}
-   f(\alpha)=\frac{1}{2\pi\imath}\oint_{l}{\frac{f(z)}{z-\alpha}\mathrm{d}z}
+   f(\alpha) = \frac{1}{2\pi\imath}\oint_{l}{\frac{f(z)}{z - \alpha}\mathrm{d}z}
    \end{align}
    $$
 
@@ -125,4 +126,4 @@ draft: false
 > 1. **模数原理**
 >    若 $f(z)$ 在某个闭区域上解析，则 $|f(z)|$ 只能在边界线上取最大值
 > 2. **刘维尔定理**
->    如 $f(z)$ 在全平面上解析且有界，即 $|f(z)|\le N$ ，则 $f(z)$ 必为常数
+>    如 $f(z)$ 在全平面上解析且有界，即 $|f(z)| \le N$ ，则 $f(z)$ 必为常数

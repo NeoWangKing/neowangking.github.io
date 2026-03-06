@@ -15,9 +15,9 @@ draft: false
 ### 复数的基本概念
 
 - 代数式：$z = x + \imath y$，其中 $x$ 和 $y$ 分别为**实部**和**虚部**，记作 $\mathrm{Re}\,z$ 和 $\mathrm{Im}\,z$
-- 三角式：$z=\rho e^{\imath\varphi}$，其中 $\rho$ 成为复数的**模**，$\varphi$ 称为复数的**辐角**，分别记为 $|z|$ 和 $\mathrm{Arg}\,z$
+- 三角式：$z = \rho e^{\imath\varphi}$，其中 $\rho$ 成为复数的**模**，$\varphi$ 称为复数的**辐角**，分别记为 $|z|$ 和 $\mathrm{Arg}\,z$
 
-> 一个复数的辐角 $\mathrm{Arg}\,z$ 是不能唯一的确定的，我们取其中满足条件 $0\le\mathrm{Arg}\,z<2\pi$ 的一个特定值 $\mathrm{arg}\,z$ 称为复数的主辐角
+> 一个复数的辐角 $\mathrm{Arg}\,z$ 是不能唯一的确定的，我们取其中满足条件 $0 \le \mathrm{Arg}\,z < 2\pi$ 的一个特定值 $\mathrm{arg}\,z$ 称为复数的主辐角
 
 ### 无限远点
 
@@ -46,7 +46,7 @@ draft: false
 
 $$
 \begin{align}
-w=f(z),\space z\in E
+w = f(z),\quad z \in E
 \end{align}
 $$
 
@@ -72,20 +72,20 @@ $$
 
 ## 导数
 
-**定义（可导与导数）** 若定义在**区域 $B$**上的函数 $w=f(z)$ 满足：
+**定义（可导与导数）** 若定义在**区域 $B$**上的函数 $w = f(z)$ 满足：
 
 1. 单值函数
 2. 对于区域 $B$ 上的一点 $z$ ，极限
 
    $$
    \begin{align}
-   \lim_{\Delta z\rightarrow 0}{\frac{\Delta w}{\Delta z}}=\lim_{\Delta z\rightarrow 0}{\frac{f(z+\Delta z)-f(z)}{\Delta z}}
+   \lim_{\Delta z\rightarrow 0}{\frac{\Delta w}{\Delta z}} = \lim_{\Delta z\rightarrow 0}{\frac{f(z + \Delta z) - f(z)}{\Delta z}}
    \end{align}
    $$
 
-   存在且**与 $\Delta z\rightarrow 0$ 的方式无关**
+   存在且**与 $\Delta z \rightarrow 0$ 的方式无关**
 
-则称函数 $w$ 在 $z$ 点**可导**，此极限称为 $z$ 点处的导数，记为 $f'(z)$ 或 $\mathrm{d}f/\mathrm{d}z$
+则称函数 $w$ 在 $z$ 点**可导**，此极限称为 $z$ 点处的导数，记为 $f'(z)$ 或 $\mathrm{d}f / \mathrm{d}z$
 
 ### 可导的必要条件
 
@@ -94,7 +94,8 @@ $$
 $$
 \begin{align}
 \begin{cases}
-\dfrac{\partial u}{\partial x}=\dfrac{\partial v}{\partial y} \\ \dfrac{\partial v}{\partial x}=-\dfrac{\partial u}{\partial y}
+\dfrac{\partial u}{\partial x} = \dfrac{\partial v}{\partial y} \\
+\dfrac{\partial v}{\partial x} = -\dfrac{\partial u}{\partial y}
 \end{cases}
 \end{align}
 $$
@@ -107,17 +108,17 @@ $$
 
 解析函数的几个主要性质：
 
-1. 梯度 $\nabla u$ 和 $\nabla v$ 正交，也即曲线簇 $u=C_{1}$ 和 $v=C_{2}$ 互相正交
-2. 若函数 $f(z)=u+\imath v$ 在区域 $B$ 上解析，则 $u$ 、 $v$ 是 $B$ 上的**调和函数**
-   > 调和函数：函数 $H$ 在区域 $B$ 上有二阶连续偏导数且满足拉普拉斯方程 $\Delta H=0$ ，称函数 $H$ 为区域 $B$ 上的调和函数
+1. 梯度 $\nabla u$ 和 $\nabla v$ 正交，也即曲线簇 $u = C_{1}$ 和 $v = C_{2}$ 互相正交
+2. 若函数 $f(z) = u + \imath v$ 在区域 $B$ 上解析，则 $u$ 、 $v$ 是 $B$ 上的**调和函数**
+   > 调和函数：函数 $H$ 在区域 $B$ 上有二阶连续偏导数且满足拉普拉斯方程 $\Delta H = 0$ ，称函数 $H$ 为区域 $B$ 上的调和函数
 
 ## 平面标量场
 
 ### 平面静电场
 
-在没有电荷的区域内，静电场的电势满足二维拉普拉斯方程，于是可以用电场区域上的一个解析函数 $f(z)=u(x,y)+\imath v(x,y)$ 来表示该区域的电势，称为复势
+在没有电荷的区域内，静电场的电势满足二维拉普拉斯方程，于是可以用电场区域上的一个解析函数 $f(z) = u(x,y) + \imath v(x,y)$ 来表示该区域的电势，称为复势
 
-一般来说，取 $u(x,y)$ 为电势，则曲线簇 $u(x,y)=C_{1}$ 为等势线簇，曲线簇 $v(x,y)=C_{2}$ 为电场线簇，函数 $v(x,y)$ 为通量函数（两点间的通量即为 $v$ 的差值）
+一般来说，取 $u(x,y)$ 为电势，则曲线簇 $u(x,y) = C_{1}$ 为等势线簇，曲线簇 $v(x,y) = C_{2}$ 为电场线簇，函数 $v(x,y)$ 为通量函数（两点间的通量即为 $v$ 的差值）
 
 ### 平面无旋流动
 
