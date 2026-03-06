@@ -16,7 +16,7 @@ importers:
         version: 5.1.0
       '@astrojs/react':
         specifier: ^3.3.0
-        version: 3.3.0(@types/react-dom@18.2.25)(@types/react@18.2.78)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.2.8(@types/node@20.12.8))
+        version: 3.3.0(@types/react-dom@18.2.25)(@types/react@18.2.78)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.2.8(@types/node@25.3.5))
       '@astrojs/rss':
         specifier: ^4.0.5
         version: 4.0.5
@@ -25,7 +25,7 @@ importers:
         version: 3.1.3
       '@astrojs/tailwind':
         specifier: ^5.1.0
-        version: 5.1.0(astro@4.6.1(@types/node@20.12.8)(typescript@5.4.5))(tailwindcss@3.4.3)
+        version: 5.1.0(astro@4.6.1(@types/node@25.3.5)(typescript@5.4.5))(tailwindcss@3.4.3)
       '@docsearch/css':
         specifier: '3'
         version: 3.6.0
@@ -55,7 +55,7 @@ importers:
         version: 3.1.3(typescript@5.4.5)
       astro:
         specifier: ^4.6.1
-        version: 4.6.1(@types/node@20.12.8)(typescript@5.4.5)
+        version: 4.6.1(@types/node@25.3.5)(typescript@5.4.5)
       chroma-js:
         specifier: ^2.4.2
         version: 2.4.2
@@ -107,6 +107,9 @@ importers:
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
+      tailwind-scrollbar:
+        specifier: ^4.0.2
+        version: 4.0.2(react@18.2.0)(tailwindcss@3.4.3)
       tailwindcss:
         specifier: ^3.4.3
         version: 3.4.3
@@ -119,13 +122,16 @@ importers:
     devDependencies:
       '@commitlint/cli':
         specifier: ^19.3.0
-        version: 19.3.0(@types/node@20.12.8)(typescript@5.4.5)
+        version: 19.3.0(@types/node@25.3.5)(typescript@5.4.5)
       '@commitlint/config-conventional':
         specifier: ^19.2.2
         version: 19.2.2
       '@inquirer/prompts':
         specifier: ^5.0.2
         version: 5.0.2
+      '@types/node':
+        specifier: ^25.3.5
+        version: 25.3.5
       lint-staged:
         specifier: ^15.2.2
         version: 15.2.2
@@ -1317,10 +1323,16 @@ packages:
     resolution: {integrity: sha512-ABoYdNQ/kBSsLvZAekMhIPMQ3YUZvavStpKYs7BjLLuKVmIMA0LUgZ7b54zzuWJRbHF80v1cNf4r90Vd6eMQDg==}
 
   '@types/node@17.0.45':
-    resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
+    resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==, tarball: https://registry.npmmirror.com/@types/node/-/node-17.0.45.tgz}
 
   '@types/node@20.12.8':
-    resolution: {integrity: sha512-NU0rJLJnshZWdE/097cdCBbyW1h4hEg0xpovcoAQYHl8dnEyp/NAOiE45pvc+Bd1Dt+2r94v2eGFpQJ4R7g+2w==}
+    resolution: {integrity: sha512-NU0rJLJnshZWdE/097cdCBbyW1h4hEg0xpovcoAQYHl8dnEyp/NAOiE45pvc+Bd1Dt+2r94v2eGFpQJ4R7g+2w==, tarball: https://registry.npmmirror.com/@types/node/-/node-20.12.8.tgz}
+
+  '@types/node@25.3.5':
+    resolution: {integrity: sha512-oX8xrhvpiyRCQkG1MFchB09f+cXftgIXb3a7UUa4Y3wpmZPw5tyZGTLWhlESOLq1Rq6oDlc8npVU2/9xiCuXMA==, tarball: https://registry.npmmirror.com/@types/node/-/node-25.3.5.tgz}
+
+  '@types/prismjs@1.26.6':
+    resolution: {integrity: sha512-vqlvI7qlMvcCBbVe0AKAb4f97//Hy0EBTaiW8AalRnG/xAN5zOiWWyrNqNXeq8+KAuvRewjCVY1+IPxk4RdNYw==, tarball: https://registry.npmmirror.com/@types/prismjs/-/prismjs-1.26.6.tgz}
 
   '@types/prop-types@15.7.12':
     resolution: {integrity: sha512-5zvhXYtRNRluoE/jAp4GVsSduVUzNWKkOZrCDBWYtE7biZywwdC2AcEzg+cSMLFRfVgeAFqpfNabiPjxFddV1Q==}
@@ -2858,6 +2870,11 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
+  prism-react-renderer@2.4.1:
+    resolution: {integrity: sha512-ey8Ls/+Di31eqzUxC46h8MksNuGx/n0AAC8uKpwFau4RPDYLuE3EXTp8N8G2vX2N7UC/+IXeNUnlWBGGcAG+Ig==, tarball: https://registry.npmmirror.com/prism-react-renderer/-/prism-react-renderer-2.4.1.tgz}
+    peerDependencies:
+      react: '>=16.0.0'
+
   prismjs@1.29.0:
     resolution: {integrity: sha512-Kx/1w86q/epKcmte75LNrEoT+lX8pBpavuAbvJWRXar7Hz8jrtF+e3vY751p0R8H9HdArwaCTNDDzHg/ScJK1Q==}
     engines: {node: '>=6'}
@@ -3239,6 +3256,12 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
+  tailwind-scrollbar@4.0.2:
+    resolution: {integrity: sha512-wAQiIxAPqk0MNTPptVe/xoyWi27y+NRGnTwvn4PQnbvB9kp8QUBiGl/wsfoVBHnQxTmhXJSNt9NHTmcz9EivFA==, tarball: https://registry.npmmirror.com/tailwind-scrollbar/-/tailwind-scrollbar-4.0.2.tgz}
+    engines: {node: '>=12.13.0'}
+    peerDependencies:
+      tailwindcss: 4.x
+
   tailwindcss@3.4.3:
     resolution: {integrity: sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==}
     engines: {node: '>=14.0.0'}
@@ -3332,6 +3355,9 @@ packages:
 
   undici-types@5.26.5:
     resolution: {integrity: sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==}
+
+  undici-types@7.18.2:
+    resolution: {integrity: sha512-AsuCzffGHJybSaRrmr5eHr81mwJU3kjw6M+uprWvCXiNeN9SOGwQ3Jn8jb8m3Z6izVgknn1R0FTCEAP2QrLY/w==, tarball: https://registry.npmmirror.com/undici-types/-/undici-types-7.18.2.tgz}
 
   unherit@3.0.1:
     resolution: {integrity: sha512-akOOQ/Yln8a2sgcLj4U0Jmx0R5jpIg2IUyRrWOzmEbjBtGzBdHtSeFKgoEcoH4KYIG/Pb8GQ/BwtYm0GCq1Sqg==}
@@ -3841,11 +3867,11 @@ snapshots:
     dependencies:
       prismjs: 1.29.0
 
-  '@astrojs/react@3.3.0(@types/react-dom@18.2.25)(@types/react@18.2.78)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.2.8(@types/node@20.12.8))':
+  '@astrojs/react@3.3.0(@types/react-dom@18.2.25)(@types/react@18.2.78)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(vite@5.2.8(@types/node@25.3.5))':
     dependencies:
       '@types/react': 18.2.78
       '@types/react-dom': 18.2.25
-      '@vitejs/plugin-react': 4.2.1(vite@5.2.8(@types/node@20.12.8))
+      '@vitejs/plugin-react': 4.2.1(vite@5.2.8(@types/node@25.3.5))
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       ultrahtml: 1.5.3
@@ -3863,9 +3889,9 @@ snapshots:
       sitemap: 7.1.1
       zod: 3.22.4
 
-  '@astrojs/tailwind@5.1.0(astro@4.6.1(@types/node@20.12.8)(typescript@5.4.5))(tailwindcss@3.4.3)':
+  '@astrojs/tailwind@5.1.0(astro@4.6.1(@types/node@25.3.5)(typescript@5.4.5))(tailwindcss@3.4.3)':
     dependencies:
-      astro: 4.6.1(@types/node@20.12.8)(typescript@5.4.5)
+      astro: 4.6.1(@types/node@25.3.5)(typescript@5.4.5)
       autoprefixer: 10.4.19(postcss@8.4.38)
       postcss: 8.4.38
       postcss-load-config: 4.0.2(postcss@8.4.38)
@@ -4045,11 +4071,11 @@ snapshots:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  '@commitlint/cli@19.3.0(@types/node@20.12.8)(typescript@5.4.5)':
+  '@commitlint/cli@19.3.0(@types/node@25.3.5)(typescript@5.4.5)':
     dependencies:
       '@commitlint/format': 19.3.0
       '@commitlint/lint': 19.2.2
-      '@commitlint/load': 19.2.0(@types/node@20.12.8)(typescript@5.4.5)
+      '@commitlint/load': 19.2.0(@types/node@25.3.5)(typescript@5.4.5)
       '@commitlint/read': 19.2.1
       '@commitlint/types': 19.0.3
       execa: 8.0.1
@@ -4096,7 +4122,7 @@ snapshots:
       '@commitlint/rules': 19.0.3
       '@commitlint/types': 19.0.3
 
-  '@commitlint/load@19.2.0(@types/node@20.12.8)(typescript@5.4.5)':
+  '@commitlint/load@19.2.0(@types/node@25.3.5)(typescript@5.4.5)':
     dependencies:
       '@commitlint/config-validator': 19.0.3
       '@commitlint/execute-rule': 19.0.0
@@ -4104,7 +4130,7 @@ snapshots:
       '@commitlint/types': 19.0.3
       chalk: 5.3.0
       cosmiconfig: 9.0.0(typescript@5.4.5)
-      cosmiconfig-typescript-loader: 5.0.0(@types/node@20.12.8)(cosmiconfig@9.0.0(typescript@5.4.5))(typescript@5.4.5)
+      cosmiconfig-typescript-loader: 5.0.0(@types/node@25.3.5)(cosmiconfig@9.0.0(typescript@5.4.5))(typescript@5.4.5)
       lodash.isplainobject: 4.0.6
       lodash.merge: 4.6.2
       lodash.uniq: 4.5.0
@@ -4779,7 +4805,7 @@ snapshots:
 
   '@types/conventional-commits-parser@5.0.0':
     dependencies:
-      '@types/node': 20.12.8
+      '@types/node': 25.3.5
 
   '@types/debug@4.1.12':
     dependencies:
@@ -4807,7 +4833,7 @@ snapshots:
 
   '@types/mute-stream@0.0.4':
     dependencies:
-      '@types/node': 20.12.8
+      '@types/node': 25.3.5
 
   '@types/nlcst@1.0.4':
     dependencies:
@@ -4818,6 +4844,12 @@ snapshots:
   '@types/node@20.12.8':
     dependencies:
       undici-types: 5.26.5
+
+  '@types/node@25.3.5':
+    dependencies:
+      undici-types: 7.18.2
+
+  '@types/prismjs@1.26.6': {}
 
   '@types/prop-types@15.7.12': {}
 
@@ -4832,7 +4864,7 @@ snapshots:
 
   '@types/sax@1.2.7':
     dependencies:
-      '@types/node': 17.0.45
+      '@types/node': 25.3.5
 
   '@types/unist@2.0.10': {}
 
@@ -4844,14 +4876,14 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vitejs/plugin-react@4.2.1(vite@5.2.8(@types/node@20.12.8))':
+  '@vitejs/plugin-react@4.2.1(vite@5.2.8(@types/node@25.3.5))':
     dependencies:
       '@babel/core': 7.24.4
       '@babel/plugin-transform-react-jsx-self': 7.24.1(@babel/core@7.24.4)
       '@babel/plugin-transform-react-jsx-source': 7.24.1(@babel/core@7.24.4)
       '@types/babel__core': 7.20.5
       react-refresh: 0.14.0
-      vite: 5.2.8(@types/node@20.12.8)
+      vite: 5.2.8(@types/node@25.3.5)
     transitivePeerDependencies:
       - supports-color
 
@@ -5085,7 +5117,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@4.6.1(@types/node@20.12.8)(typescript@5.4.5):
+  astro@4.6.1(@types/node@25.3.5)(typescript@5.4.5):
     dependencies:
       '@astrojs/compiler': 2.7.1
       '@astrojs/internal-helpers': 0.4.0
@@ -5143,8 +5175,8 @@ snapshots:
       tsconfck: 3.0.3(typescript@5.4.5)
       unist-util-visit: 5.0.0
       vfile: 6.0.1
-      vite: 5.2.8(@types/node@20.12.8)
-      vitefu: 0.2.5(vite@5.2.8(@types/node@20.12.8))
+      vite: 5.2.8(@types/node@25.3.5)
+      vitefu: 0.2.5(vite@5.2.8(@types/node@25.3.5))
       which-pm: 2.1.1
       yargs-parser: 21.1.1
       zod: 3.22.4
@@ -5394,9 +5426,9 @@ snapshots:
 
   cookie@0.6.0: {}
 
-  cosmiconfig-typescript-loader@5.0.0(@types/node@20.12.8)(cosmiconfig@9.0.0(typescript@5.4.5))(typescript@5.4.5):
+  cosmiconfig-typescript-loader@5.0.0(@types/node@25.3.5)(cosmiconfig@9.0.0(typescript@5.4.5))(typescript@5.4.5):
     dependencies:
-      '@types/node': 20.12.8
+      '@types/node': 25.3.5
       cosmiconfig: 9.0.0(typescript@5.4.5)
       jiti: 1.21.0
       typescript: 5.4.5
@@ -6729,6 +6761,12 @@ snapshots:
 
   prettier@3.2.5: {}
 
+  prism-react-renderer@2.4.1(react@18.2.0):
+    dependencies:
+      '@types/prismjs': 1.26.6
+      clsx: 2.1.0
+      react: 18.2.0
+
   prismjs@1.29.0: {}
 
   prompts@2.4.2:
@@ -7221,6 +7259,13 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
+  tailwind-scrollbar@4.0.2(react@18.2.0)(tailwindcss@3.4.3):
+    dependencies:
+      prism-react-renderer: 2.4.1(react@18.2.0)
+      tailwindcss: 3.4.3
+    transitivePeerDependencies:
+      - react
+
   tailwindcss@3.4.3:
     dependencies:
       '@alloc/quick-lru': 5.2.0
@@ -7335,6 +7380,8 @@ snapshots:
   ultrahtml@1.5.3: {}
 
   undici-types@5.26.5: {}
+
+  undici-types@7.18.2: {}
 
   unherit@3.0.1: {}
 
@@ -7476,18 +7523,18 @@ snapshots:
       unist-util-stringify-position: 4.0.0
       vfile-message: 4.0.2
 
-  vite@5.2.8(@types/node@20.12.8):
+  vite@5.2.8(@types/node@25.3.5):
     dependencies:
       esbuild: 0.20.2
       postcss: 8.4.38
       rollup: 4.14.2
     optionalDependencies:
-      '@types/node': 20.12.8
+      '@types/node': 25.3.5
       fsevents: 2.3.3
 
-  vitefu@0.2.5(vite@5.2.8(@types/node@20.12.8)):
+  vitefu@0.2.5(vite@5.2.8(@types/node@25.3.5)):
     optionalDependencies:
-      vite: 5.2.8(@types/node@20.12.8)
+      vite: 5.2.8(@types/node@25.3.5)
 
   volar-service-css@0.0.34(@volar/language-service@2.1.6):
     dependencies:

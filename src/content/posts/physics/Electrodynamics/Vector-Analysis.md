@@ -107,47 +107,47 @@ draft: false
 
 > 关于梯度算符的一些常用性质
 >
-> 1.  梯度：
+> 1. 梯度：
 >
->     $$
->     \begin{align}
->     \nabla(fg)=f\nabla g+g\nabla f
->     \end{align}
->     $$
+>    $$
+>    \begin{align}
+>    \nabla(fg)=f\nabla g+g\nabla f
+>    \end{align}
+>    $$
 >
->     $$
->     \begin{align}
->     \nabla(\boldsymbol{A}\cdot\boldsymbol{B})=\boldsymbol{A}\times(\nabla\times\boldsymbol{B})+\boldsymbol{B}\times(\nabla\times\boldsymbol{A})+(\boldsymbol{A}\cdot\nabla)\boldsymbol{B}+(\boldsymbol{B}\cdot\nabla)\boldsymbol{A}
->     \end{align}
->     $$
+>    $$
+>    \begin{align}
+>    \nabla(\boldsymbol{A}\cdot\boldsymbol{B})=\boldsymbol{A}\times(\nabla\times\boldsymbol{B})+\boldsymbol{B}\times(\nabla\times\boldsymbol{A})+(\boldsymbol{A}\cdot\nabla)\boldsymbol{B}+(\boldsymbol{B}\cdot\nabla)\boldsymbol{A}
+>    \end{align}
+>    $$
 >
-> 2.  散度：
+> 2. 散度：
 >
->     $$
->     \begin{align}
->     \nabla\cdot(f\boldsymbol{A})=f(\nabla\cdot\boldsymbol{A})+\boldsymbol{A}\cdot(\nabla f)
->     \end{align}
->     $$
+>    $$
+>    \begin{align}
+>    \nabla\cdot(f\boldsymbol{A})=f(\nabla\cdot\boldsymbol{A})+\boldsymbol{A}\cdot(\nabla f)
+>    \end{align}
+>    $$
 >
->     $$
->     \begin{align}
->     \nabla\cdot(\boldsymbol{A}\times\boldsymbol{B})=\boldsymbol{B}\cdot(\nabla\times\boldsymbol{A})-\boldsymbol{A}\cdot(\nabla\times\boldsymbol{B})
->     \end{align}
->     $$
+>    $$
+>    \begin{align}
+>    \nabla\cdot(\boldsymbol{A}\times\boldsymbol{B})=\boldsymbol{B}\cdot(\nabla\times\boldsymbol{A})-\boldsymbol{A}\cdot(\nabla\times\boldsymbol{B})
+>    \end{align}
+>    $$
 >
-> 3.  旋度：
+> 3. 旋度：
 >
->     $$
->     \begin{align}
->     \nabla\times(f\boldsymbol{A})=f(\nabla\times\boldsymbol{A})+\boldsymbol{A}\times(\nabla f)
->     \end{align}
->     $$
+>    $$
+>    \begin{align}
+>    \nabla\times(f\boldsymbol{A})=f(\nabla\times\boldsymbol{A})+\boldsymbol{A}\times(\nabla f)
+>    \end{align}
+>    $$
 >
->     $$
->     \begin{align}
->     \nabla\times(\boldsymbol{A}\times\boldsymbol{B})=(\boldsymbol{B}\cdot\nabla)\boldsymbol{A}-(\boldsymbol{A}\cdot\nabla)\boldsymbol{B}+\boldsymbol{A}(\nabla\cdot\boldsymbol{B})-\boldsymbol{B}(\nabla\cdot\boldsymbol{A})
->     \end{align}
->     $$
+>    $$
+>    \begin{align}
+>    \nabla\times(\boldsymbol{A}\times\boldsymbol{B})=(\boldsymbol{B}\cdot\nabla)\boldsymbol{A}-(\boldsymbol{A}\cdot\nabla)\boldsymbol{B}+\boldsymbol{A}(\nabla\cdot\boldsymbol{B})-\boldsymbol{B}(\nabla\cdot\boldsymbol{A})
+>    \end{align}
+>    $$
 
 ### 矢量的积分学
 
@@ -286,7 +286,7 @@ draft: false
 
    ![狄拉克函数示意图](@/image/posts/physics/Electrodynamics/Vector-Analysis/diracfunction.jpg '狄拉克函数示意图')
 
-   #### 一维狄拉克函数的一些性质：
+   #### 一维狄拉克函数的一些性质
 
    - $\int_{-\infty}^{\infty}{f(x)\delta(x-a)\mathrm{d}x}=f(a)$
 
@@ -310,7 +310,7 @@ draft: false
    \end{align}
    $$
 
-   #### 三维狄拉克函数的一些性质：
+   #### 三维狄拉克函数的一些性质
 
    与一维的情形相对应
 

@@ -14,11 +14,9 @@ draft: true
 
 ## 标题
 
-你应该避免在 Markdown 正文中重复创建文章标题，因为文章标题会根据 `frontmatter` 中 `title` 自动生成。
+你应该避免在 Markdown 正文中重复创建一级文章标题，因为文章标题会根据 `frontmatter` 中 `title` 自动生成。
 
 > 避免标题层级过深，一般到三级标题就够了。
-
-# 一级
 
 ## 二级
 
@@ -97,7 +95,7 @@ The blockquote element represents content that is quoted from another source, op
 
 ## 表格
 
-设置单元格对齐
+设置单元格对齐(默认左对齐)
 
 | Name  | Age |  Fruit |
 | :---- | :-: | -----: |
@@ -132,11 +130,58 @@ we can use 3 backticks ``` in new line and write snippet and close with 3 backti
   </head>
   <body>
     <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+    <p>Test</p>
+  </body>
+</html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example HTML5 Document</title>
+  </head>
+  <body>
+    <p>Test</p>
+  </body>
+</html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example HTML5 Document</title>
+  </head>
+  <body>
+    <p>Test</p>
+  </body>
+</html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Example HTML5 Document</title>
+  </head>
+  <body>
+    <p>Test</p>
   </body>
 </html>
 ```
 
-```
+```text
 const var text = "hello world"
 ```
 

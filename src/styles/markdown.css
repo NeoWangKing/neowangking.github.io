@@ -26,14 +26,17 @@
   @apply font-semibold mt-6 mb-2;
 }
 
+/* 链接 */
 .markdown a {
-  @apply font-normal text-accent hover:underline underline-offset-2;
+  @apply font-normal text-accent/75 hover:underline hover:text-accent underline-offset-2;
 }
 
+/* 外部链接图标 */
 .markdown a + .icon-external-link {
   @apply text-secondary ml-1;
 }
 
+/* quote引用 */
 .markdown blockquote {
   @apply my-5 pl-4 border-l-2 border-accent/80 text-secondary italic;
 }
@@ -50,22 +53,27 @@
   @apply mb-0;
 }
 
+/* 行内代码 */
 .markdown :not(pre) > code {
   @apply px-2 py-1 rounded bg-secondary text-sm font-semibold;
 }
 
+/* 代码块背景 */
 .markdown .code-block {
   @apply relative mt-10 mb-5 bg-secondary rounded-xl;
 }
 
+/* 代码语言角标 */
 .markdown .lang-tag {
   @apply absolute left-6 -top-6 h-6 px-4 flex items-center rounded-t-xl bg-inherit text-sm;
 }
 
+/* 代码块 */
 .markdown pre {
-  @apply px-6 py-4 max-h-[450px] text-sm leading-relaxed overflow-auto;
+  @apply px-6 py-4 max-h-[450px] text-sm leading-relaxed overflow-auto scrollbar-thumb-blue-500;
 }
 
+/* table 表格：{ tr: 表格的行, th: 表头单元格, td: 标准单元格 } */
 .markdown .table-wrapper {
   @apply overflow-x-auto my-5;
 }
@@ -75,30 +83,33 @@
 }
 
 .markdown tr {
-  @apply border-b border-primary;
+  @apply border-y border-primary;
+}
+
+.markdown th {
+  @apply border-y-2;
 }
 
 .markdown th,
 .markdown td {
-  @apply p-2;
+  @apply py-2 px-3 align-baseline;
 }
 
-.markdown td {
-  @apply align-baseline;
-}
-
+/* 基础图片 */
 .markdown img {
-  @apply rounded-lg bg-secondary min-h-[80px] min-w-[80px];
+  @apply block rounded-xl bg-secondary min-h-[80px] min-w-[80px];
 }
 
 .markdown figure {
-  @apply mb-5 flex flex-col items-center;
+  @apply mb-4 flex flex-col items-center;
 }
 
+/* 图片标题 */
 .markdown figcaption {
-  @apply mt-3 text-secondary text-sm;
+  @apply mt-3 text-accent/50 text-sm;
 }
 
+/* 标题锚点 */
 .markdown .heading-anchor {
   @apply ml-1 opacity-0 hover:no-underline;
 }
@@ -108,20 +119,23 @@
   @apply opacity-100;
 }
 
+/* 内嵌网页，用于内嵌视频等 */
 .markdown iframe {
-  @apply rounded-lg w-full bg-secondary;
+  @apply rounded-xl w-full bg-secondary;
 }
 
 .markdown iframe.codepen {
   @apply min-h-[450px];
 }
 
+/* 内嵌视频 */
 .markdown iframe.video {
   @apply aspect-video;
 }
 
+/* 水平分割线 */
 .markdown hr {
-  @apply my-12 mx-auto max-w-[100px] border-primary;
+  @apply my-[40px] mx-auto max-w-[500px] border-primary;
 }
 
 .markdown ul {
@@ -144,10 +158,12 @@
   @apply my-3;
 }
 
+/* 隐藏内容 */
 .markdown .spoiler {
   @apply bg-current rounded transition-bg-color not-italic;
 }
 
+/* 鼠标悬停时浮现 */
 .markdown .spoiler:hover {
   @apply bg-transparent;
 }
