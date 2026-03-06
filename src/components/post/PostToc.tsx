@@ -35,7 +35,7 @@ export function PostToc({ headings }: { headings: MarkdownHeading[] }) {
 
   return (
     <ul
-      className="relative overflow-y-auto space-y-2 group text-sm"
+      className="relative overflow-y-auto space-y-2 group text-xs"
       style={{
         maxHeight: 'min(380px, calc(100vh - 250px))',
         scrollbarWidth: 'none',
@@ -98,15 +98,15 @@ export function TocItem({
     <li className="relative" ref={itemRef}>
       <span
         className={clsx(
-          'absolute left-0 top-2 h-1 rounded-full',
-          isActive ? 'bg-accent' : 'bg-zinc-300 dark:bg-zinc-700',
+          'absolute left-0 top-2 h-1 rounded-full transition duration-300',
+          isActive ? 'bg-accent top-1.5 h-1.5' : 'bg-zinc-300 dark:bg-zinc-700',
         )}
         style={{ width: `${barWidth}px` }}
       ></span>
       <a
         className={clsx(
-          'inline-block opacity-0 transition-opacity duration-300',
-          isActive ? 'opacity-100' : 'group-hover:opacity-100 text-zinc-500 hover:text-zinc-900 dark:hover:text-zinc-100',
+          'inline-block opacity-100 transition duration-300',
+          isActive ? 'opacity-100' : 'group-hover:opacity-100 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100',
         )}
         style={{ paddingLeft: `${barWidth+8}px`}}
         href={`#${slug}`}
