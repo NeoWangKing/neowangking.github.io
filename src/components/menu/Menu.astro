@@ -1,0 +1,21 @@
+---
+import SectionBlock from '@/components/SectionBlock.astro'
+import { ReadingProgress } from '@/components/post/ReadingProgress'
+import { PostToc } from '@/components/post/PostToc'
+import type { MarkdownHeading } from 'astro'
+
+interface Props {
+  headings: MarkdownHeading[]
+}
+
+const { headings } = Astro.props
+---
+
+<SectionBlock title="目录">
+  <!-- 文章结构 -->
+  <PostToc headings={headings} client:idle />
+  <!-- 分隔线 -->
+  <hr class="my-2 border-primary max-w-[100px]" />
+  <!-- 阅读进度 -->
+  <ReadingProgress client:idle />
+</SectionBlock>

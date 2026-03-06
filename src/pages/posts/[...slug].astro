@@ -4,16 +4,14 @@ import type { GetStaticPaths } from 'astro'
 import MarkdownLayout from '@/layouts/MarkdownLayout.astro'
 import { getSortedPosts } from '@/utils/content'
 import MarkdownWrapper from '@/components/MarkdownWrapper.astro'
-import SectionBlock from '@/components/SectionBlock.astro'
-import { PostToc } from '@/components/post/PostToc'
 import PostMetaInfo from '@/components/post/PostMetaInfo.astro'
 import PostArchiveInfo from '@/components/post/PostArchiveInfo.astro'
-import { ReadingProgress } from '@/components/post/ReadingProgress'
 import { Outdate } from '@/components/post/Outdate'
 import PostNav from '@/components/post/PostNav.astro'
 import { Comments } from '@/components/comment'
 import { ActionAside } from '@/components/post/ActionAside'
 import { PostCopyright } from '@/components/post/PostCopyright'
+import Menu from '@/components/menu/Menu.astro'
 
 export const getStaticPaths = (async () => {
   const sortedPosts = await getSortedPosts()
@@ -93,14 +91,7 @@ const lastMod = current.data.lastMod || current.data.date
     <!-- 侧边目录栏 -->
     <div class="hidden lg:block">
       <aside class="sticky top-20">
-        <SectionBlock title="目录">
-          <!-- 文章结构 -->
-          <PostToc headings={headings} client:idle />
-          <!-- 分隔线 -->
-          <hr class="my-2 border-primary max-w-[100px]" />
-          <!-- 阅读进度 -->
-          <ReadingProgress client:idle />
-        </SectionBlock>
+        <Menu headings={headings} client:idle />
         <!-- 分享与赞助按钮 -->
         <ActionAside client:idle />
       </aside>

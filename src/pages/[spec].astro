@@ -5,13 +5,11 @@ import { getCollection } from 'astro:content'
 import MarkdownLayout from '@/layouts/MarkdownLayout.astro'
 import PageLayout from '@/layouts/PageLayout.astro'
 import Highlight from '@/components/Highlight.astro'
-import SectionBlock from '@/components/SectionBlock.astro'
 import MarkdownWrapper from '@/components/MarkdownWrapper.astro'
 import FriendList from '@/components/FriendList.astro'
 import ProjectList from '@/components/ProjectList.astro'
-import { ReadingProgress } from '@/components/post/ReadingProgress'
-import { PostToc } from '@/components/post/PostToc'
 import { Comments } from '@/components/comment'
+import Menu from '@/components/menu/Menu.astro'
 
 export const getStaticPaths = (async () => {
   const specList = await getCollection('spec')
@@ -80,11 +78,7 @@ const isMdContentEmpty = md.body.trim().length === 0
         </div>
         <div class="hidden lg:block">
           <aside class="sticky top-20">
-            <SectionBlock title="目录">
-              <PostToc headings={headings} client:idle />
-              <hr class="my-2 border-primary max-w-[100px]" />
-              <ReadingProgress client:idle />
-            </SectionBlock>
+            <Menu headings={headings} client:idle />
           </aside>
         </div>
         {md.data.comments && <Comments />}
