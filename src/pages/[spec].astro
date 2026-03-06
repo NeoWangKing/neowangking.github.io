@@ -9,7 +9,9 @@ import MarkdownWrapper from '@/components/MarkdownWrapper.astro'
 import FriendList from '@/components/FriendList.astro'
 import ProjectList from '@/components/ProjectList.astro'
 import { Comments } from '@/components/comment'
-import Menu from '@/components/menu/Menu.astro'
+import SectionBlock from '@/components/SectionBlock.astro'
+import { PostToc } from '@/components/post/PostToc'
+import { ReadingProgress } from '@/components/post/ReadingProgress'
 
 export const getStaticPaths = (async () => {
   const specList = await getCollection('spec')
@@ -78,7 +80,14 @@ const isMdContentEmpty = md.body.trim().length === 0
         </div>
         <div class="hidden lg:block">
           <aside class="sticky top-20">
-            <Menu headings={headings} client:idle />
+            <SectionBlock title="目录">
+              <!-- 文章结构 -->
+              <PostToc headings={headings} client:idle />
+              <!-- 分隔线 -->
+              <hr class="my-2 border-primary max-w-[100px]" />
+              <!-- 阅读进度 -->
+              <ReadingProgress client:idle />
+            </SectionBlock>
           </aside>
         </div>
         {md.data.comments && <Comments />}
