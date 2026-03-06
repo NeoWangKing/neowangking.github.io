@@ -15,12 +15,12 @@ const { tags, category, class: className } = Astro.props
     <div>
       <i class="iconfont icon-menu" />
       <a
-        class="hover:text-accent hover:underline underline-offset-2 decoration-dashed"
+        class="m-0.5 py-1 px-2 bg-accent/10 rounded-xl hover:text-accent hover:bg-accent/20"
         href={`/categories/${slugify(category[0])}`}
       >
         {category[0]}
       </a> / <a
-        class="hover:text-accent hover:underline underline-offset-2 decoration-dashed"
+        class="m-0.5 py-1 px-2 bg-accent/10 rounded-xl hover:text-accent hover:bg-accent/20"
         href={`/categories/${slugify(category.join('/'))}`}
       >
         {category[1]}
@@ -33,9 +33,8 @@ const { tags, category, class: className } = Astro.props
         <i class="iconfont icon-hashtag" />
         {tags.map((tag, index) => (
           <>
-            {index > 0 && <span>, </span>}
             <a
-              class="hover:text-accent hover:underline underline-offset-2 decoration-dashed"
+              class="m-0.5 py-1 px-2 bg-accent/10 rounded-xl hover:text-accent hover:bg-accent/20"
               href={`/tags/${slugify(tag)}`}
             >
               {tag}

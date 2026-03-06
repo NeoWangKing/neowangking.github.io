@@ -4,8 +4,8 @@ import { waline } from '@/config.json'
 import SectionBlock from '@/components/SectionBlock.astro'
 ---
 
-<div>
-  <SectionBlock title="评论区">
+<div class="p-4 border border-accent/20 rounded-xl">
+  <SectionBlock>
     {waline.serverURL && <Waline {...waline} client:visible />}
   </SectionBlock>
 </div>

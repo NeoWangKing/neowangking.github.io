@@ -34,15 +34,12 @@ export function PostCopyright({
   }, [lastMod])
 
   return (
-    <section className="text-xs leading-loose text-secondary">
+    <section className="text-xs py-4 px-5 leading-loose text-secondary bg-accent/10 rounded-lg">
       <p>文章标题：{title}</p>
       <p>文章作者：{author}</p>
       <p>文章概要：{summary}</p>
       <p>
-        <span>文章链接：{url}</span>
-        <span role="button" className="cursor-pointer select-none" onClick={handleCopyUrl}>
-          [复制]
-        </span>
+        <span role="button" className="cursor-pointer select-none" onClick={handleCopyUrl}>文章链接：{url}[复制]</span>
       </p>
       <p>上次修改：{lastModStr}</p>
       <hr className="my-3 border-primary" />
@@ -55,7 +52,7 @@ export function PostCopyright({
           <br />
           本文采用
           <a
-            className="hover:underline hover:text-accent underline-offset-2"
+            className="text-accent/80 hover:underline hover:text-accent underline-offset-2"
             href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh"
             target="_blank"
             rel="noopener noreferrer"

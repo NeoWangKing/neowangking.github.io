@@ -23,13 +23,15 @@ function BackToTop() {
 
   return (
     <motion.button
-      className="size-10 rounded-full shadow-lg shadow-zinc-800/5 border border-primary bg-white/50 dark:bg-zinc-800/50 backdrop-blur animate-bounce"
+      className="size-10 rounded-full shadow-lg shadow-zinc-800/5 border border-primary bg-white/50 dark:bg-zinc-800/50 backdrop-blur"
       type="button"
       aria-label="Back to top"
       onClick={handleBackToTop}
       initial={{ opacity: 0, scale: 0 }}
       animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0 }}
+      exit={{ opacity: 0, scale: 0, y: -50 }}
+      whileHover={{ scale: 1.2 }}
+      whileTap={{ scale: 0.8  }}
     >
       <i className="iconfont icon-rocket"></i>
     </motion.button>
