@@ -98,15 +98,15 @@ export function TocItem({
     <li className="relative" ref={itemRef}>
       <span
         className={clsx(
-          'absolute left-0 top-2 h-1 rounded-full transition duration-300',
-          isActive ? 'bg-accent top-1.5 h-1.5' : 'bg-zinc-300 dark:bg-zinc-700',
+          'absolute left-0 top-2 h-1 rounded-full transition duration-100 transition-top duration-500 transition-h duration-500',
+          isActive ? 'bg-accent top-2 h-1.5' : 'bg-zinc-300 dark:bg-zinc-700',
         )}
         style={{ width: `${barWidth}px` }}
       ></span>
       <a
         className={clsx(
-          'inline-block opacity-100 transition duration-300',
-          isActive ? 'opacity-100' : 'group-hover:opacity-100 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100',
+          'inline-block opacity-100 transition duration-100',
+          isActive ? 'opacity-100 text-accent text-sm' : 'group-hover:opacity-100 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100',
         )}
         style={{ paddingLeft: `${barWidth+8}px`}}
         href={`#${slug}`}
