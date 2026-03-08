@@ -109,7 +109,7 @@ const lastMod = current.data.lastMod || current.data.date
     <div>
       <section class="space-y-6">
         <!-- 版权声明 -->
-        <PostCopyright title={current.data.title} slug={mdSlug} author={current.data.author}  summary= {current.data.summary} lastMod={lastMod} client:visible />
+        <PostCopyright title={current.data.title} slug={mdSlug} author={current.data.author}  summary={current.data.summary} lastMod={lastMod} exSlug={current.data.exSlug} client:visible />
         <!-- 相邻文章跳转 -->
         <PostNav prev={prev} next={next} />
         <!-- 评论模块 -->

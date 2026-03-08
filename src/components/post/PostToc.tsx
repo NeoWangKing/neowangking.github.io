@@ -98,7 +98,7 @@ export function TocItem({
     <li className="relative" ref={itemRef}>
       <span
         className={clsx(
-          'absolute left-0 top-2 h-1 rounded-full transition duration-100 transition-top duration-500 transition-h duration-500',
+          'absolute left-0 top-2 h-1 rounded-full transition duration-500 transition-top transition-h',
           isActive ? 'bg-accent top-2 h-1.5' : 'bg-zinc-300 dark:bg-zinc-700',
         )}
         style={{ width: `${barWidth}px` }}

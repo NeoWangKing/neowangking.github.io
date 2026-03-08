@@ -254,6 +254,7 @@ draft: false
      $$
 
    - 拉普拉斯算符：
+
      $$
      \begin{align}
      \nabla^{2}T=\frac{1}{s}\frac{\partial}{\partial s}\left(s\frac{\partial T}{\partial s}\right)+\frac{1}{s^{2}}\frac{\partial^{2}T}{\partial\phi^{2}}+\frac{\partial^{2}T}{\partial z^{2}}

@@ -14,6 +14,7 @@ const postsCollection = defineCollection({
     comments: z.boolean().default(false),
     draft: z.boolean().default(false),
     sticky: z.number().default(0),
+    exSlug: z.string().optional(),
   }),
 })
 

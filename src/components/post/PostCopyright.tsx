@@ -14,12 +14,14 @@ export function PostCopyright({
   author,
   summary,
   lastMod,
+  exSlug,
 }: {
   title: string
   slug: string
   author: string
   summary: string
   lastMod: Date
+  exSlug?: string
 }) {
   const [lastModStr, setLastModStr] = useState('')
   const url = getPostUrl(slug)
@@ -38,6 +40,13 @@ export function PostCopyright({
       <p>文章标题：{title}</p>
       <p>文章作者：{author}</p>
       <p>文章概要：{summary}</p>
+      {exSlug && <p>原文链接：
+          <a 
+            className="cursor-pointer select-none hover:underline hover:text-accent/80 underline-offset-2 transition duration-300"
+            href={exSlug}
+            target='_blank'
+          >{exSlug}[点击跳转]</a>
+        </p>}
       <p>文章链接：
         <span 
           role="button"
@@ -45,6 +54,7 @@ export function PostCopyright({
           onClick={handleCopyUrl}
         >{url}[点击复制]</span>
       </p>
+      
       <p>上次修改：{lastModStr}</p>
       <hr className="my-3 border-primary" />
       <div>
