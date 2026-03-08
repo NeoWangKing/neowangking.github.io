@@ -3,7 +3,7 @@ title: 复变函数论（2）：复变函数的积分
 author: NeoWangKing
 date: 2026-03-01
 lastMod: 2026-03-01
-tags: [数学, 物理, 学科交叉, 复变函数]
+tags: [数学, 物理, 复变函数, 积分学]
 category: ['数学', '复变函数论']
 summary: 这是我在学习 复变函数论 过程中的笔记
 comments: true
