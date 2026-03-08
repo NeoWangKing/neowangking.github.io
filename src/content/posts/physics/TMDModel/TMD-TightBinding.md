@@ -1,8 +1,8 @@
 ---
 title: 单层 TMD 材料的三能带紧束缚模型构建
 author: NeoWangKing
-date: 2026-03-09
-lastMod: 2026-03-10
+date: 2026-03-09T16:00:00.000Z
+lastMod: 2026-03-10T16:00:00.000Z
 tags: [物理, 固体物理, TMD, TMDs, Python, 紧束缚模型]
 category: ['物理', '固体物理']
 summary: 这是我在准备课题 单层 TMD 材料的三能带紧束缚模型构建 中的开题报告时整理的一些记录

@@ -18,7 +18,7 @@ draft: false
 
 $$
 \begin{align}
-f(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos n\omega t + b_n \sin n\omega t \right),
+f(t) = \frac{a_0}{2} + \sum_{n=1}^{\infty} \left( a_n \cos n\omega t + b_n \sin n\omega t \right)
 \end{align}
 $$
 
@@ -26,8 +26,8 @@ $$
 
 $$
 \begin{align}
-a_n &= \frac{2}{T} \int_{t_0}^{t_0+T} f(t) \cos n\omega t \, dt, \quad n=0,1,2,\dots, \\
-b_n &= \frac{2}{T} \int_{t_0}^{t_0+T} f(t) \sin n\omega t \, dt, \quad n=1,2,\dots.
+a_n &= \frac{2}{T} \int_{t_0}^{t_0+T} f(t) \cos n\omega t \, dt, \quad n=0,1,2,\dots \\
+b_n &= \frac{2}{T} \int_{t_0}^{t_0+T} f(t) \sin n\omega t \, dt, \quad n=1,2,\dots
 \end{align}
 $$
 
@@ -37,7 +37,7 @@ $$
 
 $$
 \begin{align}
-f(t) = \sum_{n=-\infty}^{\infty} c_n e^{\mathrm{i} n\omega t},
+f(t) = \sum_{n=-\infty}^{\infty} c_n e^{\mathrm{i} n\omega t}
 \end{align}
 $$
 
@@ -45,7 +45,7 @@ $$
 
 $$
 \begin{align}
-c_n = \frac{1}{T} \int_{t_0}^{t_0+T} f(t) e^{-\mathrm{i} n\omega t} \, dt.
+c_n = \frac{1}{T} \int_{t_0}^{t_0+T} f(t) e^{-\mathrm{i} n\omega t} \, dt
 \end{align}
 $$
 
@@ -63,7 +63,7 @@ $$
 
 $$
 \begin{align}
-f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(\omega) e^{\mathrm{i} \omega t} \, d\omega,
+f(t) = \frac{1}{2\pi} \int_{-\infty}^{\infty} F(\omega) e^{\mathrm{i} \omega t} \, d\omega
 \end{align}
 $$
 
@@ -71,7 +71,7 @@ $$
 
 $$
 \begin{align}
-F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-\mathrm{i} \omega t} \, dt.
+F(\omega) = \int_{-\infty}^{\infty} f(t) e^{-\mathrm{i} \omega t} \, dt
 \end{align}
 $$
 
@@ -79,7 +79,7 @@ $$
 
 $$
 \begin{align}
-F(\omega) = \mathcal{F}[f(t)], \quad f(t) = \mathcal{F}^{-1}[F(\omega)].
+F(\omega) = \mathcal{F}[f(t)], \quad f(t) = \mathcal{F}^{-1}[F(\omega)]
 \end{align}
 $$
 
@@ -110,7 +110,7 @@ $\delta$ 函数（Dirac delta 函数）不是普通函数，而是一种广义�
 
 $$
 \begin{align}
-\int_{-\infty}^{\infty} \delta(t) f(t) \, dt = f(0).
+\int_{-\infty}^{\infty} \delta(t) f(t) \, dt = f(0)
 \end{align}
 $$
 
@@ -118,7 +118,7 @@ $$
 
 $$
 \begin{align}
-\int_{-\infty}^{\infty} \delta(t-t_0) f(t) \, dt = f(t_0).
+\int_{-\infty}^{\infty} \delta(t-t_0) f(t) \, dt = f(t_0)
 \end{align}
 $$
 
@@ -135,7 +135,7 @@ $\delta$ 函数的傅里叶变换为
 
 $$
 \begin{align}
-\mathcal{F}[\delta(t)] = \int_{-\infty}^{\infty} \delta(t) e^{-\mathrm{i}\omega t} dt = 1.
+\mathcal{F}[\delta(t)] = \int_{-\infty}^{\infty} \delta(t) e^{-\mathrm{i}\omega t} dt = 1
 \end{align}
 $$
 
@@ -143,7 +143,7 @@ $$
 
 $$
 \begin{align}
-\mathcal{F}^{-1}[1] = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{\mathrm{i}\omega t} d\omega = \delta(t).
+\mathcal{F}^{-1}[1] = \frac{1}{2\pi} \int_{-\infty}^{\infty} e^{\mathrm{i}\omega t} d\omega = \delta(t)
 \end{align}
 $$
 
@@ -151,7 +151,7 @@ $$
 
 $$
 \begin{align}
-\mathcal{F}\left[\sum_{n=-\infty}^{\infty} c_n e^{\mathrm{i} n\omega_0 t}\right] = 2\pi \sum_{n=-\infty}^{\infty} c_n \delta(\omega - n\omega_0).
+\mathcal{F}\left[\sum_{n=-\infty}^{\infty} c_n e^{\mathrm{i} n\omega_0 t}\right] = 2\pi \sum_{n=-\infty}^{\infty} c_n \delta(\omega - n\omega_0)
 \end{align}
 $$
 

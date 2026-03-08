@@ -18,7 +18,7 @@ draft: false
 
 $$
 \begin{align}
-F(s) = \mathcal{L}[f(t)] = \int_0^{\infty} f(t) e^{-st} \, dt, \quad s = \sigma + \mathrm{i}\omega,
+F(s) = \mathcal{L}[f(t)] = \int_0^{\infty} f(t) e^{-st} \, dt, \quad s = \sigma + \mathrm{i}\omega
 \end{align}
 $$
 
@@ -66,7 +66,7 @@ $$
 
 $$
 \begin{align}
-f(t) = \frac{1}{2\pi \mathrm{i}} \int_{\sigma - \mathrm{i}\infty}^{\sigma + \mathrm{i}\infty} F(s) e^{st} \, ds, \quad t>0,
+f(t) = \frac{1}{2\pi \mathrm{i}} \int_{\sigma - \mathrm{i}\infty}^{\sigma + \mathrm{i}\infty} F(s) e^{st} \, ds, \quad t>0
 \end{align}
 $$
 
@@ -78,7 +78,7 @@ $$
 
 $$
 \begin{align}
-f(t) = \sum_{\text{所有奇点 } s_k} \mathrm{Res}\left[ F(s) e^{st}, s_k \right], \quad t>0,
+f(t) = \sum_{\text{所有奇点 } s_k} \mathrm{Res}\left[ F(s) e^{st}, s_k \right], \quad t>0
 \end{align}
 $$
 
@@ -102,7 +102,7 @@ $$
 
 $$
 \begin{align}
-[sY(s) - y(0)] + Y(s) = \frac{1}{s+1}.
+[sY(s) - y(0)] + Y(s) = \frac{1}{s+1}
 \end{align}
 $$
 
@@ -110,7 +110,7 @@ $$
 
 $$
 \begin{align}
-Y(s) = \frac{1}{(s+1)^2}.
+Y(s) = \frac{1}{(s+1)^2}
 \end{align}
 $$
 
@@ -118,7 +118,7 @@ $$
 
 $$
 \begin{align}
-y(t) = t e^{-t}, \quad t \ge 0.
+y(t) = t e^{-t}, \quad t \ge 0
 \end{align}
 $$
 
@@ -128,7 +128,7 @@ $$
 
 $$
 \begin{align}
-L i''(t) + R i'(t) + \frac{1}{C} i(t) = u'(t),
+L i''(t) + R i'(t) + \frac{1}{C} i(t) = u'(t)
 \end{align}
 $$
 
@@ -136,7 +136,7 @@ $$
 
 $$
 \begin{align}
-(L s^2 + R s + \frac{1}{C}) I(s) = 1.
+(L s^2 + R s + \frac{1}{C}) I(s) = 1
 \end{align}
 $$
 
@@ -144,7 +144,7 @@ $$
 
 $$
 \begin{align}
-I(s) = \frac{1}{L s^2 + R s + 1/C}.
+I(s) = \frac{1}{L s^2 + R s + 1/C}
 \end{align}
 $$
 
@@ -156,7 +156,7 @@ $$
 
 $$
 \begin{align}
-\frac{\partial u}{\partial t} = a^2 \frac{\partial^2 u}{\partial x^2}, \quad x>0, t>0,
+\frac{\partial u}{\partial t} = a^2 \frac{\partial^2 u}{\partial x^2}, \quad x>0, t>0
 \end{align}
 $$
 
@@ -166,7 +166,7 @@ $$
 
 $$
 \begin{align}
-sU(x,s) = a^2 \frac{\partial^2 U}{\partial x^2}.
+sU(x,s) = a^2 \frac{\partial^2 U}{\partial x^2}
 \end{align}
 $$
 
@@ -174,7 +174,7 @@ $$
 
 $$
 \begin{align}
-U(x,s) = F(s) e^{-\sqrt{s}x/a}.
+U(x,s) = F(s) e^{-\sqrt{s}x/a}
 \end{align}
 $$
 
@@ -182,7 +182,7 @@ $$
 
 $$
 \begin{align}
-u(x,t) = f(t) * \mathcal{L}^{-1}\left[ e^{-\sqrt{s}x/a} \right].
+u(x,t) = f(t) * \mathcal{L}^{-1}\left[ e^{-\sqrt{s}x/a} \right]
 \end{align}
 $$
 
@@ -190,7 +190,7 @@ $$
 
 $$
 \begin{align}
-u(x,t) = \int_0^t f(t-\tau) \frac{x}{2a\sqrt{\pi \tau^{3/2}}} e^{-x^2/(4a^2 \tau)} \, d\tau.
+u(x,t) = \int_0^t f(t-\tau) \frac{x}{2a\sqrt{\pi \tau^{3/2}}} e^{-x^2/(4a^2 \tau)} \, d\tau
 \end{align}
 $$
 

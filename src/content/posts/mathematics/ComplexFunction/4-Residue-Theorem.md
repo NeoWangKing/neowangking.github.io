@@ -1,7 +1,7 @@
 ---
 title: 复变函数论（4）：留数定理
 author: NeoWangKing
-date: 2026-03-09
+date: 2026-03-09T23:30:00.000Z
 lastMod: 2026-03-09T23:30:00.000Z
 tags: [数学, 复变函数, 留数定理, 实积分]
 category: ['数学', '复变函数论']
@@ -18,7 +18,7 @@ draft: false
 
 $$
 \begin{align}
-f(z) = \sum_{n=-\infty}^{\infty} c_n (z - z_0)^n.
+f(z) = \sum_{n=-\infty}^{\infty} c_n (z - z_0)^n
 \end{align}
 $$
 
@@ -40,7 +40,7 @@ $$
 
 $$
 \begin{align}
-\oint_C f(z) \, dz = 2\pi \mathrm{i} \sum_{k=1}^{n} \mathrm{Res}[f, z_k].
+\oint_C f(z) \, dz = 2\pi \mathrm{i} \sum_{k=1}^{n} \mathrm{Res}[f, z_k]
 \end{align}
 $$
 
@@ -55,7 +55,7 @@ $$
 
   $$
   \begin{align}
-  \mathrm{Res}[f, z_0] = \lim_{z\to z_0} (z - z_0) f(z).
+  \mathrm{Res}[f, z_0] = \lim_{z\to z_0} (z - z_0) f(z)
   \end{align}
   $$
 
@@ -63,7 +63,7 @@ $$
 
   $$
   \begin{align}
-  \mathrm{Res}[f, z_0] = \frac{P(z_0)}{Q'(z_0)}.
+  \mathrm{Res}[f, z_0] = \frac{P(z_0)}{Q'(z_0)}
   \end{align}
   $$
 
@@ -71,7 +71,7 @@ $$
 
   $$
   \begin{align}
-  \mathrm{Res}[f, z_0] = \frac{1}{(m-1)!} \lim_{z\to z_0} \frac{d^{m-1}}{dz^{m-1}} \left[ (z - z_0)^m f(z) \right].
+  \mathrm{Res}[f, z_0] = \frac{1}{(m-1)!} \lim_{z\to z_0} \frac{d^{m-1}}{dz^{m-1}} \left[ (z - z_0)^m f(z) \right]
   \end{align}
   $$
 
@@ -109,7 +109,7 @@ $$
 
 $$
 \begin{align}
-\int_{-\infty}^{\infty} R(x) e^{\mathrm{i} a x} \, dx = 2\pi \mathrm{i} \sum_{\text{上半平面}} \mathrm{Res}\left[ R(z) e^{\mathrm{i} a z}, z_k \right].
+\int_{-\infty}^{\infty} R(x) e^{\mathrm{i} a x} \, dx = 2\pi \mathrm{i} \sum_{\text{上半平面}} \mathrm{Res}\left[ R(z) e^{\mathrm{i} a z}, z_k \right]
 \end{align}
 $$
 
@@ -121,7 +121,7 @@ $$
 
 $$
 \begin{align}
-\mathrm{P.V.} \int_{-\infty}^{\infty} R(x) e^{\mathrm{i} a x} \, dx = \pi \mathrm{i} \sum_{\text{实轴上极点}} \mathrm{Res} + 2\pi \mathrm{i} \sum_{\text{上半平面}} \mathrm{Res}.
+\mathrm{P.V.} \int_{-\infty}^{\infty} R(x) e^{\mathrm{i} a x} \, dx = \pi \mathrm{i} \sum_{\text{实轴上极点}} \mathrm{Res} + 2\pi \mathrm{i} \sum_{\text{上半平面}} \mathrm{Res}
 \end{align}
 $$
 
@@ -136,7 +136,7 @@ $$
 $$
 \begin{align}
 I = \oint_{|z|=1} \frac{1}{a + \frac{z+z^{-1}}{2}} \frac{dz}{\mathrm{i}z}
-= \frac{2}{\mathrm{i}} \oint_{|z|=1} \frac{dz}{z^2 + 2a z + 1}.
+= \frac{2}{\mathrm{i}} \oint_{|z|=1} \frac{dz}{z^2 + 2a z + 1}
 \end{align}
 $$
 
@@ -144,7 +144,7 @@ $$
 
 $$
 \begin{align}
-I = \frac{2}{\mathrm{i}} \cdot 2\pi \mathrm{i} \, \mathrm{Res}\left[ \frac{1}{z^2+2a z+1}, z_1 \right] = 4\pi \cdot \frac{1}{2z_1+2a}.
+I = \frac{2}{\mathrm{i}} \cdot 2\pi \mathrm{i} \, \mathrm{Res}\left[ \frac{1}{z^2+2a z+1}, z_1 \right] = 4\pi \cdot \frac{1}{2z_1+2a}
 \end{align}
 $$
 
@@ -152,7 +152,7 @@ $$
 
 $$
 \begin{align}
-I = \frac{2\pi}{\sqrt{a^2-1}}.
+I = \frac{2\pi}{\sqrt{a^2-1}}
 \end{align}
 $$
 
@@ -164,13 +164,14 @@ $$
 
 $$
 \begin{align}
-\mathrm{Res}\left[ \frac{1}{(z^2+1)(z^2+4)}, \mathrm{i} \right] = \lim_{z\to \mathrm{i}} \frac{z-\mathrm{i}}{(z-\mathrm{i})(z+\mathrm{i})(z^2+4)} = \frac{1}{(2\mathrm{i})(-1+4)} = \frac{1}{6\mathrm{i}}.
+\mathrm{Res}\left[ \frac{1}{(z^2+1)(z^2+4)}, \mathrm{i} \right] = \lim_{z\to \mathrm{i}} \frac{z-\mathrm{i}}{(z-\mathrm{i})(z+\mathrm{i})(z^2+4)} = \frac{1}{(2\mathrm{i})(-1+4)} = \frac{1}{6\mathrm{i}}
 \end{align}
 $$
 
 $$
 \begin{align}
-\mathrm{Res}\left[ \frac{1}{(z^2+1)(z^2+4)}, 2\mathrm{i} \right] = \lim_{z\to 2\mathrm{i}} \frac{z-2\mathrm{i}}{(z^2+1)(z-2\mathrm{i})(z+2\mathrm{i})} = \frac{1}{((-4)+1)(4\mathrm{i})} = \frac{1}{-3\cdot 4\mathrm{i}} = -\frac{1}{12\mathrm{i}}.
+\mathrm{Res}\left[ \frac{1}{(z^2+1)(z^2+4)}, 2\mathrm{i} \right] &= \lim_{z\to 2\mathrm{i}} \frac{z-2\mathrm{i}}{(z^2+1)(z-2\mathrm{i})(z+2\mathrm{i})} = \frac{1}{((-4)+1)(4\mathrm{i})}\\
+&= \frac{1}{-3\cdot 4\mathrm{i}} = -\frac{1}{12\mathrm{i}}
 \end{align}
 $$
 
@@ -178,7 +179,7 @@ $$
 
 $$
 \begin{align}
-I = 2\pi \mathrm{i} \left( \frac{1}{6\mathrm{i}} - \frac{1}{12\mathrm{i}} \right) = 2\pi \mathrm{i} \cdot \frac{1}{12\mathrm{i}} = \frac{\pi}{6}.
+I = 2\pi \mathrm{i} \left( \frac{1}{6\mathrm{i}} - \frac{1}{12\mathrm{i}} \right) = 2\pi \mathrm{i} \cdot \frac{1}{12\mathrm{i}} = \frac{\pi}{6}
 \end{align}
 $$
 
@@ -190,7 +191,7 @@ $$
 
 $$
 \begin{align}
-\mathrm{Res}\left[ \frac{e^{\mathrm{i} z}}{z^2+1}, \mathrm{i} \right] = \frac{e^{\mathrm{i} \cdot \mathrm{i}}}{2\mathrm{i}} = \frac{e^{-1}}{2\mathrm{i}}.
+\mathrm{Res}\left[ \frac{e^{\mathrm{i} z}}{z^2+1}, \mathrm{i} \right] = \frac{e^{\mathrm{i} \cdot \mathrm{i}}}{2\mathrm{i}} = \frac{e^{-1}}{2\mathrm{i}}
 \end{align}
 $$
 
@@ -198,7 +199,7 @@ $$
 
 $$
 \begin{align}
-J = 2\pi \mathrm{i} \cdot \frac{e^{-1}}{2\mathrm{i}} = \pi e^{-1}.
+J = 2\pi \mathrm{i} \cdot \frac{e^{-1}}{2\mathrm{i}} = \pi e^{-1}
 \end{align}
 $$
 
