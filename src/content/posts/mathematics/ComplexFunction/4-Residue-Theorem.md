@@ -1,8 +1,8 @@
 ---
 title: 复变函数论（4）：留数定理
 author: NeoWangKing
-date: 2026-03-09T19:00:00.000Z
-lastMod: 2026-03-09T19:00:00.000Z
+date: 2026-03-09
+lastMod: 2026-03-09T23:30:00.000Z
 tags: [数学, 复变函数, 留数定理, 实积分]
 category: ['数学', '复变函数论']
 summary: 留数定理是复变函数中计算围道积分的强有力工具，并能应用于计算某些实变函数的定积分。本文介绍留数定理及其在实积分计算中的典型应用，辅以具体例子。
@@ -79,9 +79,9 @@ $$
 
 留数定理的核心应用之一是计算某些实变函数的定积分，特别是广义积分。基本思路是将实积分转化为复平面上的围道积分，然后利用留数定理计算。常见的积分类型及处理方法如下。
 
-### 类型一：$\int_{0}^{2\pi} R(\cos\theta, \sin\theta) \, d\theta$
+### 类型一：三角函数有理式的积分
 
-其中 $R$ 是 $\cos\theta, \sin\theta$ 的有理函数。令 $z = e^{\mathrm{i}\theta}$，则 $d\theta = \frac{dz}{\mathrm{i}z}$，$\cos\theta = \frac{z + z^{-1}}{2}$，$\sin\theta = \frac{z - z^{-1}}{2\mathrm{i}}$，积分变为单位圆上的围道积分：
+考虑形如 $\int_{0}^{2\pi} R(\cos\theta, \sin\theta) \, d\theta$ 的积分，其中 $R$ 是 $\cos\theta, \sin\theta$ 的有理函数。令 $z = e^{\mathrm{i}\theta}$，则 $d\theta = \frac{dz}{\mathrm{i}z}$，$\cos\theta = \frac{z + z^{-1}}{2}$，$\sin\theta = \frac{z - z^{-1}}{2\mathrm{i}}$，积分变为单位圆上的围道积分：
 
 $$
 \begin{align}
@@ -91,9 +91,9 @@ $$
 
 其中 $F(z)$ 是 $z$ 的有理函数。然后计算单位圆内所有奇点的留数和，乘以 $2\pi$ 即得结果。
 
-### 类型二：$\int_{-\infty}^{\infty} R(x) \, dx$（有理函数的无穷积分）
+### 类型二：有理函数的无穷积分
 
-设 $R(x) = P(x)/Q(x)$，其中 $P,Q$ 为多项式，分母次数至少比分子高两次，且分母无实零点。则
+考虑形如 $\int_{-\infty}^{\infty} R(x) \, dx$ 的积分，其中 $R(x) = P(x)/Q(x)$，$P,Q$ 为多项式，分母次数至少比分子高两次，且分母无实零点。则
 
 $$
 \begin{align}
@@ -101,11 +101,11 @@ $$
 \end{align}
 $$
 
-其中求和取上半平面内的所有孤立奇点（通常是极点）。证明采用上半圆围道，利用约当引理或大圆弧引理可得。
+其中求和取上半平面内的所有孤立奇点（通常是极点）。证明采用上半圆围道，利用大圆弧引理可得。
 
-### 类型三：$\int_{-\infty}^{\infty} R(x) e^{\mathrm{i} a x} \, dx$（含三角函数的无穷积分）
+### 类型三：含三角函数的无穷积分
 
-设 $a>0$，$R(x)$ 为有理函数，分母次数高于分子次数，且分母无实零点。则
+考虑形如 $\int_{-\infty}^{\infty} R(x) e^{\mathrm{i} a x} \, dx$ 的积分，其中 $a>0$，$R(x)$ 为有理函数，分母次数高于分子次数，且分母无实零点。则
 
 $$
 \begin{align}
@@ -127,7 +127,9 @@ $$
 
 ## 计算定积分的一些例子
 
-### 例1：计算 $I = \int_{0}^{2\pi} \frac{d\theta}{a + \cos\theta}$（$a>1$）
+### 例1：计算一个三角函数有理式的积分（$a>1$）
+
+计算 $I = \int_{0}^{2\pi} \frac{d\theta}{a + \cos\theta}$，其中 $a>1$。
 
 解：令 $z = e^{\mathrm{i}\theta}$，则 $\cos\theta = \frac{z+z^{-1}}{2}$，$d\theta = dz/(\mathrm{i}z)$，积分化为
 
@@ -154,7 +156,9 @@ I = \frac{2\pi}{\sqrt{a^2-1}}.
 \end{align}
 $$
 
-### 例2：计算 $I = \int_{-\infty}^{\infty} \frac{dx}{(x^2+1)(x^2+4)}$
+### 例2：计算一个有理函数的无穷积分
+
+计算 $I = \int_{-\infty}^{\infty} \frac{dx}{(x^2+1)(x^2+4)}$。
 
 解：被积函数是有理函数，分母次数比分子高 $4$，满足类型二条件。上半平面内的奇点为 $z = \mathrm{i}$（一阶极点）和 $z = 2\mathrm{i}$（一阶极点？注意分母 $(z^2+1)(z^2+4) = (z-\mathrm{i})(z+\mathrm{i})(z-2\mathrm{i})(z+2\mathrm{i})$，所以 $z=\mathrm{i},2\mathrm{i}$ 均为单极点）。计算留数：
 
@@ -178,7 +182,9 @@ I = 2\pi \mathrm{i} \left( \frac{1}{6\mathrm{i}} - \frac{1}{12\mathrm{i}} \right
 \end{align}
 $$
 
-### 例3：计算 $I = \int_{-\infty}^{\infty} \frac{\cos x}{x^2 + 1} \, dx$
+### 例3：计算一个含三角函数的无穷积分
+
+计算 $I = \int_{-\infty}^{\infty} \frac{\cos x}{x^2 + 1} \, dx$。
 
 解：考虑 $J = \int_{-\infty}^{\infty} \frac{e^{\mathrm{i} x}}{x^2 + 1} \, dx$，则 $I = \mathrm{Re}\, J$。被积函数满足类型三（$a=1$），上半平面奇点为 $z = \mathrm{i}$（单极点）。计算留数：
 
