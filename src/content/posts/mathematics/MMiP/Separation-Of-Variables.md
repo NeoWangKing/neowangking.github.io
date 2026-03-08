@@ -1,5 +1,5 @@
 ---
-title: 数学物理方法（8）：分离变量法
+title: 数理方法（2）：分离变量法
 author: NeoWangKing
 date: 2026-03-09T17:00:00.000Z
 lastMod: 2026-03-09T17:00:00.000Z
