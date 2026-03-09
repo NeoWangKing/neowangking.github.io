@@ -2,10 +2,15 @@
 interface Props {
   current: number
   total: number
-  getPageUrl: (page: number) => string
 }
 
-const { current, total, getPageUrl } = Astro.props
+const { current, total } = Astro.props
+
+//获取页面的跳转链接
+const getPageUrl = (page: number) => {
+  if (page === 1) return '/#post'
+  return `/page/${page}#post`
+}
 
 const items = []
 if (current > 1) items.push({ isButton: true, page: current - 1, icon: 'left', label: '上一页' })

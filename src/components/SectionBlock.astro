@@ -1,13 +1,14 @@
 ---
 interface Props {
   title?: string
+  id?: string
   style?: string
 }
 
-const { title, style = "mt-4 mb-8 font-bold uppercase tracking-widest text-accent" } = Astro.props
+const { title, id = "section", style = "mt-4 mb-8 font-bold uppercase tracking-widest text-accent" } = Astro.props
 ---
 
-<section>
+<section id={id}>
   {title && <div class={style}>{title}</div>}
   <slot />
 </section>

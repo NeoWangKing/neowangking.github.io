@@ -40,23 +40,17 @@ interface Props {
 }
 
 const { currentPage, totalPage, data } = Astro.props
-
-//获取页面的跳转链接
-const getPageUrl = (page: number) => {
-  if (page === 1) return '/'
-  return `/page/${page}`
-}
 ---
 
 <MainPageLayout currentPage={currentPage}>
   <!-- 列出所有文章 -->
-  <div class="min-w-0">
+  <div class="min-w-0" id="post">
     <SectionBlock title="最新发布">
       <PostList posts={data} />
       {
         // 如果总页数大于 1 就显示翻页组件
         totalPage > 1 && (
-          <PostPagination current={currentPage} total={totalPage} getPageUrl={getPageUrl} />
+          <PostPagination current={currentPage} total={totalPage} />
         )
       }
     </SectionBlock>
