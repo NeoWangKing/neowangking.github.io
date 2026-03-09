@@ -179,3 +179,14 @@
 .markdown h4 + * {
   @apply mt-0;
 }
+
+.katex-display {
+  width: 100%;
+}
+
+.katex-display .base {
+  max-width: 90%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+}

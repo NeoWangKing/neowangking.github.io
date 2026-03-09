@@ -170,8 +170,7 @@ $$
 
 $$
 \begin{align}
-\mathrm{Res}\left[ \frac{1}{(z^2+1)(z^2+4)}, 2\mathrm{i} \right] &= \lim_{z\to 2\mathrm{i}} \frac{z-2\mathrm{i}}{(z^2+1)(z-2\mathrm{i})(z+2\mathrm{i})} = \frac{1}{((-4)+1)(4\mathrm{i})}\\
-&= \frac{1}{-3\cdot 4\mathrm{i}} = -\frac{1}{12\mathrm{i}}
+\mathrm{Res}\left[ \frac{1}{(z^2+1)(z^2+4)}, 2\mathrm{i} \right] = \lim_{z\to 2\mathrm{i}} \frac{z-2\mathrm{i}}{(z^2+1)(z-2\mathrm{i})(z+2\mathrm{i})} = \frac{1}{((-4)+1)(4\mathrm{i})} = \frac{1}{-3\cdot 4\mathrm{i}} = -\frac{1}{12\mathrm{i}}
 \end{align}
 $$
 
