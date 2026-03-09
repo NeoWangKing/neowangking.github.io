@@ -37,25 +37,25 @@ export function PostCopyright({
 
   return (
     <section className="text-xs py-3 px-5 leading-loose text-secondary bg-accent/10 rounded-xl">
-      <p>文章标题：{title}</p>
-      <p>文章作者：{author}</p>
-      <p>文章概要：{summary}</p>
-      {exSlug && <p>原文链接：
+      <p><span className="font-bold">·文章标题：</span>{title}</p>
+      <p><span className="font-bold">·文章作者：</span>{author}</p>
+      <p><span className="font-bold">·文章概要：</span>{summary}</p>
+      {exSlug && <p><span className="font-bold">·原文链接：</span>
           <a 
-            className="cursor-pointer select-none hover:underline hover:text-accent/80 underline-offset-2 transition duration-300"
+            className="text-wrap break-words cursor-pointer select-none hover:underline hover:text-accent/80 underline-offset-2 transition duration-300"
             href={exSlug}
             target='_blank'
           >{exSlug}[点击跳转]</a>
         </p>}
-      <p>文章链接：
+      <p><span className="font-bold">·文章链接：</span>
         <span 
           role="button"
-          className="cursor-pointer select-none hover:underline hover:text-accent/80 underline-offset-2 transition duration-300"
+          className="text-wrap break-words cursor-pointer select-none hover:underline hover:text-accent/80 underline-offset-2 transition duration-300"
           onClick={handleCopyUrl}
         >{url}[点击复制]</span>
       </p>
       
-      <p>上次修改：{lastModStr}</p>
+      <p><span className="font-bold">·上次修改：</span>{lastModStr}</p>
       <hr className="my-3 border-primary" />
       <div>
         <div className="float-right ml-4 my-2">

@@ -14,12 +14,21 @@ interface Props {
   title: string
   description?: string
   image?: string
+  style?: string
   mdTitle: string
   mdDescription: string
   mdSlug: string
 }
 
-const { title, description, image, mdTitle, mdDescription, mdSlug } = Astro.props
+const {
+  title,
+  description,
+  image,
+  style="max-w-[1100px] mx-auto px-4 md:px-8 py-20 mx-auto grid lg:grid-cols-[auto_300px] gap-8",
+  mdTitle,
+  mdDescription,
+  mdSlug
+  } = Astro.props
 ---
 
 <Layout title={title} description={description} image={image}>
