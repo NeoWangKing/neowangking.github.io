@@ -185,7 +185,7 @@
 }
 
 .katex-display .base {
-  max-width: calc(100% - 68.88px);
+  max-width: calc(100% - 70px);
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
