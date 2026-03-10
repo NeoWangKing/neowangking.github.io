@@ -185,8 +185,14 @@
 }
 
 .katex-display .base {
-  max-width: 90%;
+  max-width: calc(100% - 68.88px);
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: none;
+}
+
+@media (max-width: 1023px) {
+  .katex-display > .katex .tag {
+    display: auto;
+  }
 }
