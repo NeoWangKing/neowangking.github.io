@@ -31,7 +31,7 @@ const { tags, category, class: className } = Astro.props
     tags.length > 0 && (
       <div>
         <i class="iconfont icon-hashtag" />
-        {tags.map((tag, index) => (
+        {tags.map((tag) => (
           <>
             <a
               class="m-0.5 py-1 px-2 bg-accent/10 rounded-xl hover:text-accent hover:bg-accent/20 transition duration-300"
