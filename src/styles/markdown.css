@@ -201,6 +201,6 @@
 
 @media (max-width: 1023px) {
   .katex-display > .katex .tag {
-    display: auto;
+    display: none;
   }
 }
