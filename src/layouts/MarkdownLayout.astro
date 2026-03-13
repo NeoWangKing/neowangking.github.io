@@ -8,7 +8,22 @@ import { BackToTopFAB } from '@/components/BackToTopFAB'
 import { Provider } from '@/components/provider/Provider'
 import { ToastContainer } from '@/components/ToastContainer'
 import { ModalStack } from '@/components/ui/modal'
+import SectionBlock from '@/components/SectionBlock.astro'
 import 'katex/dist/katex.min.css'
+import type { MarkdownHeading } from 'astro'
+import { ActionAside } from '@/components/post/ActionAside'
+import { PostToc } from '@/components/post/PostToc'
+import { ReadingProgress } from '@/components/post/ReadingProgress'
+import TagList from '@/components/TagList.astro'
+import CategoryList from '@/components/CategoryList.astro'
+
+import { getHotTags, getCategories } from '@/utils/content'
+
+
+// 获取热门标签
+const hotTags = await getHotTags()
+// 获取所有类别
+const Categories = await getCategories()
 
 interface Props {
   title: string
@@ -17,6 +32,7 @@ interface Props {
   mdTitle: string
   mdDescription: string
   mdSlug: string
+  headings: MarkdownHeading[]
 }
 
 const {
@@ -25,7 +41,8 @@ const {
   image,
   mdTitle,
   mdDescription,
-  mdSlug
+  mdSlug,
+  headings
   } = Astro.props
 ---
 
@@ -41,7 +58,50 @@ const {
   <Header client:only="react" transition:persist="header" />
   <main class="relative z-1 pt-16 min-h-main bg-primary">
     <HeadGradient client:idle />
-    <slot />
+    <div class="max-w-[1440px] mx-auto px-4 py-20 sm:px-4 lg:grid lg:grid-cols-[200px_auto_200px] lg:gap-[20px]">
+      <!-- 左侧展示部分 -->
+      <div class="w-[200px] hidden lg:block">
+        <div class="p-4 mb-4 rounded-[24px] bg-secondary shadow-xl">
+          <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
+              <TagList tags={hotTags} />
+              <div class="mt-2 text-right">
+                <a class="text-sm text-secondary hover:text-accent" href="/tags">
+                  更多标签 <i class="iconfont icon-arrow-right" />
+                </a>
+              </div>
+          </SectionBlock>
+        </div>
+        <div class="p-4 my-4 rounded-[24px] bg-secondary shadow-xl">
+          <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
+            <CategoryList categories={Categories} />
+            <div class="mt-2 text-right">
+              <a class="text-sm text-secondary hover:text-accent" href="/categories">
+                所有分类 <i class="iconfont icon-arrow-right" />
+              </a>
+            </div>
+          </SectionBlock>
+        </div>
+      </div>
+      <!-- 中间主体部分 -->
+      <div class="px-6 pt-8 pb-4 rounded-[24px] bg-secondary shadow-xl">
+        <slot />
+      </div>
+      <!-- 侧边目录栏 -->
+      <div class="w-[200px] hidden lg:block">
+        <div class="sticky top-20 p-4 mb-4 rounded-[24px] bg-secondary shadow-xl">
+          <SectionBlock title="目录" style="mt-4 mb-4 text-xl font-bold uppercase tracking-widest text-accent">
+            <!-- 文章结构 -->
+            <PostToc headings={headings} client:idle />
+            <!-- 分隔线 -->
+            <hr class="my-2 border-primary max-w-[100px]" />
+            <!-- 阅读进度 -->
+            <ReadingProgress client:idle />
+            <!-- 分享与赞助按钮 -->
+            <ActionAside client:idle />
+          </SectionBlock>
+        </div>
+      </div>
+    </div>
   </main>
   <Footer />
 

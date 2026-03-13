@@ -30,7 +30,7 @@ const {
   currentPage,
   showCategories = true,
   showTags = true,
-  style = "max-w-[1100px] mx-auto px-4 sm:px-8 md:px-8 md:py-20 md:mx-auto lg:grid lg:grid-cols-[auto_300px] lg:gap-8" 
+  style = "max-w-[1440px] mx-auto px-4 py-20 md:py-20 lg:grid lg:grid-cols-[200px_auto] lg:gap-[20px]"
 } = Astro.props
 ---
 
@@ -39,30 +39,64 @@ const {
     <!-- 如果页码为 1 就显示 Hero 页 -->
     {currentPage === 1 && <Hero />}
     <div class={style}>
-      <slot />
+      
       <!-- 分类和标签展示组件 -->
       <div>
-        <aside class="max-w-[760px] mx-auto md:sticky md:top-20 space-y-10">
+        <aside class="mx-auto mb-6 hidden lg:block lg:sticky lg:top-20 space-y-6">
           {showTags &&
-          <SectionBlock title="热门标签" style="mt-4 mb-8 font-bold uppercase tracking-widest text-accent">
-              <TagList tags={hotTags} />
-              <div class="mt-2 text-right">
-                <a class="text-sm text-secondary hover:text-accent" href="/tags">
-                  更多标签 <i class="iconfont icon-arrow-right" />
-                </a>
-              </div>
-          </SectionBlock>
+            <div class="p-4 rounded-[24px] bg-secondary shadow-xl">
+              <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
+                <TagList tags={hotTags} />
+                <div class="text-right">
+                  <a class="text-sm text-secondary hover:text-accent" href="/tags">
+                    更多标签 <i class="iconfont icon-arrow-right" />
+                  </a>
+                </div>
+              </SectionBlock>
+            </div>
           }
           {showCategories &&
-            <SectionBlock title="文章分类" style="mt-4 mb-8 font-bold uppercase tracking-widest text-accent">
-              <CategoryList categories={Categories} />
-              <div class="mt-2 text-right">
-                <a class="text-sm text-secondary hover:text-accent" href="/categories">
-                  所有分类 <i class="iconfont icon-arrow-right" />
-                </a>
-              </div>
-            </SectionBlock>
-            
+            <div class="p-4 rounded-[24px] bg-secondary shadow-xl">
+              <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
+                <CategoryList categories={Categories} />
+                <div class="mt-2 text-right">
+                  <a class="text-sm text-secondary hover:text-accent" href="/categories">
+                    所有分类 <i class="iconfont icon-arrow-right" />
+                  </a>
+                </div>
+              </SectionBlock>
+            </div>
+          }
+        </aside>
+      </div>
+      <div class="px-4 py-2 rounded-[24px] bg-secondary shadow-xl">
+        <slot />
+      </div>
+      <div>
+        <aside class="mx-auto mt-6 lg:hidden space-y-6">
+          {showTags &&
+            <div class="p-4 rounded-[24px] bg-secondary shadow-xl">
+              <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
+                <TagList tags={hotTags} />
+                <div class="text-right">
+                  <a class="text-sm text-secondary hover:text-accent" href="/tags">
+                    更多标签 <i class="iconfont icon-arrow-right" />
+                  </a>
+                </div>
+              </SectionBlock>
+            </div>
+          }
+          {showCategories &&
+            <div class="p-4 rounded-[24px] bg-secondary shadow-xl">
+              <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
+                <CategoryList categories={Categories} />
+                <div class="mt-2 text-right">
+                  <a class="text-sm text-secondary hover:text-accent" href="/categories">
+                    所有分类 <i class="iconfont icon-arrow-right" />
+                  </a>
+                </div>
+              </SectionBlock>
+            </div>
           }
         </aside>
       </div>

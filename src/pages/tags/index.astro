@@ -6,12 +6,10 @@ import MainPageLayout from '@/layouts/MainPageLayout.astro'
 
 const allTags = await getAllTags();
 const pageName = "标签云";
-
-const style = "max-w-[1100px] mx-auto px-4 py-20 sm:px-4 md:px-8 lg:grid lg:grid-cols-[auto_300px] lg:gap-8"
 ---
 
-<MainPageLayout showTags={false} style={style}>
-  <div class="max-w-[800px] mx-auto px-4 py-16">
+<MainPageLayout showTags={false}>
+  <div class="mx-auto px-4 py-16">
     <header class="space-y-4 mb-8">
       <h1 class="text-4xl font-bold">
         <Highlight><a href=`/tags`>{pageName}</a></Highlight>

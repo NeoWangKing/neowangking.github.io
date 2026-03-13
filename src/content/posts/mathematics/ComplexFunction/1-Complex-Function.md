@@ -94,8 +94,10 @@ $$
 $$
 \begin{align}
 \begin{cases}
-\dfrac{\partial u}{\partial x} = \dfrac{\partial v}{\partial y} \\
-\dfrac{\partial v}{\partial x} = -\dfrac{\partial u}{\partial y}
+\begin{aligned}
+&\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \\
+&\frac{\partial v}{\partial x} = -\frac{\partial u}{\partial y}
+\end{aligned}
 \end{cases}
 \end{align}
 $$
@@ -137,4 +139,5 @@ $$
   - 若绕支点 $n$ 周后函数值 $w$ 复原，则称为 $n-1$ 阶支点
 
 - **黎曼面** 围绕支点，将平面沿从支点发出的一条射线剪开，将多个平面如此切开，使其分别对应 $\mathrm{Arg} z$ 的不同取值范围（比如：$[0,2\pi)$，$[2\pi,4\pi)$），在此基础上，将这些平面的上缘与下缘首尾相接，形成一个自相交的多叶的面，称为函数的**黎曼面**
+
   ![黎曼面](@/image/posts/mathematics/ComplexFunction/Complex-Function/001.jpg '黎曼面')

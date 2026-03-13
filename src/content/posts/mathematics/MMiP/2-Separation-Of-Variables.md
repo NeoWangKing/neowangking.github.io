@@ -21,9 +21,11 @@ draft: false
 $$
 \begin{align}
 \begin{cases}
-u_{tt} - a^2 u_{xx} = 0, \quad 0 < x < l, \; t > 0, \\
-u(0,t) = 0, \; u(l,t) = 0, \\
-u(x,0) = \phi(x), \; u_t(x,0) = \psi(x).
+\begin{aligned}
+&u_{tt} - a^2 u_{xx} = 0, \quad 0 < x < l, \; t > 0, \\
+&u(0,t) = 0, \; u(l,t) = 0, \\
+&u(x,0) = \phi(x), \; u_t(x,0) = \psi(x).
+\end{aligned}
 \end{cases}
 \end{align}
 $$
@@ -43,8 +45,10 @@ $$
    $$
    \begin{align}
    \begin{cases}
-   X'' + \lambda X = 0, \\
-   T'' + a^2 \lambda T = 0.
+   \begin{aligned}
+   &X'' + \lambda X = 0, \\
+   &T'' + a^2 \lambda T = 0.
+   \end{aligned}
    \end{cases}
    \end{align}
    $$
@@ -164,8 +168,10 @@ $$
 $$
 \begin{align}
 \begin{cases}
-w_{tt} - a^2 w_{xx} = 0, \\
-w(x,0;\tau)=0, \quad w_t(x,0;\tau)=f(x,\tau),
+\begin{aligned}
+&w_{tt} - a^2 w_{xx} = 0, \\
+&w(x,0;\tau)=0, \quad w_t(x,0;\tau)=f(x,\tau),
+\end{aligned}
 \end{cases}
 \end{align}
 $$
@@ -239,8 +245,10 @@ $$
 $$
 \begin{align}
 \begin{cases}
-u_{xx}+u_{yy} = f(x,y), \quad 0<x<a,\;0<y<b, \\
-u(0,y)=0,\; u(a,y)=0,\; u(x,0)=0,\; u(x,b)=0.
+\begin{aligned}
+&u_{xx}+u_{yy} = f(x,y), \quad 0<x<a,\;0<y<b, \\
+&u(0,y)=0,\; u(a,y)=0,\; u(x,0)=0,\; u(x,b)=0.
+\end{aligned}
 \end{cases}
 \end{align}
 $$

@@ -211,8 +211,10 @@ $$
       $$
       \begin{align}
       \begin{cases}
-      u_{t} - a^{2}u_{xx} - b^{2}u = 0\\
-      u_{t} - a^{2}\Delta_{3}u - b^{2}u = 0
+      \begin{aligned}
+      &u_{t} - a^{2}u_{xx} - b^{2}u = 0\\
+      &u_{t} - a^{2}\Delta_{3}u - b^{2}u = 0
+      \end{aligned}
       \end{cases}
       \end{align}
       $$
@@ -523,13 +525,17 @@ $$
    $$
    \begin{align}
    \begin{cases}
-   x = x(\xi, \eta)\\
-   y = y(\xi, \eta)
+   \begin{aligned}
+   &x = x(\xi, \eta)\\
+   &y = y(\xi, \eta)
+   \end{aligned}
    \end{cases}
    \text{即}
    \begin{cases}
-   \xi = \xi(x, y)\\
-   \eta = \eta(x, y)
+   \begin{aligned}
+   &\xi = \xi(x, y)\\
+   &\eta = \eta(x, y)
+   \end{aligned}
    \end{cases}
    \end{align}
    $$
@@ -547,13 +553,15 @@ $$
    $$
    \begin{align}
    \begin{cases}
-   A_{11} = a_{11}\xi_{x}^{2} + 2a_{12}\xi_{x}\xi_{y} + a_{22}\xi_{y}^{2}\\
-   A_{12} = a_{11}\xi_{x}\eta_{x} + a_{12}(\xi_{x}\eta_{y} + \xi_{y}\eta_{x}) + a_{22}\xi_{y}\eta_{y}\\
-   A_{22} = a_{11}\eta_{x}^{2} + 2a_{12}\eta_{x}\eta_{y} + a_{22}\eta_{y}^{2}\\
-   B_{1} = a_{11}\xi_{xx} + 2a_{12}\xi_{xy} + a_{22}\xi_{yy} + b_{1}\xi_{x} + b_{2}\xi_{y}\\
-   B_{2} = a_{11}\eta_{xx} + 2a_{12}\eta_{xy} + a_{22}\eta_{yy} + b_{1}\eta_{x} + b_{2}\eta_{y}\\
-   C = c\\
-   F = f
+   \begin{aligned}
+   &A_{11} = a_{11}\xi_{x}^{2} + 2a_{12}\xi_{x}\xi_{y} + a_{22}\xi_{y}^{2}\\
+   &A_{12} = a_{11}\xi_{x}\eta_{x} + a_{12}(\xi_{x}\eta_{y} + \xi_{y}\eta_{x}) + a_{22}\xi_{y}\eta_{y}\\
+   &A_{22} = a_{11}\eta_{x}^{2} + 2a_{12}\eta_{x}\eta_{y} + a_{22}\eta_{y}^{2}\\
+   &B_{1} = a_{11}\xi_{xx} + 2a_{12}\xi_{xy} + a_{22}\xi_{yy} + b_{1}\xi_{x} + b_{2}\xi_{y}\\
+   &B_{2} = a_{11}\eta_{xx} + 2a_{12}\eta_{xy} + a_{22}\eta_{yy} + b_{1}\eta_{x} + b_{2}\eta_{y}\\
+   &C = c\\
+   &F = f
+   \end{aligned}
    \end{cases}
    \end{align}
    $$
@@ -592,9 +600,11 @@ $$
    $$
    \begin{align}
    \begin{cases}
-   a_{12}^{2} - a_{11}a_{22} > 0,\quad\text{双曲型}\\
-   a_{12}^{2} - a_{11}a_{22} = 0,\quad\text{抛物型}\\
-   a_{12}^{2} - a_{11}a_{22} < 0,\quad\text{椭圆型}
+   \begin{aligned}
+   &a_{12}^{2} - a_{11}a_{22} > 0,\quad\text{双曲型}\\
+   &a_{12}^{2} - a_{11}a_{22} = 0,\quad\text{抛物型}\\
+   &a_{12}^{2} - a_{11}a_{22} < 0,\quad\text{椭圆型}
+   \end{aligned}
    \end{cases}
    \end{align}
    $$

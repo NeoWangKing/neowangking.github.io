@@ -38,11 +38,11 @@ const config: Config = {
       lg: '1024px',
       // => @media (min-width: 1024px) { ... }
 
-      xl: '1280px',
-      // => @media (min-width: 1280px) { ... }
+      xl: '1440px',
+      // => @media (min-width: 1440px) { ... }
 
-      '2xl': '1536px',
-      // => @media (min-width: 1536px) { ... }
+      '2xl': '2560px',
+      // => @media (min-width: 2560px) { ... }
     },
     extend: {
       colors: {
@@ -56,6 +56,7 @@ const config: Config = {
         root: 'rgb(var(--color-bg-root))',
         primary: 'rgb(var(--color-bg-primary))',
         secondary: 'rgb(var(--color-bg-secondary))',
+        codeblock: 'rgb(var(--color-bg-codeblock))',
       },
       borderColor: {
         primary: 'rgb(var(--color-border-primary))',

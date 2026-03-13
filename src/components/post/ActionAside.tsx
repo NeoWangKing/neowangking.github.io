@@ -26,10 +26,7 @@ const shareList = [
 export function ActionAside() {
   return (
     <div
-      className="absolute left-0 bottom-0 flex flex-col gap-4"
-      style={{
-        transform: 'translateY(calc(100% + 24px))',
-      }}
+      className="sticky mt-4 left-0 bottom-0 flex flex-lin gap-4"
     >
       <ShareButton />
       <DonateButton />

@@ -15,8 +15,10 @@ const { prev, next, class: className } = Astro.props
     {
       prev && (
         <a class="flex items-baseline justify-start gap-2 hover:text-accent transition duration-300" href={`/posts/${prev.slug}`}>
-          <i class="iconfont icon-arrow-left" />
-          <span>{prev.data.title}</span>
+          <span class="p-2 rounded-lg border-2 border-accent/10 hover:bg-accent/10 transition duration-300">
+            <i class="iconfont icon-arrow-left" />
+            <span>{prev.data.title}</span>
+          </span>
         </a>
       )
     }
@@ -28,8 +30,10 @@ const { prev, next, class: className } = Astro.props
           class="flex items-baseline justify-end gap-2 hover:text-accent transition duration-300"
           href={`/posts/${next.slug}`}
         >
-          <span>{next.data.title}</span>
-          <i class="iconfont icon-arrow-right" />
+          <span class="p-2 rounded-lg border-2 border-accent/10 hover:bg-accent/10 transition duration-300">
+            <span>{next.data.title}</span>
+            <i class="iconfont icon-arrow-right" />
+          </span>
         </a>
       )
     }

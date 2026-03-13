@@ -271,8 +271,10 @@ draft: false
    \begin{align}
    \delta(x)=
    \begin{cases}
-   0, & \text{if}\space x \neq 0\\
-   \infty, & \text{if}\space x = 0
+   \begin{aligned}
+   &0, & \text{if}\space x \neq 0\\
+   &\infty, & \text{if}\space x = 0
+   \end{aligned}
    \end{cases}
    \end{align}
    $$
@@ -329,9 +331,11 @@ draft: false
    \begin{align}
    \text{ $F$ 可被 $D$ 和 $C$ 唯一定义} \iff
    \begin{cases}
-   F\rightarrow 0\\
-   r^{2}D\rightarrow 0\\
-   r^{2}C\rightarrow 0
+   \begin{aligned}
+   &F\rightarrow 0\\
+   &r^{2}D\rightarrow 0\\
+   &r^{2}C\rightarrow 0
+   \end{aligned}
    \end{cases},\quad(r\rightarrow +\infty)
    \end{align}
    $$

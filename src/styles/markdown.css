@@ -7,7 +7,15 @@
 }
 
 .markdown p {
-  @apply mb-5;
+  @apply mb-5 indent-4;
+}
+
+.markdown .heading {
+  @apply pl-4 duration-100 border-l-[2px] border-accent;
+}
+
+.markdown .heading:hover {
+  @apply text-accent border-l-[4px];
 }
 
 .markdown h1 {
@@ -15,25 +23,35 @@
 }
 
 .markdown h2 {
-  @apply text-2xl font-bold mt-12 mb-6;
+  @apply text-3xl font-bold mt-12 mb-6;
 }
 
 .markdown h3 {
-  @apply text-xl font-semibold mt-8 mb-3;
+  @apply text-2xl font-semibold mt-8 mb-3;
 }
 
 .markdown h4 {
-  @apply font-semibold mt-6 mb-2;
+  @apply text-xl font-semibold mt-6 mb-2;
+}
+
+/* 标题锚点 */
+.markdown .heading-anchor {
+  @apply ml-1 opacity-0 no-underline duration-300;
+}
+
+.markdown .heading:hover .heading-anchor,
+.markdown .heading-anchor:focus-visible {
+  @apply opacity-100;
 }
 
 /* 链接 */
 .markdown a {
-  @apply font-normal text-accent/75 hover:underline hover:text-accent underline-offset-2;
+  @apply text-accent/75 hover:underline hover:text-accent underline-offset-2;
 }
 
 /* 外部链接图标 */
 .markdown a + .icon-external-link {
-  @apply text-secondary ml-1;
+  @apply text-accent/75 ml-1;
 }
 
 /* quote引用 */
@@ -50,17 +68,17 @@
 }
 
 .markdown blockquote > p:last-child {
-  @apply mb-0;
+  @apply mb-1;
 }
 
 /* 行内代码 */
 .markdown :not(pre) > code {
-  @apply px-2 py-1 rounded bg-secondary text-sm font-semibold;
+  @apply px-2 py-1 rounded bg-codeblock text-sm font-semibold;
 }
 
 /* 代码块背景 */
 .markdown .code-block {
-  @apply relative mt-10 mb-5 bg-secondary rounded-xl;
+  @apply relative mt-10 mb-5 bg-codeblock rounded-xl;
 }
 
 /* 代码语言角标 */
@@ -87,7 +105,7 @@
 }
 
 .markdown th {
-  @apply border-y-2;
+  @apply border-y;
 }
 
 .markdown th,
@@ -97,7 +115,7 @@
 
 /* 基础图片 */
 .markdown img {
-  @apply block rounded-xl bg-secondary min-h-[80px] min-w-[80px];
+  @apply block rounded-xl bg-secondary min-h-[80px] min-w-[80px] shadow-xl;
 }
 
 .markdown figure {
@@ -107,16 +125,6 @@
 /* 图片标题 */
 .markdown figcaption {
   @apply mt-3 text-accent/50 text-sm;
-}
-
-/* 标题锚点 */
-.markdown .heading-anchor {
-  @apply ml-1 opacity-0 hover:no-underline;
-}
-
-.markdown .heading:hover .heading-anchor,
-.markdown .heading-anchor:focus-visible {
-  @apply opacity-100;
 }
 
 /* 内嵌网页，用于内嵌视频等 */

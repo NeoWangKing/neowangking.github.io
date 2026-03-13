@@ -7,6 +7,7 @@ tags: [数学, 物理, 数学物理方法, 球函数, 勒让德多项式, 勒让
 category: ['数学', '数学物理方法']
 summary: 本文系统整理球函数的相关知识，。
 comments: true
+sticky: 1
 draft: false
 ---
 
@@ -155,5 +156,110 @@ $$
 该公式也叫做 **罗德里格斯公式**
 
 ### 勒让德多项式的积分形式
+
+利用高阶导数的柯西公式
+
+$$
+\begin{align}
+f^{(l)}(x) = \frac{l!}{2\pi\mathrm{i}}\oint{\frac{f(z)}{(z - x)^{l + 1}}\mathrm{d}z}
+\end{align}
+$$
+
+可以得到勒让德多项式的积分形式
+
+$$
+\begin{align}
+P_{l}(x) &= \frac{\mathrm{d}^{l}}{\mathrm{d}x^{l}}\left[\frac{1}{2^{l}l!}(x^{2} - 1)^{l}\right]\\
+\Rightarrow P_{l}(x) &= \frac{1}{2\pi\mathrm{i}2^{l}}\oint_{C_{l}}{\frac{(z^{2} - 1)^{l}}{(z - x)^{l + 1}}\mathrm{d}z}
+\end{align}
+$$
+
+其中 $C_{l}$ 为包含 $z = x$ 点的任一环路，这一积分公式称作 **施列夫利积分**
+
+接下来将这个积分化成定积分，取 $C_{l}$ 为圆心在 $z = x$ 、半径为 $\sqrt{|x^{2} - 1|}$ 的圆周，于是就有：$z - x = \sqrt{x^{2} - 1}\mathrm{e}^{\mathrm{i}\psi}$ ，$\mathrm{d}z = \mathrm{i}\sqrt{x^{2} - 1}\mathrm{e}^{\mathrm{i}\psi}\mathrm{d}\psi$ ，代入得到
+
+$$
+\begin{align}
+P_{l}(x) = \frac{1}{\pi}\int_{0}^{\pi}\left[x + \mathrm{i}\sqrt{1-x^{2}}\cos{\psi}\right]^{l}\mathrm{d}\psi
+\end{align}
+$$
+
+这叫做 **拉普拉斯积分** ，由此也可见 $|P_{l}(x)| \le 1$
+
+### 勒让德多项式的正交性
+
+勒让德多项式是施图姆-刘维尔本征值问题的正交关系的一个 **特例**，也即
+
+$$
+\begin{align}
+\int_{-1}^{+1}{P_{k}(x) P_{l}(x) \mathrm{d}x} = 0 \quad (l \neq k)
+\end{align}
+$$
+
+更一般的，我们可以求出
+
+$$
+\begin{align}
+\int_{-1}^{+1}{P_{k}(x) P_{l}(x) \mathrm{d}x} = \left(N_{l}\right)^{2} \delta_{l,k} = \frac{2}{2l + 1} \delta_{l,k}
+\end{align}
+$$
+
+其中 $\left(N_{l}\right)^{2} = \frac{2}{2l + 1}$ ， 这就是勒让德多项式的模方
+
+### 广义傅里叶级数展开
+
+通过上面的推导，我们知道了勒让德多项式是完备的，也就是说，它可以作为广义傅里叶级数展开的基。于是，定义在 $x \in [-1, +1]$ 上的函数 $f(x)$ 可以展开成广义傅里叶级数：
+
+$$
+\begin{align}
+\begin{cases}
+\begin{aligned}
+&f(x) = \sum_{l = 0}^{\infty}{f_{l}P_{l}(x)}\\
+&f_{l} = \frac{2l + 1}{2}\int_{-1}^{+1}{f(x)P_{l}(x)\mathrm{d}x}
+\end{aligned}
+\end{cases}
+\end{align}
+$$
+
+或者对于定义在 $\theta \in [0,\pi]$ 上的函数 $f(\theta)$ 也可以进行展开：
+
+$$
+\begin{align}
+\begin{cases}
+\begin{aligned}
+&f(\theta) = \sum_{l = 0}^{\infty}{f_{l}P_{l}(\cos{\theta})} \\
+&f_{l} = \frac{2l + 1}{2}\int_{0}^{\pi}{f(\theta)P_{l}(\cos{\theta})\sin{\theta}\mathrm{d}\theta}
+\end{aligned}
+\end{cases}
+\end{align}
+$$
+
+### 母函数的导出
+
+考虑在单位球的北极处放置一个 $4\pi\varepsilon_{0}$ 单位的正电荷，则在球内任意一点 $M(r, \theta)$ 处的静电势为：
+
+$$
+\begin{align}
+\frac{1}{d} = \frac{1}{\sqrt{1 - 2r\cos{\theta} + r^{2}}}
+\end{align}
+$$
+
+> 我也不知道这里为什么要是 $\frac{1}{d}$ ，约定俗成的
+
+静电势 $\frac{1}{d}$ 遵从拉普拉斯方程，满足拉普拉斯方程的一般解的形式，即：
+
+$$
+\begin{align}
+\frac{1}{d} = \sum_{l = 0}^{\infty}{\left(A_{l}r^{l} + B_{l}\frac{1}{r^{l + 1}}\right)P_{l}(\cos{\theta})}
+\end{align}
+$$
+
+球心处的电势应当有限，所以 $B_{l} = 0$ ，于是有
+
+$$
+\begin{align}
+\frac{1}{\sqrt{1 - 2r\cos^{2}{\theta} + r^{2}}} = \sum_{l = 0}^{\infty}{A_{l}r^{l}P_{l}(\cos{\theta})}
+\end{align}
+$$
 
 _**持续更新ing...**_

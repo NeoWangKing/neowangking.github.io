@@ -17,8 +17,7 @@ const { categories } = Astro.props
     <div class="flex flex-wrap gap-2.5">
       {categories.map((category) => (
         <a class="relative block group" href={`/categories/${category.slug.join('/')}`}>
-          <div class="absolute -z-1 inset-0 rounded-lg bg-accent/10 group-hover:transition group-hover:bg-accent/20 group-hover:scale-105" />
-          <div class="px-2.5 py-2.5 text-sm flex gap-1 select-none">
+          <div class="px-2.5 py-2.5 text-sm flex gap-1 select-none rounded-lg bg-accent/10 hover:transition hover:bg-accent/20 hover:scale-105">
             <span class="grow">{category.name[category.name.length - 1]}</span>
             <span class="shrink-0">{category.count}</span>
           </div>
