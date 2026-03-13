@@ -258,7 +258,39 @@ $$
 
 $$
 \begin{align}
-\frac{1}{\sqrt{1 - 2r\cos^{2}{\theta} + r^{2}}} = \sum_{l = 0}^{\infty}{A_{l}r^{l}P_{l}(\cos{\theta})}
+\frac{1}{\sqrt{1 - 2r\cos{\theta} + r^{2}}} = \sum_{l = 0}^{\infty}{A_{l}r^{l}P_{l}(\cos{\theta})}
+\end{align}
+$$
+
+可以简单的通过令 $\theta = 0$ ，得到 $A_{l} = 1$ ，于是
+
+$$
+\begin{align}
+\frac{1}{\sqrt{1 - 2r\cos{\theta} + r^{2}}} = \sum_{l = 0}^{\infty}{r^{l}P_{l}(\cos{\theta})},\quad r<1
+\end{align}
+$$
+
+同理，可以求得球外的静电势，结果为：
+
+$$
+\begin{align}
+\frac{1}{\sqrt{1 - 2r\cos{\theta} + r^{2}}} = \sum_{l = 0}^{\infty}{\frac{1}{r^{l + 1}}P_{l}(\cos{\theta})},\quad r>1
+\end{align}
+$$
+
+于是，这个静电势 $\frac{1}{\sqrt{1 - 2r\cos{\theta} + r^{2}}}$ 被称作勒让德多项式的 **母函数**（生成函数）
+
+而如果是在半径为 $R$ 的球的北极上放置电荷，则：
+
+$$
+\begin{align}
+\frac{1}{\sqrt{R^{2} - 2rR\cos{\theta} + r^{2}}} =
+\begin{cases}
+\begin{aligned}
+&\sum_{l = 0}^{\infty}{\frac{1}{R^{l + 1}}r^{l}P_{l}(\cos{\theta})}, &r<R \\
+&\sum_{l = 0}^{\infty}{R^{l}\frac{1}{r^{l + 1}}P_{l}(\cos{\theta})}, &r>R
+\end{aligned}
+\end{cases}
 \end{align}
 $$
 

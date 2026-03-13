@@ -11,11 +11,16 @@
 }
 
 .markdown .heading {
-  @apply pl-4 duration-100 border-l-[2px] border-accent;
+  @apply pl-0 duration-200 border-accent font-serif;
 }
 
 .markdown .heading:hover {
-  @apply text-accent border-l-[4px];
+  @apply pl-2 text-accent border-l-[0px];
+}
+
+.markdown .heading::before {
+  content: '·';
+  @apply font-extrabold font-sans text-accent;
 }
 
 .markdown h1 {
