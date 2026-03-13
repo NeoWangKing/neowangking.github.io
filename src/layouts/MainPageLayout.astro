@@ -30,7 +30,7 @@ const {
   currentPage,
   showCategories = true,
   showTags = true,
-  style = "max-w-[1440px] mx-auto px-4 py-20 md:py-20 lg:grid lg:grid-cols-[200px_auto] lg:gap-[20px]"
+  style = "max-w-[1440px] mx-auto px-4 py-20 lg:grid lg:grid-cols-[200px_auto] lg:gap-[20px]"
 } = Astro.props
 ---
 
@@ -39,7 +39,6 @@ const {
     <!-- 如果页码为 1 就显示 Hero 页 -->
     {currentPage === 1 && <Hero />}
     <div class={style}>
-      
       <!-- 分类和标签展示组件 -->
       <div>
         <aside class="mx-auto mb-6 hidden lg:block lg:sticky lg:top-20 space-y-6">
@@ -69,9 +68,11 @@ const {
           }
         </aside>
       </div>
+      <!-- 中间主体部分 -->
       <div class="px-4 py-2 rounded-[24px] bg-secondary shadow-xl">
         <slot />
       </div>
+      <!-- 小屏幕的下方组件 -->
       <div>
         <aside class="mx-auto mt-6 lg:hidden space-y-6">
           {showTags &&

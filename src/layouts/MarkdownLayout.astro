@@ -56,31 +56,33 @@ const {
   />
 
   <Header client:only="react" transition:persist="header" />
-  <main class="relative z-1 pt-16 min-h-main bg-primary">
+  <main class="relative z-1 px-4 pt-16 min-h-main bg-primary">
     <HeadGradient client:idle />
-    <div class="max-w-[1440px] mx-auto px-4 py-20 sm:px-4 lg:grid lg:grid-cols-[200px_auto_200px] lg:gap-[20px]">
+    <div class="max-w-[1440px] mx-auto px-4 py-20 lg:grid lg:grid-cols-[200px_auto_200px] lg:gap-[20px]">
       <!-- 左侧展示部分 -->
-      <div class="w-[200px] hidden lg:block">
-        <div class="p-4 mb-4 rounded-[24px] bg-secondary shadow-xl">
-          <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
+      <div>
+        <aside class="mx-auto mb-6 hidden lg:block lg:sticky lg:top-20 space-y-6">
+          <div class="p-4 rounded-[24px] bg-secondary shadow-xl">
+            <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
               <TagList tags={hotTags} />
-              <div class="mt-2 text-right">
+              <div class="text-right">
                 <a class="text-sm text-secondary hover:text-accent" href="/tags">
                   更多标签 <i class="iconfont icon-arrow-right" />
                 </a>
               </div>
-          </SectionBlock>
-        </div>
-        <div class="p-4 my-4 rounded-[24px] bg-secondary shadow-xl">
-          <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
-            <CategoryList categories={Categories} />
-            <div class="mt-2 text-right">
-              <a class="text-sm text-secondary hover:text-accent" href="/categories">
-                所有分类 <i class="iconfont icon-arrow-right" />
-              </a>
-            </div>
-          </SectionBlock>
-        </div>
+            </SectionBlock>
+          </div>
+          <div class="p-4 rounded-[24px] bg-secondary shadow-xl">
+            <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
+              <CategoryList categories={Categories} />
+              <div class="mt-2 text-right">
+                <a class="text-sm text-secondary hover:text-accent" href="/categories">
+                  所有分类 <i class="iconfont icon-arrow-right" />
+                </a>
+              </div>
+            </SectionBlock>
+          </div>
+        </aside>
       </div>
       <!-- 中间主体部分 -->
       <div class="px-6 pt-8 pb-4 rounded-[24px] bg-secondary shadow-xl">
