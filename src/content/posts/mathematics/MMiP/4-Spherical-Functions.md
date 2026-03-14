@@ -2,12 +2,12 @@
 title: 球函数
 author: NeoWangKing
 date: 2026-03-12T00:00:47+08:00
-lastMod: 2026-03-12T00:00:47+08:00
+lastMod: 2026-03-14T11:34:33+08:00
 tags: [数学, 物理, 数学物理方法, 球函数, 勒让德多项式, 勒让德函数]
 category: ['数学', '数学物理方法']
 summary: 本文系统整理球函数的相关知识，。
 comments: true
-sticky: 1
+sticky: 0
 draft: false
 ---
 
@@ -293,5 +293,147 @@ $$
 \end{cases}
 \end{align}
 $$
+
+### 勒让德多项式的递推公式
+
+通过母函数可以推导出勒让德多项式的递推公式，已知有：
+
+$$
+\begin{align}
+\frac{1}{\sqrt{1 - 2rx + r^{2}}} = \sum_{l = 0}^{\infty}{r^{l}P_{l}(x)}
+\end{align}
+$$
+
+两边对 $r$ 求导，得到
+
+$$
+\begin{align}
+\frac{x - r}{\sqrt{1 - 2rx + r^{2}}} = (1 - 2rx + r^{2})\sum_{l = 0}^{\infty}{l r^{l - 1} P_{l}(x)}
+\end{align}
+$$
+
+$$
+\begin{align}
+(x - r)\sum_{l = 0}^{\infty}{r^{l}P_{l}(x)} = (1 - 2rx + r^{2})\sum_{l = 0}^{\infty}{l r^{l - 1} P_{l}(x)}
+\end{align}
+$$
+
+化简即可得到
+
+$$
+\begin{align}
+(k + 1)P_{k + 1}(x) - (2k + 1)xP_{k}(x) + kP_{k - 1}(x) = 0\quad(k \ge 1)
+\end{align}
+$$
+
+通过改变求导的对象（比如对 $x$ 求导），还可以得到如下的递推公式
+
+$$
+\begin{align}
+P_{k}(x) = P_{k + 1}'(x) - 2xP_{k}'(x) + P_{k - 1}'(x)\quad(k \ge 1)
+\end{align}
+$$
+
+$$
+\begin{align}
+P_{k + 1}'(x) = (k + 1)P_{k}(x) + xP_{k}'(x)
+\end{align}
+$$
+
+$$
+\begin{align}
+kP_{k}(x) = xP_{k}'(x) - P_{k - 1}'(x)\quad(k \ge 1)
+\end{align}
+$$
+
+$$
+\begin{align}
+(x^{2} - 1)P_{k}'(x) = kxP_{k}(x) - kP_{k - 1}(x)\quad(k \ge 1)
+\end{align}
+$$
+
+$$
+\begin{align}
+(2k + 1)P_{k}(x) = P_{k + 1}'(x) - P_{k - 1}'(x)\quad(k \ge 1)
+\end{align}
+$$
+
+## 连带勒让德函数
+
+### 连带勒让德方程
+
+当问题不再具有轴对称性（$m \neq 0$）时，$\Theta(\theta)$ 满足的方程为连带勒让德方程。在变量 $x=\cos\theta$ 下，方程化为
+
+$$
+\begin{align}
+(1-x^2)\frac{d^2y}{dx^2} - 2x\frac{dy}{dx} + \left[l(l+1) - \frac{m^2}{1-x^2}\right]y = 0
+\end{align}
+$$
+
+其中 $m$ 为整数（由 $\Phi(\phi)$ 的周期性条件决定），且 $|m| \le l$。此方程的解称为 **连带勒让德函数** $P_l^m(x)$。
+
+### 连带勒让德函数的定义
+
+连带勒让德函数可由勒让德多项式通过微分得到：
+
+$$
+\begin{align}
+P_l^m(x) = (1-x^2)^{m/2} \frac{d^m}{dx^m} P_l(x), \quad m = 0,1,2,\dots,l
+\end{align}
+$$
+
+对于负指标 $m$，定义
+
+$$
+\begin{align}
+P_l^{-m}(x) = (-1)^m \frac{(l-m)!}{(l+m)!} P_l^m(x)
+\end{align}
+$$
+
+**前几项**：
+
+- $P_1^1(x) = (1-x^2)^{1/2}$
+- $P_2^1(x) = 3x(1-x^2)^{1/2}$
+- $P_2^2(x) = 3(1-x^2)$
+
+### 正交归一性
+
+连带勒让德函数在区间 $[-1,1]$ 上带权正交：
+
+$$
+\begin{align}
+\int_{-1}^{1} P_l^m(x) P_{k}^m(x) \, dx = \frac{2}{2l+1} \frac{(l+m)!}{(l-m)!} \delta_{lk}
+\end{align}
+$$
+
+对于不同的 $m$，它们也满足正交关系
+
+$$
+\begin{align}
+\int_{-1}^{1} P_l^m(x) P_l^{m'}(x) \frac{dx}{1-x^2} = 0, \quad m \neq m'
+\end{align}
+$$
+
+### 球函数
+
+在球坐标下，同时考虑极角 $\theta$ 和方位角 $\phi$ 的函数，定义 **球函数**（球谐函数）
+
+$$
+\begin{align}
+Y_{lm}(\theta,\phi) = \sqrt{\frac{2l+1}{4\pi} \frac{(l-m)!}{(l+m)!}} \, P_l^m(\cos\theta) e^{\mathrm{i}m\phi}, \quad m = -l,\dots,l
+\end{align}
+$$
+
+球函数构成球面上的完备正交函数系，满足
+
+$$
+\begin{align}
+\int_0^{2\pi}\int_0^{\pi} Y_{lm}(\theta,\phi) \overline{Y_{l'm'}}(\theta,\phi) \sin\theta\, d\theta d\phi = \delta_{ll'}\delta_{mm'}
+\end{align}
+$$
+
+球函数在量子力学、电磁学、热传导等领域有广泛应用。
+
+> 连带勒让德函数和球函数是处理非轴对称问题的核心工具，它们的正交完备性为求解偏微分方程提供了级数展开的基础。
 
 _**持续更新ing...**_
