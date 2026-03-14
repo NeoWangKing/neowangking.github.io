@@ -54,10 +54,10 @@ const oldestPosts = await getOldestPosts().then((posts) => {
   <div class="mx-auto px-4 py-16">
     <header class="space-y-4 mb-8">
       <h1 class="text-4xl font-bold">
-        <Highlight><a href=`/categories`>分类</a></Highlight>：
-        <Highlight><a href={`/categories/${category.slug[0]}`}>{category.name[0]}</a>/</Highlight>
+        <a href=`/categories`><Highlight>分类</Highlight></a>：
+        <a href={`/categories/${category.slug[0]}`}><Highlight>{category.name[0]}</Highlight></a>/
         {category.name.length === 2 && 
-          <Highlight><a href={`/categories/${slug}`}>{category.name[1]}/</a></Highlight>
+          <a href={`/categories/${slug}`}><Highlight>{category.name[1]}</Highlight>/</a>
         }
       </h1>
       <!--
