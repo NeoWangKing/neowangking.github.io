@@ -9,21 +9,7 @@ import PostArchiveInfo from '@/components/post/PostArchiveInfo.astro'
 import { Outdate } from '@/components/post/Outdate'
 import PostNav from '@/components/post/PostNav.astro'
 import { Comments } from '@/components/comment'
-import { ActionAside } from '@/components/post/ActionAside'
 import { PostCopyright } from '@/components/post/PostCopyright'
-import SectionBlock from '@/components/SectionBlock.astro'
-import { PostToc } from '@/components/post/PostToc'
-import { ReadingProgress } from '@/components/post/ReadingProgress'
-import TagList from '@/components/TagList.astro'
-import CategoryList from '@/components/CategoryList.astro'
-
-import { getHotTags, getCategories } from '@/utils/content'
-
-
-// 获取热门标签
-const hotTags = await getHotTags()
-// 获取所有类别
-const Categories = await getCategories()
 
 export const getStaticPaths = (async () => {
   const sortedPosts = await getSortedPosts()
