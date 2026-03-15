@@ -7,11 +7,16 @@
 }
 
 .markdown p {
-  @apply mb-5 indent-4;
+  @apply mb-4 indent-4;
 }
 
+.markdown strong {
+  @apply text-accent font-extrabold;
+}
+
+/* 标题部分 */
 .markdown .heading {
-  @apply pl-0 duration-200 border-accent font-serif;
+  @apply pl-0 duration-200 border-accent font-serif font-extrabold;
 }
 
 .markdown .heading:hover {
@@ -19,8 +24,11 @@
 }
 
 .markdown .heading::before {
-  content: '·';
-  @apply font-extrabold font-sans text-accent;
+  content: '\e798';
+  font-family: 'iconfont';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @apply text-accent;
 }
 
 .markdown h1 {
@@ -162,6 +170,10 @@
 .markdown ol,
 .markdown ul {
   @apply my-5 pl-6 space-y-2;
+}
+
+.markdown li::marker {
+  @apply text-accent;
 }
 
 .markdown ul ul,
