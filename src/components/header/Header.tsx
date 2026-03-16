@@ -13,11 +13,11 @@ export function Header() {
   return (
     <header className="fixed top-0 inset-x-0 h-[64px] z-10 overflow-hidden">
       <BluredBackground />
-      <div className="max-w-[1100px] h-full md:px-4 mx-auto grid grid-cols-[64px_64px_auto_128px]">
+      <div className="h-full mx-auto grid grid-cols-[64px_64px_auto_128px]">
         <div className="flex items-center justify-center">
           {isMobile ? <HeaderDrawer /> : <AnimatedLogo />}
         </div>
-        <div className="flex items-center justify-start">
+        <div className="flex items-center justify-center">
           <SearchButton />
         </div>
         <div className="relative flex items-center justify-center">

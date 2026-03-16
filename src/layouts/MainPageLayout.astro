@@ -43,7 +43,7 @@ const {
       <div>
         <aside class="mx-auto mb-6 hidden lg:block lg:sticky lg:top-20 space-y-6">
           {showTags &&
-            <div class="p-4 rounded-[24px] bg-secondary shadow-xl">
+            <div class="p-4 rounded-[24px] border border-primary bg-secondary shadow-xl">
               <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
                 <TagList tags={hotTags} />
                 <div class="text-right">
@@ -55,7 +55,7 @@ const {
             </div>
           }
           {showCategories &&
-            <div class="p-4 rounded-[24px] bg-secondary shadow-xl">
+            <div class="p-4 rounded-[24px] border border-primary bg-secondary shadow-xl">
               <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
                 <CategoryList categories={Categories} />
                 <div class="mt-2 text-right">
@@ -69,14 +69,14 @@ const {
         </aside>
       </div>
       <!-- 中间主体部分 -->
-      <div class="px-4 py-2 rounded-[24px] bg-secondary shadow-xl">
+      <div class="px-4 py-2 rounded-[24px] border border-primary bg-secondary shadow-xl">
         <slot />
       </div>
       <!-- 小屏幕的下方组件 -->
       <div>
         <aside class="mx-auto mt-6 lg:hidden space-y-6">
           {showTags &&
-            <div class="p-4 rounded-[24px] bg-secondary shadow-xl">
+            <div class="p-4 rounded-[24px] border border-primary bg-secondary shadow-xl">
               <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
                 <TagList tags={hotTags} />
                 <div class="text-right">
@@ -88,7 +88,7 @@ const {
             </div>
           }
           {showCategories &&
-            <div class="p-4 rounded-[24px] bg-secondary shadow-xl">
+            <div class="p-4 rounded-[24px] border border-primary bg-secondary shadow-xl">
               <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
                 <CategoryList categories={Categories} />
                 <div class="mt-2 text-right">

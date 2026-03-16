@@ -26,7 +26,11 @@ function AnimatedMenu() {
   return (
     <AnimatePresence>
       {!shouldHeaderMetaShow && (
-        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
+        <motion.div 
+          initial={{ y: -20, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ opacity: 0 }}
+        >
           <HeaderMenu isBgShow={shouldBgShow} />
         </motion.div>
       )}
@@ -43,8 +47,8 @@ function AccessibleMenu() {
         {shouldShow && (
           <motion.div
             className="fixed z-10 top-12 inset-x-0 flex justify-center pointer-events-none"
-            initial={{ y: -20 }}
-            animate={{ y: 0 }}
+            initial={{ y: -20, opacity: 0 }}
+            animate={{ y: 0, opacity: 1 }}
             exit={{ y: -20, opacity: 0 }}
           >
             <HeaderMenu isBgShow />
@@ -61,7 +65,7 @@ function HeaderMenu({ isBgShow }: { isBgShow: boolean }) {
   const [mouseY, setMouseY] = useState(0)
   const [radius, setRadius] = useState(0)
 
-  const background = `radial-gradient(${radius}px circle at ${mouseX}px ${mouseY}px, rgb(var(--color-accent) / 0.12) 0%, transparent 65%)`
+  const background = `radial-gradient(${radius}px circle at ${mouseX}px ${mouseY}px, rgb(var(--color-accent) / 0.2) 0%, transparent 50%)`
 
   const handleMouseMove = ({ clientX, clientY, currentTarget }: React.MouseEvent) => {
     const bounds = currentTarget.getBoundingClientRect()
@@ -72,18 +76,19 @@ function HeaderMenu({ isBgShow }: { isBgShow: boolean }) {
 
   return (
     <nav
-      className={clsx('relative rounded-full group pointer-events-auto duration-100', {
+      className={clsx('relative rounded-full group pointer-events-auto', {
         'shadow-lg shadow-zinc-800/5 border border-primary bg-white/50 dark:bg-zinc-800/50 backdrop-blur':
           isBgShow,
       })}
       onMouseMove={handleMouseMove}
     >
-      <div
-        className="absolute -z-1 -inset-px rounded-full opacity-0 group-hover:opacity-100"
-        style={{ background }}
-        aria-hidden
-      ></div>
-      <div className="text-sm px-4 flex">
+      
+      <div className="text-sm px-0 flex">
+        <div
+          className="absolute -z-1 -inset-px rounded-full opacity-0 group-hover:opacity-100"
+          style={{ background }}
+          aria-hidden
+        ></div>
         {menus.map((menu) => (
           <HeaderMenuItem
             key={menu.name}
@@ -111,7 +116,7 @@ function HeaderMenuItem({
 }) {
   return (
     <a
-      className={clsx('relative block px-4 py-1.5', isActive ? 'text-accent' : 'hover:text-accent')}
+      className={clsx('relative block px-4 py-1.5 rounded-full transition durantion-300', isActive ? 'text-accent font-bold bg-accent/15 border border-accent/40' : 'hover:text-accent')}
       href={href}
     >
       <div className="flex space-x-2">
@@ -120,13 +125,11 @@ function HeaderMenuItem({
             className={clsx('iconfont', icon)}
             initial={{ y: 10, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
+            exit={{ y: 10, opacity: 0 }}
           ></motion.i>
         )}
         <span>{title}</span>
       </div>
-      {isActive && (
-        <div className="absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-accent/70 to-transparent"></div>
-      )}
     </a>
   )
 }

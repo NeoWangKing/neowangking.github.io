@@ -4,7 +4,7 @@ import { waline } from '@/config.json'
 import SectionBlock from '@/components/SectionBlock.astro'
 ---
 
-<div class="p-4 rounded-xl border-2 border-accent/10">
+<div class="p-4 rounded-xl border border-primary">
   <SectionBlock>
     {waline.serverURL && <Waline {...waline} client:visible />}
   </SectionBlock>
