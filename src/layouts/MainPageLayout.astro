@@ -1,17 +1,12 @@
 ---
 import Hero from '@/components/hero/Hero.astro'
 import PageLayout from '@/layouts/PageLayout.astro'
-import SectionBlock from '@/components/SectionBlock.astro'
-import TagList from '@/components/TagList.astro'
-import CategoryList from '@/components/CategoryList.astro'
-
-import { getHotTags, getCategories } from '@/utils/content'
+import Card from '@/components/cards/Card.astro'
+import TagCard from '@/components/cards/TagCard.astro'
+import CategoryCard from '@/components/cards/CategoryCard.astro'
 
 
-// 获取热门标签
-const hotTags = await getHotTags()
-// 获取所有类别
-const Categories = await getCategories()
+
 
 interface Props {
   title?: string
@@ -42,65 +37,18 @@ const {
       <!-- 分类和标签展示组件 -->
       <div>
         <aside class="mx-auto mb-6 hidden lg:block lg:sticky lg:top-20 space-y-6">
-          {showTags &&
-            <div class="p-4 rounded-[24px] border border-primary bg-secondary shadow-xl">
-              <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
-                <TagList tags={hotTags} />
-                <div class="text-right">
-                  <a class="text-sm text-secondary hover:text-accent" href="/tags">
-                    更多标签 <i class="iconfont icon-arrow-right" />
-                  </a>
-                </div>
-              </SectionBlock>
-            </div>
-          }
-          {showCategories &&
-            <div class="p-4 rounded-[24px] border border-primary bg-secondary shadow-xl">
-              <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
-                <CategoryList categories={Categories} />
-                <div class="mt-2 text-right">
-                  <a class="text-sm text-secondary hover:text-accent" href="/categories">
-                    所有分类 <i class="iconfont icon-arrow-right" />
-                  </a>
-                </div>
-              </SectionBlock>
-            </div>
-          }
+          {showTags && <TagCard />}
+          {showCategories && <CategoryCard />}
         </aside>
       </div>
       <!-- 中间主体部分 -->
-      <div class="px-4 py-2 rounded-[24px] border border-primary bg-secondary shadow-xl">
+      <Card>
         <slot />
-      </div>
-      <!-- 小屏幕的下方组件 -->
-      <div>
-        <aside class="mx-auto mt-6 lg:hidden space-y-6">
-          {showTags &&
-            <div class="p-4 rounded-[24px] border border-primary bg-secondary shadow-xl">
-              <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
-                <TagList tags={hotTags} />
-                <div class="text-right">
-                  <a class="text-sm text-secondary hover:text-accent" href="/tags">
-                    更多标签 <i class="iconfont icon-arrow-right" />
-                  </a>
-                </div>
-              </SectionBlock>
-            </div>
-          }
-          {showCategories &&
-            <div class="p-4 rounded-[24px] border border-primary bg-secondary shadow-xl">
-              <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
-                <CategoryList categories={Categories} />
-                <div class="mt-2 text-right">
-                  <a class="text-sm text-secondary hover:text-accent" href="/categories">
-                    所有分类 <i class="iconfont icon-arrow-right" />
-                  </a>
-                </div>
-              </SectionBlock>
-            </div>
-          }
+        <aside class="m-4 lg:hidden space-y-6">
+          {showTags && <TagCard rounded="xl" shadow="none" />}
+          {showCategories && <CategoryCard rounded="xl" shadow="none" />}
         </aside>
-      </div>
+      </Card>
     </div>
   </div>
 </PageLayout>

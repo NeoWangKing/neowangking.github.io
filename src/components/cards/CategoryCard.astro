@@ -1,0 +1,31 @@
+---
+import Card from '@/components/cards/Card.astro'
+import SectionBlock from '@/components/SectionBlock.astro'
+import CategoryList from '@/components/CategoryList.astro'
+import { getCategories } from '@/utils/content'
+
+// 获取所有类别
+const Categories = await getCategories()
+
+interface Props {
+  rounded?: string
+  shadow?: string
+  other?: string
+}
+
+const { rounded = '[24px]', shadow = 'xl', other = '' } = Astro.props
+
+---
+
+<Card rounded={rounded} shadow={shadow} other={other}>
+  <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
+    <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
+      <CategoryList categories={Categories} />
+      <div class="mt-2 text-right">
+        <a class="text-sm text-secondary hover:text-accent" href="/categories">
+          所有分类 <i class="iconfont icon-arrow-right" />
+        </a>
+      </div>
+    </SectionBlock>
+  </SectionBlock>
+</Card>

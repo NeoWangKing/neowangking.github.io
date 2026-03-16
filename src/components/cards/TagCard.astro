@@ -1,0 +1,29 @@
+---
+import Card from '@/components/cards/Card.astro'
+import SectionBlock from '@/components/SectionBlock.astro'
+import { getHotTags } from '@/utils/content'
+import TagList from '@/components/TagList.astro'
+
+// 获取热门标签
+const hotTags = await getHotTags()
+
+interface Props {
+  rounded?: string
+  shadow?: string
+  other?: string
+}
+
+const { rounded = '[24px]', shadow = 'xl', other = '' } = Astro.props
+
+---
+
+<Card rounded={rounded} shadow={shadow} other={other}>
+  <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
+    <TagList tags={hotTags} />
+    <div class="text-right">
+      <a class="text-sm text-secondary hover:text-accent" href="/tags">
+        更多标签 <i class="iconfont icon-arrow-right" />
+      </a>
+    </div>
+  </SectionBlock>
+</Card>

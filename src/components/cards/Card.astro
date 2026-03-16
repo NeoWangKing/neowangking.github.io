@@ -1,0 +1,21 @@
+---
+interface Props {
+  rounded?: string
+  shadow?: string
+  other?: string
+}
+
+const { rounded, shadow, other } = Astro.props
+---
+
+<div 
+  class={
+    [
+      "p-4 border border-primary bg-secondary",
+      rounded ? `rounded-${rounded}` : 'rounded-[24px]',
+      shadow ? `shadow-${shadow}` : 'shadow-xl',
+      other && other,
+    ].join(' ')}
+>
+  <slot/>
+</div>
