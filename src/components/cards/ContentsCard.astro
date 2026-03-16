@@ -1,0 +1,27 @@
+---
+import Card from '@/components/cards/Card.astro'
+import SectionBlock from '@/components/SectionBlock.astro'
+import { PostToc } from '@/components/post/PostToc'
+import { ReadingProgress } from '@/components/post/ReadingProgress'
+import { ActionAside } from '@/components/post/ActionAside'
+import type { MarkdownHeading } from 'astro'
+
+interface Props {
+  headings: MarkdownHeading[]
+}
+
+const { headings } = Astro.props
+---
+
+<Card>
+  <SectionBlock title="目录" style="mt-4 mb-4 text-xl font-bold uppercase tracking-widest text-accent">
+    <!-- 文章结构 -->
+    <PostToc headings={headings} client:idle />
+    <!-- 分隔线 -->
+    <hr class="my-2 border-primary max-w-[100px]" />
+    <!-- 阅读进度 -->
+    <ReadingProgress client:idle />
+    <!-- 分享与赞助按钮 -->
+    <ActionAside client:idle />
+  </SectionBlock>
+</Card>

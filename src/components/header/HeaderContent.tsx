@@ -65,7 +65,7 @@ function HeaderMenu({ isBgShow }: { isBgShow: boolean }) {
   const [mouseY, setMouseY] = useState(0)
   const [radius, setRadius] = useState(0)
 
-  const background = `radial-gradient(${radius}px circle at ${mouseX}px ${mouseY}px, rgb(var(--color-accent) / 0.2) 0%, transparent 50%)`
+  // const background = `radial-gradient(${radius}px circle at ${mouseX}px ${mouseY}px, rgb(var(--color-accent) / 0.2) 0%, transparent 50%)`
 
   const handleMouseMove = ({ clientX, clientY, currentTarget }: React.MouseEvent) => {
     const bounds = currentTarget.getBoundingClientRect()
@@ -86,7 +86,7 @@ function HeaderMenu({ isBgShow }: { isBgShow: boolean }) {
       <div className="text-sm px-0 flex">
         <div
           className="absolute -z-1 -inset-px rounded-full opacity-0 group-hover:opacity-100"
-          style={{ background }}
+          // style={{ background }}
           aria-hidden
         ></div>
         {menus.map((menu) => (

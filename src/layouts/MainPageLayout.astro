@@ -42,13 +42,15 @@ const {
         </aside>
       </div>
       <!-- 中间主体部分 -->
-      <Card>
-        <slot />
-        <aside class="m-4 lg:hidden space-y-6">
-          {showTags && <TagCard rounded="xl" shadow="none" />}
-          {showCategories && <CategoryCard rounded="xl" shadow="none" />}
-        </aside>
-      </Card>
+      <div>
+        <Card>
+          <slot />
+          <aside class="m-4 lg:hidden space-y-6">
+            {showTags && <TagCard rounded="xl" shadow="none" />}
+            {showCategories && <CategoryCard rounded="xl" shadow="none" />}
+          </aside>
+        </Card>
+      </div>
     </div>
   </div>
 </PageLayout>

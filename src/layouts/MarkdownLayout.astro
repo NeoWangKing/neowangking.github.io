@@ -17,6 +17,7 @@ import { ReadingProgress } from '@/components/post/ReadingProgress'
 import Card from '@/components/cards/Card.astro'
 import TagCard from '@/components/cards/TagCard.astro'
 import CategoryCard from '@/components/cards/CategoryCard.astro'
+import ContentsCard from '@/components/cards/ContentsCard.astro'
 
 
 interface Props {
@@ -61,27 +62,20 @@ const {
         </aside>
       </div>
       <!-- 中间主体部分 -->
-      <Card>
-        <slot />
-        <aside class="mx-auto m-4 lg:hidden space-y-6">
-          <TagCard rounded="xl" shadow="none" />
-          <CategoryCard rounded="xl" shadow="none" />
-        </aside>
-      </Card>
-      <!-- 侧边目录栏 -->
-      <div class="hidden lg:block">
-        <Card other="sticky top-20">
-          <SectionBlock title="目录" style="mt-4 mb-4 text-xl font-bold uppercase tracking-widest text-accent">
-            <!-- 文章结构 -->
-            <PostToc headings={headings} client:idle />
-            <!-- 分隔线 -->
-            <hr class="my-2 border-primary max-w-[100px]" />
-            <!-- 阅读进度 -->
-            <ReadingProgress client:idle />
-            <!-- 分享与赞助按钮 -->
-            <ActionAside client:idle />
-          </SectionBlock>
+      <div>
+        <Card>
+          <slot />
+          <aside class="mx-auto m-4 lg:hidden space-y-6">
+            <TagCard rounded="xl" shadow="none" />
+            <CategoryCard rounded="xl" shadow="none" />
+          </aside>
         </Card>
+      </div>
+      <!-- 侧边目录栏 -->
+      <div>
+        <aside class="sticky top-20 hidden lg:block space-y-6">
+          <ContentsCard headings={headings} />
+        </aside>
       </div>
     </div>
   </main>
