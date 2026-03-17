@@ -1,0 +1,21 @@
+---
+import { getSubCategories } from '@/utils/content'
+
+interface Props {
+  supName: string
+}
+
+const { supName } = Astro.props
+const subCategories = await getSubCategories(supName)
+---
+{subCategories.map((subcategory, index) => (
+  
+  <a class="relative block" href={`/categories/${subcategory.slug.join('/')}`}>
+    {!(index===0) && <hr class="mx-auto w-[90%] border-accent/50"/>}
+    <div class="px-2.5 py-2 text-sm flex gap-1 select-none rounded-lg transition hover:bg-accent/10">
+      <i class="shrink-0 iconfont icon-menu" />
+      <span class="grow">{subcategory.name[1]}</span>
+      <span class="shrink-0">{subcategory.count}</span>
+    </div>
+  </a>
+))}
