@@ -2,7 +2,6 @@
 dist/
 
 .vscode/
-.vscode/settings.json
 
 # generated types
 .astro/
