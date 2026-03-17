@@ -38,7 +38,7 @@ const mdSlug = `/posts/${current.slug}`
 
 const mdDescription = concat(current.data.category.join('/') || '', current.data.tags.join(', '))
 
-function concat(str1: string, str2: string, sep = ' / ') {
+function concat(str1: string, str2: string, sep = ' | ') {
   if (str1 && str2) return str1 + sep + str2
   if (str1) return str1
   if (str2) return str2
@@ -60,7 +60,7 @@ const lastMod = current.data.lastMod || current.data.date
   <div>
     <!-- 标题部分，展示分类以及标签 -->
     <header class="space-y-4">
-      <h1 class="text-4xl font-bold text-center">
+      <h1 class="text-[48px] font-bold font-serif text-center">
         {current.data.title}
       </h1>
       <PostMetaInfo
