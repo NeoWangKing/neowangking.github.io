@@ -40,6 +40,6 @@ html.gray {
 
 * {
   scrollbar-width: thin;
-  scrollbar-color: theme('colors.accent/0.1') theme('backgroundColor.secondary');
+  scrollbar-color: theme('colors.accent/0.3') theme('backgroundColor.secondary');
   scroll-behavior: smooth;
 }

@@ -126,18 +126,18 @@
   @apply py-2 px-3 align-baseline;
 }
 
-/* 基础图片 */
-.markdown img {
-  @apply block rounded-xl bg-secondary min-h-[80px] min-w-[80px] shadow-xl;
-}
-
 .markdown figure {
-  @apply mb-4 flex flex-col items-center;
+  @apply mx-auto mb-4 flex flex-col items-center max-w-[550px];
 }
 
 /* 图片标题 */
 .markdown figcaption {
   @apply mt-3 text-accent/50 text-sm;
+}
+
+/* 基础图片 */
+.markdown img {
+  @apply block rounded-xl bg-primary min-h-[80px] min-w-[80px] shadow-xl;
 }
 
 /* 内嵌网页，用于内嵌视频等 */
@@ -210,6 +210,7 @@
   width: calc(100% - 70px) !important;
   overflow-x: auto;
   overflow-y: hidden;
+  scrollbar-color: theme('colors.accent/0.2') theme('backgroundColor.secondary/0');
 }
 
 .katex-display .base > .mtable {

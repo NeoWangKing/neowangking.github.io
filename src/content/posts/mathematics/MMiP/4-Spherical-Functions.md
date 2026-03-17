@@ -2,7 +2,7 @@
 title: 球函数
 author: NeoWangKing
 date: 2026-03-12T00:00:47+08:00
-lastMod: 2026-03-14T11:34:33+08:00
+lastMod: 2026-03-17T21:44:16+08:00
 tags: [数学, 物理, 数学物理方法, 球函数, 勒让德多项式, 勒让德函数]
 category: ['数学', '数学物理方法']
 summary: 本文系统整理球函数的相关知识，。
@@ -43,7 +43,7 @@ x = \cos{\theta}
 \end{align}
 $$
 
-## 轴对称球函数
+## 1. 轴对称球函数
 
 ### 勒让德多项式
 
@@ -358,7 +358,7 @@ $$
 \end{align}
 $$
 
-## 连带勒让德函数
+## 2. 连带勒让德函数
 
 ### 连带勒让德函数的导出
 
@@ -390,8 +390,7 @@ $$
 
 $$
 \begin{align}
-\frac{\mathrm{d}^{2}\Theta}{\mathrm{d}x^{2}} =& (1 - x^2)^{\frac{m}{2}} y'' - 2m(1 - x^2)^{\frac{m}{2} - 1} xy' - m(1 - x^2)^{\frac{m}{2} - 1} y \\
-&+ m(m - 2)(1 - x^2)^{\frac{m}{2} - 2}x^{2}y
+\frac{\mathrm{d}^{2}\Theta}{\mathrm{d}x^{2}} = (1 - x^2)^{\frac{m}{2}} y'' - 2m(1 - x^2)^{\frac{m}{2} - 1} xy' - m(1 - x^2)^{\frac{m}{2} - 1} y + m(m - 2)(1 - x^2)^{\frac{m}{2} - 2}x^{2}y
 \end{align}
 $$
 
@@ -432,7 +431,7 @@ $$
 >
 > 这就是连带勒让德方程
 
-于是我们可以得到 $l$ 阶连带勒让德函数（由勒让德多项式通过微分得到）：
+于是我们可以得到 $l$ 阶连带勒让德函数：
 
 $$
 \begin{align}
@@ -454,13 +453,49 @@ $$
 - $P_2^1(x) = 3x(1-x^2)^{1/2}$
 - $P_2^2(x) = 3(1-x^2)$
 
-### 正交归一性
+### 连带勒让德函数的其他形式
+
+1. 微分形式
+
+   $$
+   \begin{align}
+   P^{m}_{l}(x) = \frac{(1 - x^2)^{\frac{m}{2}}}{2^{l}l!}\frac{\mathrm{d}^{l + m}}{\mathrm{d}x^{l + m}}\left(x^2 - 1\right)^{l}
+   \end{align}
+   $$
+
+   > 而对于负指标，代入 $-m$ 即可得到
+   >
+   > $$
+   > \begin{align}
+   > P^{-m}_{l}(x) = \frac{(1 - x^2)^{-\frac{m}{2}}}{2^{l}l!}\frac{\mathrm{d}^{l - m}}{\mathrm{d}x^{l - m}}\left(x^2 - 1\right)^{l}
+   > \end{align}
+   > $$
+   >
+   > 与 $m$ 为正的情况对比即可得到
+   >
+   > $$
+   > \begin{align}
+   > P_l^{-m}(x) = (-1)^m \frac{(l-m)!}{(l+m)!} P_l^m(x)
+   > \end{align}
+   > $$
+
+2. 积分形式
+
+   按照柯西公式，微分表达式可以表示成环路积分：
+
+   $$
+   \begin{align}
+   P^{m}_{l}(x) = \frac{(1 - x^2)^{\frac{m}{2}}}{2^l}\frac{1}{2\pi \mathrm{i}}\frac{(l + m)!}{l!}\oint_{C}{\frac{(z^2 - 1)^{l}}{(z - x)^{l + m + 1}}\mathrm{d}z}
+   \end{align}
+   $$
+
+### 正交归一性与模
 
 连带勒让德函数在区间 $[-1,1]$ 上带权正交：
 
 $$
 \begin{align}
-\int_{-1}^{1} P_l^m(x) P_{k}^m(x) \, dx = \frac{2}{2l+1} \frac{(l+m)!}{(l-m)!} \delta_{lk}
+\int_{-1}^{1} P_l^m(x) P_{k}^m(x) \, \mathrm{d}x = \left(N^{m}_{l}\right)^{2} \delta_{lk} = \frac{2}{2l+1} \frac{(l+m)!}{(l-m)!} \delta_{lk}
 \end{align}
 $$
 
@@ -472,26 +507,150 @@ $$
 \end{align}
 $$
 
+### 广义傅里叶级数展开
+
+根据上面的证明，可以看出连带勒让德函数 $P^{m}_{l}(x)$ 是完备的，可以作为广义傅里叶级数展开的基：
+
+$$
+\begin{align}
+\begin{cases}
+\begin{aligned}
+&f(x) = \sum_{l = 0}^{\infty}{f_{l}P^{m}_{l}(x)}\\
+&f_{l} = \frac{2l + 1}{2} \frac{(l - m)!}{(l + m)!}\int_{-1}^{+1}{f(x)P_{l}^{m}(x)\,\mathrm{d}x}
+\end{aligned}
+\end{cases}
+\end{align}
+$$
+
+或：
+
+$$
+\begin{align}
+\begin{cases}
+\begin{aligned}
+&f(\theta) = \sum_{l = 0}^{\infty}{f_{l}P^{m}_{l}(\cos{\theta})}\\
+&f_{l} = \frac{2l + 1}{2} \frac{(l - m)!}{(l + m)!}\int_{-1}^{+1}{f(\theta)P_{l}^{m}(\cos{\theta})\,\sin{\theta}\mathrm{d}\theta}
+\end{aligned}
+\end{cases}
+\end{align}
+$$
+
+### 连带勒让德函数的递推
+
+连带勒让德函数的基本递推公式有四个：
+
+$$
+\begin{align}
+(2k + 1)xP^{m}_{k}(x) = (k + m)P^{m}_{k - 1}(x) + (k - m + 1)P^{m}_{k + 1}(x)\quad(k \ge 1)
+\end{align}
+$$
+
+$$
+\begin{align}
+(2k + 1)(1 - x^2)^{1/2}P^{m}_{k}(x) = P^{m + 1}_{k + 1}(x) -P^{m + 1}_{k - 1}(x)\quad(k \ge 1)
+\end{align}
+$$
+
+$$
+\begin{align}
+(2k + 1)(1 - x^2)^{1/2}P^{m}_{k}(x) = (k + m)(k + m - 1)P^{m - 1}_{k - 1}(x) - (k - m + 2)(k - m + 1)P^{m - 1}_{k + 1}(x)\quad(k \ge 1)
+\end{align}
+$$
+
+$$
+\begin{align}
+(2k + 1)(1 - x^2)\frac{\mathrm{d}P^{m}_{l}(x)}{\mathrm{d}x} = (k + 1)(k + m)P^{m}_{k - 1}(x) - k(k - m + 1)P^{m}_{k + 1}(x)\quad(k \ge 1)
+\end{align}
+$$
+
+## 3. 一般求函数
+
 ### 球函数
 
-在球坐标下，同时考虑极角 $\theta$ 和方位角 $\phi$ 的函数，定义 **球函数**（球谐函数）
+球函数方程的解就叫做球函数：
 
 $$
 \begin{align}
-Y_{lm}(\theta,\phi) = \sqrt{\frac{2l+1}{4\pi} \frac{(l-m)!}{(l+m)!}} \, P_l^m(\cos\theta) e^{\mathrm{i}m\phi}, \quad m = -l,\dots,l
+Y^{m}_{l}(\theta, \varphi) = P^{m}_{l}(\cos{\theta})
+\begin{Bmatrix}
+\cos{m\varphi}\\
+\sin{m\varphi}
+\end{Bmatrix}
 \end{align}
 $$
 
-球函数构成球面上的完备正交函数系，满足
+这是球函数的实变函数形式，其中 $\begin{Bmatrix}\cos{m\varphi}\\\sin{m\varphi}\end{Bmatrix}$ 指的是 $\cos{m\varphi}$ 和 $\sin{m\varphi}$ 的线性组合
+
+线性独立的 $l$ 阶球函数共有 $2l + 1$ 个，这是因为对于 $m = 0$，只有一个球函数 $P_{l}(x)$，而对于 $m \neq 0$，有两个球函数 $P^{m}_{l}(x)\cos{m\varphi}$ 和 $P^{m}_{l}(x)\sin{m\varphi}$，于是根据欧拉公式可以写出球函数的复变函数形式：
 
 $$
 \begin{align}
-\int_0^{2\pi}\int_0^{\pi} Y_{lm}(\theta,\phi) \overline{Y_{l'm'}}(\theta,\phi) \sin\theta\, d\theta d\phi = \delta_{ll'}\delta_{mm'}
+Y^{m}_{l}(\theta, \varphi) = P^{|m|}{l}(\cos{\theta}) = P^{|m|}_{l}(\cos{\theta})e^{\mathrm{i}m\varphi}\quad(m = -l, \cdots, 0, 1, \cdots, l; l = 0, 1, 2, \cdots)
 \end{align}
 $$
 
-球函数在量子力学、电磁学、热传导等领域有广泛应用。
+在之后的学习中，我会以复变函数的形式为重点，这里只是提一嘴以防忘记还有实变函数的形式
 
-> 连带勒让德函数和球函数是处理非轴对称问题的核心工具，它们的正交完备性为求解偏微分方程提供了级数展开的基础。
+### 球函数的正交关系
+
+球函数中的任意两个在球面 $S$ 上（即 $0 \le \theta \le \pi,\, 0 \le \varphi \le 2\pi$ ）正交：
+
+$$
+\begin{align}
+\iint_{S}{Y^{m}_{l}(\theta, \varphi)Y^{n}_{k}(\theta, \varphi)\,\sin{\theta}\mathrm{d}\theta\mathrm{d}\varphi} = 0\quad(m \neq n \text{ or } l \neq k)
+\end{align}
+$$
+
+### 球函数的模
+
+1. 实变函数形式的模
+
+   使用三角函数积分即可得到：
+
+   $$
+   \begin{align}
+   (N^{m}_{l})^2 &= \iint_{S}{[Y^{m}_{l}(\theta, \varphi)]^{2}\,\sin{\theta}\mathrm{d}\theta\mathrm{d}\varphi}\\
+   &=\int_{0}^{\pi}{[P^{m}_{l}(\cos{\theta})]^{2}\sin{\theta}\mathrm{d}\theta}\int_{0}^{2\pi}{(A\sin^{2}{m\varphi} + B\cos^{2}{m\varphi})\,\mathrm{d}\varphi}\\
+   &=\int_{-1}^{+1}{[P^{m}_{l}(x)]^{2}\mathrm{d}x}\int_{0}^{2\pi}{(A\sin^{2}{m\varphi} + B\cos^{2}{m\varphi})\,\mathrm{d}\varphi}
+   \end{align}
+   $$
+
+   积分得（不会积的去重修微积分）：
+
+   $$
+   \begin{align}
+   N_{l}^{m} = \sqrt{\frac{2\pi\delta_{m}}{2l + 1}\frac{(l + m)!}{(l - m)!}}
+   \end{align}
+   $$
+
+   其中 $\delta_{m} = \begin{cases}2, &m = 0\\1, &m = 1, 2, 3,\cdots\end{cases}$ 。
+
+2. 复变函数形式的模
+
+   利用积分式：
+
+   $$
+   \begin{align}
+   \int_{0}^{2\pi}{e^{\mathrm{i}m\varphi}[e^{\mathrm{i}m\varphi}]^{*}\mathrm{d}\varphi} = \int_{0}^{2\pi}{1\mathrm{d}\varphi} = 2\pi
+   \end{align}
+   $$
+
+   得到复变函数形式的球函数的模的平方为：
+
+   $$
+   \begin{align}
+   (N_{l}^{m})^{2} &= \iint_{S}{Y_{l}^{m}(\theta,\varphi)[Y_{l}^{m}(\theta,\varphi)]^{*}\,\sin{\theta}\mathrm{d}\theta\mathrm{d}\varphi}\\
+   &= \int_{0}^{\pi}{[P_{l}^{|m|}(\cos{\theta})]^{2}\sin{\theta}\mathrm{d}\theta}\cdot\int_{0}^{2\pi}{e^{\mathrm{i}m\varphi}[e^{\mathrm{i}m\varphi}]^{*}\mathrm{d}\varphi}\\
+   &= \frac{2}{2l + 1}\cdot\frac{(l + |m|)!}{(l - |m|)!}\cdot 2\pi
+   \end{align}
+   $$
+
+   得到：
+
+   $$
+   \begin{align}
+   N_{l}^{m} = \sqrt{\frac{4\pi}{2l + 1}\cdot\frac{(l + |m|)!}{(l - |m|)!}}
+   \end{align}
+   $$
 
 _**持续更新ing...**_
