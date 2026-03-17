@@ -9,6 +9,7 @@ import {
 import { pageScrollLocationAtom, pageScrollDirectionAtom } from '@/store/scrollInfo'
 import { isMobileAtom } from '@/store/viewport'
 import { floor } from 'lodash-es'
+import { mouseLocationAtom } from '@/store/mouseInfo'
 
 const threshold = 60
 
@@ -27,9 +28,14 @@ export function useHasMetaInfo() {
   return useAtomValue(hasMetaInfoAtom)
 }
 
+export function useMouseLocation() {
+  return useAtomValue(mouseLocationAtom)
+}
+
 export function useShouldHeaderMenuBgShow() {
   const scrollY = useAtomValue(pageScrollLocationAtom)
-  return scrollY < threshold
+  // return scrollY < threshold
+  return scrollY < 0
 }
 
 export function useIsMobile() {
@@ -39,8 +45,9 @@ export function useIsMobile() {
 export function useShouldHeaderMetaShow() {
   const hasMetaInfo = useHasMetaInfo()
   const scrollY = useAtomValue(pageScrollLocationAtom)
+  const { mouseY } = useAtomValue(mouseLocationAtom)
 
-  return hasMetaInfo && scrollY >= threshold
+  return hasMetaInfo && scrollY >= threshold && mouseY >= threshold
 }
 
 export function useHeaderMetaInfo() {

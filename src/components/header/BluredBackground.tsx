@@ -1,15 +1,16 @@
-import { useHeaderBgOpacity } from './hooks'
+import { AnimatePresence, motion } from 'framer-motion'
 
 export function BluredBackground() {
-  const opacity = useHeaderBgOpacity()
+  // const opacity = useHeaderBgOpacity()
 
   return (
-    <div
-      className="absolute inset-0 -z-1 border-b border-primary bg-white/70 dark:bg-zinc-800/70 backdrop-saturate-200 backdrop-blur-lg transform-gpu"
-      style={{
-        opacity: opacity,
-        transitionDuration: '0.1s',
-      }}
-    ></div>
+    <AnimatePresence>
+      <motion.div
+        className="absolute inset-0 -z-1 border-b border-primary bg-white/70 dark:bg-zinc-800/70 backdrop-saturate-200 backdrop-blur-md transform-gpu"
+        initial={{ y: -20, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        exit={{ y: -20, opacity: 0 }}
+      ></motion.div>
+    </AnimatePresence>
   )
 }
