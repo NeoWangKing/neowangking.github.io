@@ -360,25 +360,83 @@ $$
 
 ## 连带勒让德函数
 
-### 连带勒让德方程
+### 连带勒让德函数的导出
 
 当问题不再具有轴对称性（$m \neq 0$）时，$\Theta(\theta)$ 满足的方程为连带勒让德方程。在变量 $x=\cos\theta$ 下，方程化为
 
 $$
 \begin{align}
-(1-x^2)\frac{d^2y}{dx^2} - 2x\frac{dy}{dx} + \left[l(l+1) - \frac{m^2}{1-x^2}\right]y = 0
+(1-x^2)\frac{\mathrm{d}^2\Theta}{\mathrm{d}x^2} - 2x\frac{\mathrm{d}\Theta}{\mathrm{d}x} + \left[\lambda - \frac{m^2}{1-x^2}\right]\Theta = 0
 \end{align}
 $$
 
 其中 $m$ 为整数（由 $\Phi(\phi)$ 的周期性条件决定），且 $|m| \le l$。此方程的解称为 **连带勒让德函数** $P_l^m(x)$。
 
-### 连带勒让德函数的定义
-
-连带勒让德函数可由勒让德多项式通过微分得到：
+在这个方程中， $x_{0} = 0$ 是常点，可以通过一般的级数解法求得级数解，但是递推公式极为复杂，所以我们考虑一下其他的方法，适当的取
 
 $$
 \begin{align}
-P_l^m(x) = (1-x^2)^{m/2} \frac{d^m}{dx^m} P_l(x), \quad m = 0,1,2,\dots,l
+\Theta = (1 - x^{2})^{\frac{m}{2}} y(x)
+\end{align}
+$$
+
+在这个变换下有：
+
+$$
+\begin{align}
+\frac{\mathrm{d}\Theta}{\mathrm{d}x} = (1 - x^2)^{\frac{m}{2}} y' - m(1 - x^2)^{\frac{m}{2} - 1}xy
+\end{align}
+$$
+
+$$
+\begin{align}
+\frac{\mathrm{d}^{2}\Theta}{\mathrm{d}x^{2}} =& (1 - x^2)^{\frac{m}{2}} y'' - 2m(1 - x^2)^{\frac{m}{2} - 1} xy' - m(1 - x^2)^{\frac{m}{2} - 1} y \\
+&+ m(m - 2)(1 - x^2)^{\frac{m}{2} - 2}x^{2}y
+\end{align}
+$$
+
+这样代入就可以得到 $y(x)$ 的微分方程
+
+$$
+\begin{align}
+(1 - x^2)y'' - 2(m + 1)xy' + [\lambda - m(m + 1)]y = 0
+\end{align}
+$$
+
+可以证明，上式就是勒让德方程求导 $m$ 次后得到的方程，于是就有 $y(x) = P_{l}^{(m)}(x)$ 。
+
+> 证明：
+> 将勒让德方程：
+>
+> $$
+> \begin{align}
+> (1 - x^2)P'' - 2xP' + \lambda P = 0
+> \end{align}
+> $$
+>
+> 对 $x$ 求导 $m$ 次，结果为：
+>
+> $$
+> \begin{align}
+> \left[(1 - x^2)p^{(m + 2)} - m2xP^{(m + 1)} - \frac{m(m - 1)}{2}2P^{(m)}\right] - 2\left[xP^{(m + 1)} + mP^{(m)}\right] + \lambda P^{(m)} = 0
+> \end{align}
+> $$
+>
+> 化简得到：
+>
+> $$
+> \begin{align}
+> (1 - x^2){P^{(m)}}'' - 2x(m + 1){P^{(m)}}' + \left[\lambda - m(m + 1)\right]P^{(m)} = 0
+> \end{align}
+> $$
+>
+> 这就是连带勒让德方程
+
+于是我们可以得到 $l$ 阶连带勒让德函数（由勒让德多项式通过微分得到）：
+
+$$
+\begin{align}
+P_l^m(x) = (1-x^2)^{\frac{m}{2}} P^{(m)}_{l}(x), \quad m = 0,1,2,\dots,l
 \end{align}
 $$
 

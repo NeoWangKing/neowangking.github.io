@@ -69,7 +69,7 @@
 
 /* quote引用 */
 .markdown blockquote {
-  @apply my-5 pl-4 border-l-2 border-accent/80 text-secondary italic;
+  @apply my-5 max-w-full pl-4 border-l-2 border-accent/80 text-secondary italic;
 }
 
 .markdown blockquote::before {
@@ -81,7 +81,7 @@
 }
 
 .markdown blockquote > p:last-child {
-  @apply mb-1;
+  @apply mb-2;
 }
 
 /* 行内代码 */
@@ -205,19 +205,28 @@
   @apply mt-0;
 }
 
-.katex-display {
-  width: 100%;
-}
-
 .katex-display .base {
-  max-width: calc(100% - 70px);
+  position: relative !important;
+  width: calc(100% - 70px) !important;
   overflow-x: auto;
   overflow-y: hidden;
-  scrollbar-width: none;
 }
 
-@media (max-width: 1023px) {
-  .katex-display > .katex .tag {
+.katex-display .base > .mtable {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+.katex-display .mord {
+  position: relative;
+}
+
+@media (max-width: 425px) {
+  .katex-display .katex .tag {
     display: none;
   }
 }

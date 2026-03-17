@@ -32,18 +32,14 @@ html {
   color: theme('textColor.primary');
   background-color: theme('backgroundColor.root');
   scroll-padding-top: 64px;
-  scroll-behavior: smooth;
 }
 
 html.gray {
   filter: grayscale(1);
 }
 
-body {
-  scroll-behavior: smooth;
-}
-
 * {
   scrollbar-width: thin;
+  scrollbar-color: theme('colors.accent/0.1') theme('backgroundColor.secondary');
   scroll-behavior: smooth;
 }
