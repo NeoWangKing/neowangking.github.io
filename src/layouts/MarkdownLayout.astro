@@ -14,7 +14,7 @@ import Card from '@/components/cards/Card.astro'
 import TagCard from '@/components/cards/TagCard.astro'
 import CategoryCard from '@/components/cards/CategoryCard.astro'
 import ContentsCard from '@/components/cards/ContentsCard.astro'
-
+import { ScrollRestoration } from '@/components/ScrollRestoration'
 
 interface Props {
   title: string
@@ -45,7 +45,9 @@ const {
     slug={mdSlug}
     client:only="react"
   />
-
+  <!-- 添加滚动恢复组件，仅在客户端运行 -->
+  <ScrollRestoration slug={mdSlug} client:only="react" />
+  
   <Header client:only="react" transition:persist="header" />
   <main class="relative z-1 px-4 pt-16 min-h-main bg-primary">
     <HeadGradient client:idle transition:animate="fade"/>

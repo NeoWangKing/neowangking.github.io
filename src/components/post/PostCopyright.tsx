@@ -36,7 +36,7 @@ export function PostCopyright({
   }, [lastMod])
 
   return (
-    <section className="text-xs py-3 px-5 leading-loose text-secondary border-2 border-accent/10 rounded-xl">
+    <section className="text-xs py-3 px-5 mt-6 leading-loose text-secondary border border-primary rounded-xl">
       <p><span className="font-bold">·文章标题：</span>{title}</p>
       <p><span className="font-bold">·文章作者：</span>{author}</p>
       <p><span className="font-bold">·文章概要：</span>{summary}</p>

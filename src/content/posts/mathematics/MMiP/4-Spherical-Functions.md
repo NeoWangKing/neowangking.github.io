@@ -655,4 +655,98 @@ $$
 
 ### 球面上的函数的广义傅里叶级数展开
 
-_**持续更新ing...**_
+定义在球面 $S(0 \le \theta \le \pi,\,0 \le \varphi 2\pi)$ 上的函数 $f(\theta, \varphi)$ 可以用球函数展开成二重广义傅里叶级数。
+
+1. 实变函数的形式
+
+   对 $f$ 进行展开：
+
+   $$
+   \begin{align}
+   f(\theta,\varphi) = \sum_{m = 0}^{\infty}{\left[A_{m}(\theta)\cos{m\varphi} + B_{m}(\theta)\sin{m\varphi}\right]}
+   \end{align}
+   $$
+
+   此处的系数可以从下式中得出：
+
+   $$
+   \begin{align}
+   \begin{cases}
+   \begin{aligned}
+   &A_{m}(\theta) = \frac{1}{\pi\delta_{m}} \int_{0}^{2\pi}{f(\theta,\varphi)\,\cos{m\varphi}\mathrm{d}\varphi}\\
+   &B_{m}(\theta) = \frac{1}{\pi} \int_{0}^{2\pi}{f(\theta,\varphi)\,\sin{m\varphi}\mathrm{d}\varphi}
+   \end{aligned}
+   \end{cases}
+   \end{align}
+   $$
+
+   再以 $P_{l}^{m}(\cos{\theta})$ 为基底展开得到：
+
+   $$
+   \begin{align}
+   \begin{cases}
+   \begin{aligned}
+   &A_{m}(\theta) = \sum_{l = m}^{\infty}{A_{l}^{m} P_{l}^{m}(\cos{\theta})}\\
+   &B_{m}(\theta) = \sum_{l = m}^{\infty}{B_{l}^{m} P_{l}^{m}(\cos{\theta})}
+   \end{aligned}
+   \end{cases}
+   \end{align}
+   $$
+
+   最后利用广义傅里叶级数展开~~（md敲代码敲得想4）~~，得到：
+
+   $$
+   \begin{align}
+   \begin{cases}
+   \begin{aligned}
+   A_{l}^{m} &= \frac{2l + 1}{2} \cdot \frac{(l - m)!}{(l + m)!} \int_{0}^{\pi}{A_{m}(\theta)P_{l}^{m}(\cos{\theta})\,\sin{\theta}\mathrm{d}\theta}\\
+             &= \frac{2l + 1}{2\pi\delta_{m}} \cdot \frac{(l - m)!}{(l + m)!} \int_{0}^{\pi}{\int_{0}^{2\pi}{f(\theta,\varphi)P_{l}^{m}(\cos{\theta})\,\cos{m\varphi}\sin{\theta}\mathrm{d}\theta\mathrm{d}\varphi}}\\
+   B_{l}^{m} &= \frac{2l + 1}{2} \cdot \frac{(l - m)!}{(l + m)!} \int_{0}^{\pi}{B_{m}(\theta)P_{l}^{m}(\cos{\theta})\,\sin{\theta}\mathrm{d}\theta}\\
+             &= \frac{2l + 1}{2\pi} \cdot \frac{(l - m)!}{(l + m)!} \int_{0}^{\pi}{\int_{0}^{2\pi}{f(\theta,\varphi)P_{l}^{m}(\cos{\theta})\,\sin{m\varphi}\sin{\theta}\mathrm{d}\theta\mathrm{d}\varphi}}
+   \end{aligned}
+   \end{cases}
+   \end{align}
+   $$
+
+   带回到 $f(\theta, \varphi)$ 在球面 $S$ 上的展开式：
+
+   $$
+   \begin{align}
+   f(\theta,\varphi) = \sum_{m = 0}^{\infty}{\sum_{l = m}^{\infty}{\left[A_{l}^{m}\cos{m\varphi} + B_{l}^{m}\sin{m\varphi}\right]P_{l}^{m}(\cos{\theta})}}
+   \end{align}
+   $$
+
+2. 复变函数的形式
+
+   与上述实变函数的形式的推导过程类似，展开复数形式的傅里叶级数，有：
+
+   $$
+   \begin{align}
+   f(\theta,\varphi) = \sum_{l = 0}^{\infty}{\sum_{m = -l}^{\infty}{C_{l}^{m}P_{l}^{|m|}(\cos{\theta})e^{\mathrm{i}m\varphi}}}
+   \end{align}
+   $$
+
+   $$
+   \begin{align}
+   C_{l}^{m} = \frac{2l + 1}{4\pi}\frac{(l - |m|)!}{(l + |m|)!} \int_{0}^{\pi}{\int_{0}^{2\pi}{f(\theta,\varphi)P_{l}^{|m|}(\cos{\theta})\left[e^{\mathrm{i}m\varphi}\right]^{*}\,\sin{\theta}\mathrm{d}\theta\mathrm{d}\varphi}}
+   \end{align}
+   $$
+
+### 正交归一化的球函数
+
+在物理学的情形中，常常需要用到正交归一化的球函数，其定义为
+
+$$
+\begin{align}
+Y_{lm}(\theta,\varphi) = \frac{1}{N_{l}^{m}}Y_{l}^{m}(\theta,\varphi) = \sqrt{\frac{2l + 1}{4\pi}} \cdot \frac{(l - |m|)!}{(l + |m|)!}P_{l}^{|m|}(\cos{\theta})e^{\mathrm{i}m\varphi}\quad(l = 0,1,2,\cdots;\, m = -l,\cdots,l)
+\end{align}
+$$
+
+于是对应的球面上的函数 $f(\theta,\varphi)$ 可以使用正交归一球函数展开，即：
+
+$$
+\begin{align}
+&f(\theta,\varphi) = \sum_{l = 0}^{\infty}{\sum_{m = -l}^{l}{C_{lm}Y_{lm}(\theta,\varphi)}}\\
+&C_{lm} = \int_{0}^{2\pi}{\int_{0}^{\pi}{f(\theta,\varphi)Y_{lm}^{*}(\theta,\varphi)\,\sin^{2}{\theta}\mathrm{d}\theta\mathrm{d}\varphi}}
+\end{align}
+$$

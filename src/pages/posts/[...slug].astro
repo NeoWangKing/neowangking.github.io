@@ -9,6 +9,7 @@ import PostArchiveInfo from '@/components/post/PostArchiveInfo.astro'
 import { Outdate } from '@/components/post/Outdate'
 import PostNav from '@/components/post/PostNav.astro'
 import { Comments } from '@/components/comment'
+import { PostTagsList } from '@/components/post/PostTagsList'
 import { PostCopyright } from '@/components/post/PostCopyright'
 
 export const getStaticPaths = (async () => {
@@ -90,6 +91,7 @@ const lastMod = current.data.lastMod || current.data.date
   <!-- 页脚模块 -->
   <div class="mt-8 mb-4">
     <section class="space-y-6">
+      <PostTagsList tags={current.data.tags} client:visible />
       <!-- 版权声明 -->
       <PostCopyright title={current.data.title} slug={mdSlug} author={current.data.author}  summary={current.data.summary} lastMod={lastMod} exSlug={current.data.exSlug} client:visible />
       <!-- 相邻文章跳转 -->

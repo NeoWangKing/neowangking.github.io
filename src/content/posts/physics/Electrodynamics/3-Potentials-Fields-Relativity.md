@@ -2,10 +2,10 @@
 title: 势与场和狭义相对论
 author: NeoWangKing
 date: 2026-03-14T11:50:58+08:00
-lastMod: 2026-03-14T11:50:58+08:00
-tags: [物理, 电动力学, 矢势, 标势, 规范变换, 相对论]
+lastMod: 2026-03-18T23:04:32+08:00
+tags: [物理, 电动力学, 矢势, 标势, 规范变换, 狭义相对论, 洛伦兹变换, 四维矢量]
 category: ['物理', '电动力学']
-summary: 本文介绍电动力学中的势与场，包括矢势和标势的引入、规范变换（库仑规范与洛伦兹规范），以及狭义相对论的基本原理、同时性的相对性、时间膨胀等概念。
+summary: 本文介绍电动力学中的势与场，包括矢势和标势的引入、规范变换（库仑规范与洛伦兹规范）；以及狭义相对论的基本原理、洛伦兹变换、四维时空、相对论动力学等内容。
 comments: true
 draft: false
 ---
@@ -163,16 +163,227 @@ $$
 
 其中 $\gamma = 1/\sqrt{1-v^2/c^2}$。可见，运动时钟变慢——**时间膨胀**。反之，在火车上的观察者也会看到地面上的时钟变慢，两者都是正确的，这是相对论的对称性。
 
-### 例子：μ子的寿命
+### 长度收缩
 
-μ子在静止时的平均寿命约为 $\Delta \bar{t} = 2\times 10^{-6}\,\mathrm{s}$。若它以 $v = \dfrac{3}{5}c$ 运动，则在地面参考系中的寿命为
+考虑一列长度为 $\Delta \bar{x}$ 的车厢（在自身静止系中的长度），以速度 $v$ 相对于地面运动。在地面系中测量其长度，需要同时记录两端的位置。设光从后端发出，经前端反射回后端。在车厢系中，光往返时间为 $\Delta \bar{t} = 2\Delta \bar{x}/c$。在地面系中，设车厢长度为 $\Delta x$，则光从前端到后端的时间满足
 
 $$
 \begin{align}
-\gamma = \frac{1}{\sqrt{1-(3/5)^2}} = \frac{5}{4}, \quad \Delta t = \gamma \Delta \bar{t} = \frac{5}{4} \times 2\times 10^{-6} = 2.5\times 10^{-6}\,\mathrm{s}
+\Delta t_1 = \frac{\Delta x + v\Delta t_1}{c}, \quad \Delta t_2 = \frac{\Delta x - v\Delta t_2}{c}
 \end{align}
 $$
 
-这就是为什么高速μ子能到达地面而被观测到。
+解得 $\Delta t_1 = \dfrac{\Delta x}{c-v}$，$\Delta t_2 = \dfrac{\Delta x}{c+v}$，总时间 $\Delta t = \Delta t_1 + \Delta t_2 = \dfrac{2\Delta x}{c(1-v^2/c^2)} = \dfrac{2\gamma^2 \Delta x}{c}$。由时间膨胀，$\Delta t = \gamma \Delta \bar{t} = \dfrac{2\gamma \Delta \bar{x}}{c}$，比较得
 
-_**持续更新ing...**_
+$$
+\begin{align}
+\Delta x = \frac{1}{\gamma} \Delta \bar{x}
+\end{align}
+$$
+
+即运动物体在运动方向上长度收缩。
+
+### 洛伦兹变换
+
+设惯性系 $\bar{S}$ 以速度 $v$ 沿 $x$ 轴方向相对于 $S$ 系运动，且两系原点在 $t=0$ 时重合。洛伦兹变换为
+
+$$
+\begin{align}
+\bar{x} &= \gamma (x - vt) \\
+\bar{y} &= y \\
+\bar{z} &= z \\
+\bar{t} &= \gamma \left( t - \frac{v}{c^2} x \right)
+\end{align}
+$$
+
+其逆变换为
+
+$$
+\begin{align}
+x &= \gamma (\bar{x} + vt) \\
+y &= \bar{y} \\
+z &= \bar{z} \\
+t &= \gamma \left( \bar{t} + \frac{v}{c^2} \bar{x} \right)
+\end{align}
+$$
+
+其中 $\gamma = 1/\sqrt{1-v^2/c^2}$。
+
+### 闵可夫斯基时空与四维矢量
+
+#### 四维坐标
+
+定义四维坐标 $x^\mu$（$\mu = 0,1,2,3$）：
+
+$$
+\begin{align}
+x^0 = ct, \quad x^1 = x, \quad x^2 = y, \quad x^3 = z
+\end{align}
+$$
+
+洛伦兹变换可写为矩阵形式：
+
+$$
+\begin{align}
+\begin{pmatrix} \bar{x}^0 \\ \bar{x}^1 \\ \bar{x}^2 \\ \bar{x}^3 \end{pmatrix} =
+\begin{pmatrix}
+\gamma & -\gamma\beta & 0 & 0 \\
+-\gamma\beta & \gamma & 0 & 0 \\
+0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1
+\end{pmatrix}
+\begin{pmatrix} x^0 \\ x^1 \\ x^2 \\ x^3 \end{pmatrix}
+\end{align}
+$$
+
+其中 $\beta = v/c$。通常记 $\bar{x}^\mu = \Lambda^\mu_{\ \nu} x^\nu$。
+
+#### 四维矢量的点积与度规
+
+定义度规 $g_{\mu\nu}$ 为
+
+$$
+\begin{align}
+g_{00} = -1, \quad g_{11} = g_{22} = g_{33} = 1
+\end{align}
+$$
+
+四维矢量的点积（内积）定义为
+
+$$
+\begin{align}
+(a,b) = g_{\mu\nu} a^\mu b^\nu = -a^0 b^0 + a^1 b^1 + a^2 b^2 + a^3 b^3
+\end{align}
+$$
+
+该点积在洛伦兹变换下不变。
+
+协变矢量 $a_\mu$ 定义为
+
+$$
+\begin{align}
+a_0 = -a^0, \quad a_1 = a^1, \quad a_2 = a^2, \quad a_3 = a^3
+\end{align}
+$$
+
+于是点积可写为 $a_\mu b^\mu$（爱因斯坦求和约定）。
+
+#### 时空间隔与因果结构
+
+对于两个事件，定义间隔 $I$ 为
+
+$$
+\begin{align}
+I = (\Delta x)_\mu (\Delta x)^\mu = - (c\Delta t)^2 + (\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2
+\end{align}
+$$
+
+间隔是洛伦兹不变量。根据 $I$ 的符号，可将事件分为三类：
+
+- **类时间隔**（$I<0$）：可通过小于光速的信号联系，存在因果关联。
+- **类空间隔**（$I>0$）：无法用光速或亚光速信号联系，无因果关联。
+- **类光间隔**（$I=0$）：正好可用光信号联系。
+
+在闵可夫斯基图中，未来光锥、过去光锥和现在区域由间隔划分。
+
+### 四维速度与四维动量
+
+#### 固有时
+
+对于运动的粒子，定义固有时 $\tau$ 为粒子静止系中的时间：
+
+$$
+\begin{align}
+\mathrm{d}\tau = \sqrt{1 - \frac{u^2}{c^2}} \, \mathrm{d}t = \frac{1}{\gamma} \mathrm{d}t
+\end{align}
+$$
+
+固有时是洛伦兹标量。
+
+#### 四维速度
+
+四维速度定义为
+
+$$
+\begin{align}
+\eta^\mu = \frac{\mathrm{d}x^\mu}{\mathrm{d}\tau} = \left( \gamma c, \gamma \boldsymbol{u} \right)
+\end{align}
+$$
+
+其中 $\boldsymbol{u}$ 是普通速度。四维速度满足 $\eta_\mu \eta^\mu = -c^2$。
+
+#### 四维动量与能量
+
+四维动量定义为
+
+$$
+\begin{align}
+p^\mu = m \eta^\mu = \left( \gamma m c, \gamma m \boldsymbol{u} \right)
+\end{align}
+$$
+
+其中 $m$ 为静止质量。定义能量 $E = p^0 c = \gamma m c^2$，相对论性动量 $\boldsymbol{p} = \gamma m \boldsymbol{u}$。于是四维动量可写为 $p^\mu = (E/c, \boldsymbol{p})$。
+
+**能量-动量关系**：由 $p_\mu p^\mu = -m^2 c^2$ 得
+
+$$
+\begin{align}
+E^2 - p^2 c^2 = (m c^2)^2
+\end{align}
+$$
+
+其中 $p = |\boldsymbol{p}|$。静止能量 $E_0 = m c^2$，动能 $E_{\text{kin}} = E - m c^2 = (\gamma - 1) m c^2$，低速下近似为 $\frac{1}{2} m u^2$。
+
+### 相对论动力学举例
+
+#### 恒力作用下的直线运动
+
+设粒子受恒定力 $F$（沿 $x$ 方向），初动量为零。由 $F = \mathrm{d}p/\mathrm{d}t$ 得 $p = Ft$。又 $p = \gamma m u$，解得
+
+$$
+\begin{align}
+\frac{u}{c} = \frac{Ft/mc}{\sqrt{1 + (Ft/mc)^2}}
+\end{align}
+$$
+
+积分得位置
+
+$$
+\begin{align}
+x(t) = \int_0^t u \, \mathrm{d}t = \frac{mc^2}{F} \left[ \sqrt{1 + \left( \frac{Ft}{mc} \right)^2} - 1 \right]
+\end{align}
+$$
+
+当 $Ft \ll mc$ 时，$x \approx \frac{F}{2m}t^2$（牛顿极限）；当 $Ft \gg mc$ 时，$x \approx ct - \frac{mc^2}{F}$（趋近光速）。
+
+#### 相对论性回旋运动
+
+带电粒子在均匀恒定磁场 $\boldsymbol{B}$ 中运动，受洛伦兹力 $\boldsymbol{F} = Q \boldsymbol{u} \times \boldsymbol{B}$。运动方程为 $\mathrm{d}\boldsymbol{p}/\mathrm{d}t = Q \boldsymbol{u} \times \boldsymbol{B}$，其中 $\boldsymbol{p} = \gamma m \boldsymbol{u}$。由于磁场不做功，$\gamma$ 常数，故 $p = \gamma m u$ 大小不变，方向变化。在垂直磁场的平面内做匀速圆周运动，向心力由洛伦兹力提供：
+
+$$
+\begin{align}
+\frac{p u}{R} = Q u B \quad \Rightarrow \quad p = Q B R
+\end{align}
+$$
+
+角频率（回旋频率）为
+
+$$
+\begin{align}
+\Omega = \frac{u}{R} = \frac{Q B}{p/u} = \frac{Q B}{\gamma m}
+\end{align}
+$$
+
+即 $\Omega = \dfrac{QB}{\gamma m}$，与速度有关，体现了相对论效应。
+
+### 闵可夫斯基力
+
+定义闵可夫斯基力（四维力）$K^\mu = \dfrac{\mathrm{d}p^\mu}{\mathrm{d}\tau}$。它是一个四维矢量，其时间分量为
+
+$$
+\begin{align}
+K^0 = \frac{\mathrm{d}p^0}{\mathrm{d}\tau} = \frac{1}{c} \frac{\mathrm{d}E}{\mathrm{d}\tau}
+\end{align}
+$$
+
+对于电磁力，洛伦兹力公式 $\boldsymbol{F} = Q(\boldsymbol{E} + \boldsymbol{u} \times \boldsymbol{B})$ 可嵌入四维形式，但需注意 $K^\mu$ 与普通力 $\boldsymbol{F}$ 的关系为 $K^\mu = (\gamma \boldsymbol{F}\cdot\boldsymbol{u}/c, \gamma \boldsymbol{F})$。
