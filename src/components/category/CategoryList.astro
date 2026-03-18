@@ -20,11 +20,13 @@ const { categories } = Astro.props
     <div class="space-y-2.5">
       {categories.map((category) => (
         <div class="relative block group space-y-2.5" >
-          <div class="px-2.5 py-2 text-sm flex gap-1 select-none rounded-lg bg-accent/10 transition group-hover:bg-accent/20 group-hover:scale-100">
-            <i class="shrink-0 iconfont icon-menu" />
-            <span class="grow">{category.name[0]}</span>
-            <span class="shrink-0">{category.count}</span>
-          </div>
+          <a href={`/categories/${category.slug[0]}`}>
+            <div class="px-2.5 py-2 text-sm flex gap-1 select-none rounded-lg bg-accent/10 transition group-hover:bg-accent/20 group-hover:scale-100">
+              <i class="shrink-0 iconfont icon-menu" />
+              <span class="grow">{category.name[0]}</span>
+              <span class="shrink-0">{category.count}</span>
+            </div>
+          </a>
           <div class="hidden ml-4 rounded-lg border border-primary group-hover:block">
             <SubCategoryList supName={category.name[0]} />
           </div>

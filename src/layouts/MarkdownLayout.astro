@@ -55,15 +55,15 @@ const {
     <HeadGradient client:idle />
     <div class="max-w-[1440px] mx-auto px-0 py-20 lg:grid lg:grid-cols-[200px_auto_200px] lg:gap-[20px]">
       <!-- 左侧展示部分 -->
-      <div>
+      <div transition:name="LeftBlock" transition:animate="fade">
         <aside class="mx-auto mb-6 hidden lg:block lg:sticky lg:top-20 space-y-6">
           <TagCard />
           <CategoryCard />
         </aside>
       </div>
       <!-- 中间主体部分 -->
-      <div>
-        <Card>
+      <div transition:name="MainBlock" transition:animate="fade">
+        <Card transition:name="MainCard" transition:animate="fade">
           <slot />
           <aside class="mx-auto m-4 lg:hidden space-y-6">
             <TagCard rounded="xl" shadow="none" />
@@ -72,7 +72,7 @@ const {
         </Card>
       </div>
       <!-- 侧边目录栏 -->
-      <div>
+      <div transition:name="RightBlock" transition:animate="fade">
         <aside class="sticky top-20 mx-auto hidden lg:block space-y-6">
           <ContentsCard headings={headings} />
         </aside>

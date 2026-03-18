@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from "astro:transitions";
 import { site, author } from '@/config.json'
 
 interface Props {
@@ -58,3 +59,5 @@ const titleWithSiteSuffix = title === site.title ? title : `${title} - ${site.ti
 />
 <!-- 链接站点地图 -->
 <link rel="sitemap" href="/sitemap-index.xml" />
+
+<ViewTransitions />

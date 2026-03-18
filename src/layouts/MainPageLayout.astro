@@ -4,6 +4,7 @@ import PageLayout from '@/layouts/PageLayout.astro'
 import Card from '@/components/cards/Card.astro'
 import TagCard from '@/components/cards/TagCard.astro'
 import CategoryCard from '@/components/cards/CategoryCard.astro'
+import type { animate } from 'framer-motion'
 
 
 
@@ -25,25 +26,25 @@ const {
   currentPage,
   showCategories = true,
   showTags = true,
-  style = "max-w-[1440px] mx-auto px-0 py-20 md:px-4 lg:grid lg:grid-cols-[200px_auto] lg:gap-[20px]"
+  style = "max-w-[1440px] mx-auto px-0 py-20 md:px-4 lg:grid lg:grid-cols-[200px_auto_0] lg:gap-[20px]"
 } = Astro.props
 ---
 
 <PageLayout title={title} description={description} image={image}>
   <div>
     <!-- 如果页码为 1 就显示 Hero 页 -->
-    {currentPage === 1 && <Hero />}
+    {currentPage && <Hero />}
     <div class={style}>
       <!-- 分类和标签展示组件 -->
-      <div>
+      <div transition:name="LeftBlock" transition:animate="fade">
         <aside class="mx-auto mb-6 hidden lg:block lg:sticky lg:top-20 space-y-6">
           {showTags && <TagCard />}
           {showCategories && <CategoryCard />}
         </aside>
       </div>
       <!-- 中间主体部分 -->
-      <div>
-        <Card>
+      <div transition:name="MainBlock" transition:animate="fade">
+        <Card transition:name="MainCard" transition:animate="fade">
           <slot />
           <aside class="m-4 lg:hidden space-y-6">
             {showTags && <TagCard rounded="xl" shadow="none" />}
@@ -51,6 +52,7 @@ const {
           </aside>
         </Card>
       </div>
+      <div></div>
     </div>
   </div>
 </PageLayout>
