@@ -5,9 +5,6 @@ import Card from '@/components/cards/Card.astro'
 import TagCard from '@/components/cards/TagCard.astro'
 import CategoryCard from '@/components/cards/CategoryCard.astro'
 
-
-
-
 interface Props {
   title?: string
   description?: string
@@ -15,8 +12,7 @@ interface Props {
   currentPage?: number
   showCategories?: boolean
   showTags?: boolean
-  style?: string
-}
+};
 
 const {
   title,
@@ -24,33 +20,33 @@ const {
   image,
   currentPage,
   showCategories = true,
-  showTags = true,
-  style = "max-w-[1440px] mx-auto px-0 py-20 md:px-4 lg:grid lg:grid-cols-[200px_auto] lg:gap-[20px]"
-} = Astro.props
+  showTags = true
+} = Astro.props;
 ---
 
 <PageLayout title={title} description={description} image={image}>
   <div>
     <!-- 如果页码为 1 就显示 Hero 页 -->
-    {currentPage === 1 && <Hero />}
-    <div class={style}>
+    {currentPage===1 && <Hero />}
+    <div id="mainblock" class="max-w-[1440px] mx-auto px-0 py-20 lg:grid lg:grid-cols-[200px_auto_200px] lg:gap-[20px]">
       <!-- 分类和标签展示组件 -->
-      <div>
+      <div transition:name="LeftBlock" transition:persist>
         <aside class="mx-auto mb-6 hidden lg:block lg:sticky lg:top-20 space-y-6">
           {showTags && <TagCard />}
           {showCategories && <CategoryCard />}
         </aside>
       </div>
       <!-- 中间主体部分 -->
-      <div>
+      <div transition:name="MainBlock" transition:animate="fade">
         <Card>
           <slot />
-          <aside class="m-4 lg:hidden space-y-6">
+          <aside class="mx-auto m-4 lg:hidden space-y-6">
             {showTags && <TagCard rounded="xl" shadow="none" />}
             {showCategories && <CategoryCard rounded="xl" shadow="none" />}
           </aside>
         </Card>
       </div>
+      <div></div>
     </div>
   </div>
 </PageLayout>

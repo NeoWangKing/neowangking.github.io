@@ -17,7 +17,7 @@ const { rounded = '[24px]', shadow = 'xl', other = '' } = Astro.props
 
 ---
 
-<Card rounded={rounded} shadow={shadow} other={other}>
+<Card rounded={rounded} shadow={shadow} other={other} transition:name="TagCard">
   <SectionBlock title="热门标签" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
     <TagList tags={hotTags} />
     <div class="text-right">

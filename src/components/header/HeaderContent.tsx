@@ -74,6 +74,7 @@ function HeaderMenuItem({
     <a
       className={clsx('relative block px-4 py-1.5 rounded-full transition durantion-300', isActive ? 'text-accent font-bold bg-accent/15 border border-accent/40' : 'hover:text-accent')}
       href={href}
+      data-astro-history="replace"
     >
       <div className="flex space-x-2">
         {isActive && (

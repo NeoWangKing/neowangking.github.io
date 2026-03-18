@@ -5,7 +5,7 @@ import { getAllCategories, getSubCategories, listInclude, getOldestPosts } from 
 import SectionBlock from '@/components/SectionBlock.astro'
 import Highlight from '@/components/Highlight.astro'
 import Timeline from '@/components/Timeline.astro'
-import CategorySmallList from '@/components/CategorySmallList.astro'
+import CategorySmallList from '@/components/category/CategorySmallList.astro'
 
 export const getStaticPaths = (async () => {
   const allCategories = await getAllCategories()
@@ -50,7 +50,7 @@ const oldestPosts = await getOldestPosts().then((posts) => {
   return posts.filter((post) => listInclude(post.data.category, category.name))
 })
 ---
-<MainPageLayout showCategories={false}>
+<MainPageLayout>
   <div class="mx-auto px-4 py-16">
     <header class="space-y-4 mb-8">
       <h1 class="text-4xl font-bold">
