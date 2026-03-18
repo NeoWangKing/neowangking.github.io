@@ -7,9 +7,9 @@ export function PostTagsList({
 }) {
 
   return (
-    <section className="text-xs py-3 px-5 leading-loose text-secondary border border-primary rounded-xl space-x-2">
+    <section className="text-xs py-3 px-5 leading-loose text-secondary border border-primary rounded-xl">
       {tags.map((tag) => (
-        <a className='inline-block px-3 py-0.5 rounded-lg bg-accent/10 transition hover:bg-accent/20 hover:text-accent hover:scale-105' href={`/tags/${slugify(tag)}`}>
+        <a className='inline-block m-1 px-3 py-0.5 rounded-lg bg-accent/10 transition hover:bg-accent/20 hover:text-accent hover:scale-105' href={`/tags/${slugify(tag)}`}>
           <i className="iconfont icon-hashtag" />
           <span>{tag}</span>
         </a>
