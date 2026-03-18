@@ -30,7 +30,7 @@ const {
     {currentPage===1 && <Hero />}
     <div id="mainblock" class="max-w-[1440px] mx-auto px-0 py-20 lg:grid lg:grid-cols-[200px_auto_200px] lg:gap-[20px]">
       <!-- 分类和标签展示组件 -->
-      <div transition:name="LeftBlock" transition:persist>
+      <div transition:name="LeftBlock" transition:persist="leftblock">
         <aside class="mx-auto mb-6 hidden lg:block lg:sticky lg:top-20 space-y-6">
           {showTags && <TagCard />}
           {showCategories && <CategoryCard />}
@@ -46,7 +46,7 @@ const {
           </aside>
         </Card>
       </div>
-      <div></div>
+      <div transition:name="RightBlock"></div>
     </div>
   </div>
 </PageLayout>
