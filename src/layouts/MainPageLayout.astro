@@ -16,7 +16,6 @@ interface Props {
   currentPage?: number
   showCategories?: boolean
   showTags?: boolean
-  style?: string
 }
 
 const {
@@ -25,8 +24,7 @@ const {
   image,
   currentPage,
   showCategories = true,
-  showTags = true,
-  style = "max-w-[1440px] mx-auto px-0 py-20 md:px-4 lg:grid lg:grid-cols-[200px_auto_0] lg:gap-[20px]"
+  showTags = true
 } = Astro.props
 ---
 
@@ -34,7 +32,7 @@ const {
   <div>
     <!-- 如果页码为 1 就显示 Hero 页 -->
     {currentPage && <Hero />}
-    <div class={style}>
+    <div class="max-w-[1440px] mx-auto px-0 py-20 lg:grid lg:grid-cols-[200px_auto_200px] lg:gap-[20px]">
       <!-- 分类和标签展示组件 -->
       <div transition:name="LeftBlock" transition:animate="fade">
         <aside class="mx-auto mb-6 hidden lg:block lg:sticky lg:top-20 space-y-6">
@@ -46,7 +44,7 @@ const {
       <div transition:name="MainBlock" transition:animate="fade">
         <Card transition:name="MainCard" transition:animate="fade">
           <slot />
-          <aside class="m-4 lg:hidden space-y-6">
+          <aside class="mx-auto m-4 lg:hidden space-y-6">
             {showTags && <TagCard rounded="xl" shadow="none" />}
             {showCategories && <CategoryCard rounded="xl" shadow="none" />}
           </aside>
