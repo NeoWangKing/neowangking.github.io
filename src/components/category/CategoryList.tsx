@@ -1,4 +1,5 @@
 import { useAtom } from 'jotai'
+import { motion, AnimatePresence } from 'framer-motion'
 import { showSubCategoryAtom } from '@/store/showSubCategory'
 import SubCategoryList from './SubCategoryList'
 
@@ -56,11 +57,19 @@ export function CategoryList({ categories }: Props) {
             </a>
 
             {/* 二级分类列表 */}
-            {isOpen && (
-              <div className="ml-4 rounded-lg border border-primary">
-                <SubCategoryList subCategories={category.subCategories} />
-              </div>
-            )}
+            <AnimatePresence initial={false}>
+              {isOpen && (
+                <motion.div
+                  initial={{ height: 0, opacity: 0 }}
+                  animate={{ height: 'auto', opacity: 1 }}
+                  exit={{ height: 0, opacity: 0 }}
+                  transition={{ duration: 0.2 }}
+                  className="ml-4 overflow-hidden rounded-lg border border-primary"
+                >
+                  <SubCategoryList subCategories={category.subCategories} />
+                </motion.div>
+              )}
+            </AnimatePresence>
           </div>
         )
       })}
