@@ -23,7 +23,7 @@ export function AnimatedLogo() {
 
 function Logo() {
   return (
-    <a className="block" href="/" title="Nav to home">
+    <a className="block" href="/" title="Nav to home" data-astro-history="replace">
       <img
         className="size-[40px] select-none object-cover rounded-2xl border border-primary shadow-md"
         src={author.avatar}

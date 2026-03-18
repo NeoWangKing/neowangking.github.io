@@ -35,7 +35,10 @@ const isMdContentEmpty = md.body.trim().length === 0
 
 {
   isPageLayout ? (
-    <MainPageLayout title={md.data.title} description={md.data.description}>
+    <MainPageLayout 
+      title={md.data.title}
+      description={md.data.description}
+    >
       <div class="mx-auto px-4 py-16 space-y-8">
         <header class="space-y-4">
           <h1 class="text-4xl font-bold">

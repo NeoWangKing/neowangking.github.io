@@ -17,7 +17,7 @@ const { rounded = '[24px]', shadow = 'xl', other = '' } = Astro.props
 
 ---
 
-<Card rounded={rounded} shadow={shadow} other={other} transition:name="CategoryCard" transition:persist>
+<Card rounded={rounded} shadow={shadow} other={other} transition:name="CategoryCard">
   <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
     <CategoryList categories={Categories} />
     <div class="mt-2 text-right">

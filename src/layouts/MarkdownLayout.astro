@@ -8,12 +8,8 @@ import { BackToTopFAB } from '@/components/BackToTopFAB'
 import { Provider } from '@/components/provider/Provider'
 import { ToastContainer } from '@/components/ToastContainer'
 import { ModalStack } from '@/components/ui/modal'
-import SectionBlock from '@/components/SectionBlock.astro'
 import 'katex/dist/katex.min.css'
 import type { MarkdownHeading } from 'astro'
-import { ActionAside } from '@/components/post/ActionAside'
-import { PostToc } from '@/components/post/PostToc'
-import { ReadingProgress } from '@/components/post/ReadingProgress'
 import Card from '@/components/cards/Card.astro'
 import TagCard from '@/components/cards/TagCard.astro'
 import CategoryCard from '@/components/cards/CategoryCard.astro'
@@ -52,10 +48,10 @@ const {
 
   <Header client:only="react" transition:persist="header" />
   <main class="relative z-1 px-4 pt-16 min-h-main bg-primary">
-    <HeadGradient client:idle />
+    <HeadGradient client:idle transition:animate="fade"/>
     <div class="max-w-[1440px] mx-auto px-0 py-20 lg:grid lg:grid-cols-[200px_auto_200px] lg:gap-[20px]">
       <!-- 左侧展示部分 -->
-      <div transition:name="LeftBlock" transition:animate="fade">
+      <div transition:name="LeftBlock" transition:persist>
         <aside class="mx-auto mb-6 hidden lg:block lg:sticky lg:top-20 space-y-6">
           <TagCard />
           <CategoryCard />
@@ -63,7 +59,7 @@ const {
       </div>
       <!-- 中间主体部分 -->
       <div transition:name="MainBlock" transition:animate="fade">
-        <Card transition:name="MainCard" transition:animate="fade">
+        <Card>
           <slot />
           <aside class="mx-auto m-4 lg:hidden space-y-6">
             <TagCard rounded="xl" shadow="none" />

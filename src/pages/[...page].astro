@@ -44,7 +44,7 @@ const { currentPage, totalPage, data } = Astro.props
 
 <MainPageLayout currentPage={currentPage}>
   <!-- 列出所有文章 -->
-  <div class="min-w-0" id="post">
+  <div class="min-w-0">
     <SectionBlock title="最新发布" style="ml-4 mt-4 mb-4 text-xl font-bold uppercase tracking-widest text-accent">
       <PostList posts={data} />
       {
