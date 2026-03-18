@@ -1,37 +1,53 @@
-import { pageScrollLocationAtom, pageScrollDirectionAtom } from '@/store/scrollInfo'
+// PostToc.tsx
+import { pageScrollLocationAtom } from '@/store/scrollInfo'
 import type { MarkdownHeading } from 'astro'
 import clsx from 'clsx'
 import { useAtomValue } from 'jotai'
-import { startTransition, useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 
-function useActiveItem() {
-  const [activeItem, setActiveItem] = useState('')
+/**
+ * 获取当前视口内可见的所有标题，并找出其中最靠近视口顶部的一个（主活动项）
+ */
+function useActiveItems() {
+  const [activeItems, setActiveItems] = useState<Set<string>>(new Set())
+  const [primaryItem, setPrimaryItem] = useState<string>('')
   const scrollY = useAtomValue(pageScrollLocationAtom)
 
   useEffect(() => {
     const $article = document.querySelector('#markdown-wrapper')
     if (!$article) return
-    const $headings = Array.from($article.querySelectorAll('h1,h2,h3,h4,h5,h6'))
-    for (let i = 0; i < $headings.length; i++) {
-      const item = $headings[i]
-      const nextItem = $headings[i + 1]
-      const itemTop = item.getBoundingClientRect().top
-      const nextItemTop = nextItem ? nextItem.getBoundingClientRect().top : 10000
 
-      if (itemTop <= 80 && nextItemTop > 80) {
-        startTransition(() => {
-          setActiveItem(item.id)
-        })
-        break
+    const $headings = Array.from($article.querySelectorAll('h1,h2,h3,h4,h5,h6'))
+    const visibleSlugs = new Set<string>()
+    let primarySlug = ''
+    let minDistance = Infinity
+    const viewportHeight = window.innerHeight
+
+    $headings.forEach(($heading) => {
+      const rect = $heading.getBoundingClientRect()
+      // 判断是否与视口相交（可见）
+      if (rect.top < viewportHeight && rect.bottom > 0) {
+        const slug = $heading.id
+        visibleSlugs.add(slug)
+
+        // 计算该标题顶部距离视口顶部的绝对距离
+        const distanceToTop = Math.abs(rect.top)
+        if (distanceToTop < minDistance) {
+          minDistance = distanceToTop
+          primarySlug = slug
+        }
       }
-    }
+    })
+
+    setActiveItems(visibleSlugs)
+    setPrimaryItem(primarySlug)
   }, [scrollY])
 
-  return activeItem
+  return { activeItems, primaryItem }
 }
 
 export function PostToc({ headings }: { headings: MarkdownHeading[] }) {
-  const activeItem = useActiveItem()
+  const { activeItems, primaryItem } = useActiveItems()
 
   return (
     <ul
@@ -47,7 +63,8 @@ export function PostToc({ headings }: { headings: MarkdownHeading[] }) {
           slug={item.slug}
           text={item.text}
           depth={item.depth}
-          isActive={item.slug === activeItem}
+          isActive={activeItems.has(item.slug)}
+          isPrimary={item.slug === primaryItem}  // 新增
         />
       ))}
     </ul>
@@ -59,57 +76,52 @@ export function TocItem({
   text,
   depth,
   isActive,
+  isPrimary,
 }: {
   slug: string
   text: string
   depth: number
   isActive: boolean
+  isPrimary: boolean
 }) {
-  const itemRef = useRef<HTMLLIElement>(null)
-  const scrollDirection = useAtomValue(pageScrollDirectionAtom)
-  const barWidth = 5 + (10 * (depth - 2))
+  const barWidth = 5 + 10 * (depth - 2)
 
-  useEffect(() => {
-    if (!isActive) return
-    const $item = itemRef.current
-    if (!$item) return
-    const $container = $item.parentElement
-    if (!$container) return
-
-    const containerHeight = $container.clientHeight
-    const itemHeight = $item.clientHeight
-    const itemOffsetTop = $item.offsetTop
-    const scrollTop = $container.scrollTop
-
-    const itemTop = itemOffsetTop - scrollTop
-    const itemBottom = itemTop + itemHeight
-
-    if (itemTop < 0 || itemBottom > containerHeight) {
-      if (scrollDirection === 'up') {
-        $container.scrollTop = itemOffsetTop - containerHeight + itemHeight
-
-      } else {
-        $container.scrollTop = itemOffsetTop
-      }
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault()
+    const element = document.getElementById(slug)
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' })
+      history.pushState(null, '', '#' + slug)
     }
-  }, [isActive])
+  }
 
   return (
-    <li className="relative" ref={itemRef}>
+    <li className="relative">
+      {/* 左侧示意条 */}
       <span
         className={clsx(
-          'absolute left-0 top-2 h-1 rounded-full transition duration-500 transition-top transition-h',
-          isActive ? 'bg-accent top-2 h-1.5' : 'bg-zinc-300 dark:bg-zinc-700',
+          'absolute left-0 top-2 rounded-full transition-all duration-300',
+          isPrimary
+            ? 'bg-accent h-1.5'            // 主活动项：更高更粗
+            : isActive
+            ? 'bg-accent h-1'
+            : 'bg-zinc-300 dark:bg-zinc-700 h-1',
         )}
-        style={{ width: `${barWidth}px` }}
-      ></span>
+        style={{ width: `${barWidth}px` }} // 主活动项宽度稍宽
+      />
+      {/* 链接文本 */}
       <a
         className={clsx(
-          'inline-block opacity-100 transition duration-100',
-          isActive ? 'opacity-100 text-accent text-sm' : 'group-hover:opacity-100 text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100',
+          'inline-block transition-all duration-300',
+          isPrimary
+            ? 'opacity-100 text-accent font-bold text-base' // 主活动项：加粗、稍大
+            : isActive
+            ? 'opacity-100 text-accent/75 text-sm'
+            : 'opacity-60 group-hover:opacity-100 text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100',
         )}
-        style={{ paddingLeft: `${barWidth+8}px`}}
+        style={{ paddingLeft: `${barWidth + 8}px` }}
         href={`#${slug}`}
+        onClick={handleClick}
       >
         <span>{text}</span>
       </a>
