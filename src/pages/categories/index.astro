@@ -4,7 +4,7 @@ import { getCategories, getOldestPosts } from '@/utils/content'
 import SectionBlock from '@/components/SectionBlock.astro'
 import Highlight from '@/components/Highlight.astro'
 import Timeline from '@/components/Timeline.astro'
-import CategorySmallList from '@/components/CategorySmallList.astro'
+import CategorySmallList from '@/components/category/CategorySmallList.astro'
 
 const oldestPosts = await getOldestPosts()
 const category = await getCategories()

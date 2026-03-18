@@ -1,11 +1,20 @@
 ---
+// CategoryCard.astro
 import Card from '@/components/cards/Card.astro'
 import SectionBlock from '@/components/SectionBlock.astro'
-import CategoryList from '@/components/category/CategoryList.astro'
-import { getCategories } from '@/utils/content'
+import { CategoryList } from '../category/CategoryList'
+import { getCategories, getSubCategories } from '@/utils/content'
 
-// 获取所有类别
-const Categories = await getCategories()
+// 获取一级分类
+const categories = await getCategories()
+
+// 为每个一级分类获取二级分类（假设 supName 为一级分类名称）
+const categoriesWithSub = await Promise.all(
+  categories.map(async (cat) => ({
+    ...cat,
+    subCategories: await getSubCategories(cat.name[0]) // 根据实际数据结构调整
+  }))
+)
 
 interface Props {
   rounded?: string
@@ -14,12 +23,11 @@ interface Props {
 }
 
 const { rounded = '[24px]', shadow = 'xl', other = '' } = Astro.props
-
 ---
 
 <Card rounded={rounded} shadow={shadow} other={other} transition:name="CategoryCard">
   <SectionBlock title="文章分类" style="mt-4 mb-4 font-bold uppercase tracking-widest text-accent">
-    <CategoryList categories={Categories} />
+    <CategoryList categories={categoriesWithSub} client:visible />
     <div class="mt-2 text-right">
       <a class="text-sm text-secondary hover:text-accent" href="/categories">
         所有分类 <i class="iconfont icon-arrow-right" />
