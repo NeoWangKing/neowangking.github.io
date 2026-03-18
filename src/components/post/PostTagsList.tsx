@@ -1,9 +1,4 @@
-import { site } from '@/config.json'
 import { slugify } from '@/utils/content'
-
-function getPostUrl(slug: string) {
-  return new URL(slug, site.url).href
-}
 
 export function PostTagsList({
   tags
