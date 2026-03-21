@@ -1,9 +1,9 @@
 import { slugify } from '@/utils/content'
 
 export function PostTagsList({
-  tags
+  tags = []
 }: {
-  tags: string[]
+  tags?: string[]
 }) {
 
   return (
