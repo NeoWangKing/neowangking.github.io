@@ -1,0 +1,1 @@
+const o="projects.md",t="spec",e="projects",c="",n={title:"项目",description:"这些是我创建或参与的项目，如果你感兴趣不妨去给个 Star。",comments:!1},s={type:"content",filePath:"/home/runner/work/blog-source-code/blog-source-code/src/content/spec/projects.md",rawData:void 0};export{s as _internal,c as body,t as collection,n as data,o as id,e as slug};
